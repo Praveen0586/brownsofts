@@ -28,94 +28,75 @@ class _HomePageState extends State<HomePage> {
               Container(
                 color: const Color.fromARGB(224, 238, 225, 215),
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height /2
-                ,
-                child: Positioned(
-                    child: SizedBox(
-                  height: 250,
-                  width: 250,
-                  child: Image.asset(
-                    "assets/logo.png",
-                    alignment: Alignment.bottomCenter / 2,
-                    scale: 6,
+                height: MediaQuery.of(context).size.height / 1.4,
+                child: Center(
+                  child: SizedBox(
+                    height: 350,
+                    width: 350,
+                    child: Image.asset(
+                      "assets/logo.png",
+                      alignment: Alignment.bottomCenter * 12,
+                      scale: 4,
+                    ),
                   ),
-                )),
+                ),
               ),
             ],
           ),
-          Stack(
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const SizedBox(
-                    height: 75,
-                  ),
-                  //create new acoount
-                  SizedBox(
-                    height: 55,
-                    width: MediaQuery.of(context).size.width / 1.5,
-                    child: OutlinedButton(
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (ctx) => SIgnInPage()));
-                      },
-                      style: OutlinedButton.styleFrom(
-                          side: BorderSide(
-                              color: Theme.of(context).colorScheme.primary,
-                              width: 3)),
-                      child: const Text(
-                        "Sign In",
-                        style: TextStyle(fontSize: 15),
-                      ),
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 30,
+                ),
+                SizedBox(
+                  height: 55,
+                  width: MediaQuery.of(context).size.width / 1.5,
+                  child: OutlinedButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (ctx) => SIgnInPage()));
+                    },
+                    style: OutlinedButton.styleFrom(
+                        side: BorderSide(
+                            color: Theme.of(context).colorScheme.primary,
+                            width: 3)),
+                    child: const Text(
+                      "Sign In",
+                      style: TextStyle(fontSize: 15),
                     ),
                   ),
-                  const SizedBox(
-                    height: 80,
-                  ),
-                  SizedBox(
-                    height: 55,
-                    width: MediaQuery.of(context).size.width / 1.5,
-                    child: OutlinedButton(
-                      onPressed: () {},
-                      style: OutlinedButton.styleFrom(
-                          side: BorderSide(
-                              color: Theme.of(context).colorScheme.primary,
-                              width: 3)),
-                      child: const Text(
-                        "Create Account",
-                        style: TextStyle(fontSize: 15),
-                      ),
+                ),
+                const SizedBox(
+                  height: 60,
+                ),
+                SizedBox(
+                  height: 55,
+                  width: MediaQuery.of(context).size.width / 1.5,
+                  child: OutlinedButton(
+                    onPressed: () {
+                      // Handle create account action here
+                    },
+                    style: OutlinedButton.styleFrom(
+                        side: BorderSide(
+                            color: Theme.of(context).colorScheme.primary,
+                            width: 3)),
+                    child: const Text(
+                      "Create Account",
+                      style: TextStyle(fontSize: 15),
                     ),
                   ),
-                ],
-              )
-            ],
+                ),
+                const SizedBox(
+                  height: 35,
+                ),
+              ],
+            ),
           )
         ],
       ),
     );
   }
 }
-
-
-//  Positioned(bottom: 10,width: 500,
-//             child: Container(
-//               child: Center(
-//                 child: Column(
-//                   children: [
-//                   
-//                   ],
-//                 ),
-//               ),
-//             ),
-//           ),
-
-//  ElevatedButton(
-//                     onPressed: () {},
-//                     child: Text(
-//                       "Sign In",
-//                       style: TextStyle(fontSize: 25),
-//                     ),
-//                   ),
