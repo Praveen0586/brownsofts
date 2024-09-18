@@ -123,22 +123,25 @@ class _SIgnInPageState extends State<SIgnInPage> {
                       ),
 
                       const SizedBox(
-                        height: 15,
+                        height: 25,
                       ),
-                      SizedBox(
-                        height: 50,
-                        width: 175,
-                        child: Expanded(
-                          child: ElevatedButton.icon(
-                            onPressed: () {
-                              bool valid = formkey.currentState!.validate();
-                              formkey.currentState!.save();
-                              print(valid);
-                              print("$entered_emiail ,$entered_password");
-                            },
-                            label: const Text("LOGIN "),
-                            icon: const Icon(Icons.arrow_right_rounded),
-                            iconAlignment: IconAlignment.end,
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: SizedBox(
+                          height: 50,
+                          width: 175,
+                          child: Expanded(
+                            child: ElevatedButton.icon(
+                              onPressed: () {
+                                bool valid = formkey.currentState!.validate();
+                                formkey.currentState!.save();
+                                print(valid);
+                                print("$entered_emiail ,$entered_password");
+                              },
+                              label: const Text("LOGIN "),
+                              icon: const Icon(Icons.arrow_right_rounded),
+                              iconAlignment: IconAlignment.end,
+                            ),
                           ),
                         ),
                       )
