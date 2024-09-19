@@ -1,3 +1,4 @@
+import 'package:brownsofts/authentivation/log_in.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatefulWidget {
@@ -8,18 +9,24 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
-  final email = TextEditingController();
-  final password = TextEditingController();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
   final formkey = GlobalKey<FormState>();
-  String entered_email = "";
-  String entered_password = "";
   bool visible = false;
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(left: 25, top: 25, bottom: 25, right: 15),
+        padding:
+            const EdgeInsets.only(left: 25, top: 25, bottom: 25, right: 15),
         child: ListView(
           children: [
             Column(
@@ -30,7 +37,7 @@ class _SignInPageState extends State<SignInPage> {
                   height: 150,
                 ),
                 const Text(
-                  "Login ",
+                  "Login",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 50,
@@ -52,20 +59,19 @@ class _SignInPageState extends State<SignInPage> {
                     children: [
                       // Email Field
                       TextFormField(
-                        onSaved: (val) {
-                          entered_email = val.toString();
-                        },
+                        controller: emailController,
                         validator: (value) {
-                          if (value == null || value.isEmpty || !value.contains("@")) {
+                          if (value == null ||
+                              value.isEmpty ||
+                              !value.contains("@")) {
                             return "Please enter a valid Email Address";
-                          } else {
-                            return null;
                           }
+                          return null;
                         },
-                        autofocus: true,
+                        autofocus: false,
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.email_outlined),
+                          prefixIcon: const Icon(Icons.email_outlined),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 color: Theme.of(context).colorScheme.primary),
@@ -74,31 +80,25 @@ class _SignInPageState extends State<SignInPage> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
-                          label: Text("Email"),
-                          hintText: "user123@gmail.com", // Fixed typo
+                          label: const Text("Email"),
+                          hintText: "user123@gmail.com",
                         ),
-                        controller: email,
                       ),
                       const SizedBox(
                         height: 25,
                       ),
                       // Password Field
                       TextFormField(
-                        onSaved: (val) {
-                          entered_password = val.toString();
-                        },
+                        controller: passwordController,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return "Please mention password";
-                          } else {
-                            return null;
+                            return "Please enter a password";
                           }
+                          return null;
                         },
-                        autofocus: true,
-                        obscureText: !visible, // Fixed visibility logic
-                        keyboardType: TextInputType.visiblePassword,
+                        obscureText: !visible,
                         decoration: InputDecoration(
-                          contentPadding: EdgeInsets.symmetric(
+                          contentPadding: const EdgeInsets.symmetric(
                               vertical: 8, horizontal: 10),
                           suffix: IconButton(
                             onPressed: () {
@@ -110,7 +110,7 @@ class _SignInPageState extends State<SignInPage> {
                                 ? const Icon(Icons.visibility_outlined)
                                 : const Icon(Icons.visibility_off_outlined),
                           ),
-                          prefixIcon: const Icon(Icons.lock_person_outlined),
+                          prefixIcon: const Icon(Icons.lock_outline),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 color: Theme.of(context).colorScheme.primary),
@@ -120,9 +120,8 @@ class _SignInPageState extends State<SignInPage> {
                             borderRadius: BorderRadius.circular(15),
                           ),
                           label: const Text("Password"),
-                          hintText: "***",
+                          hintText: "••••••••",
                         ),
-                        controller: password,
                       ),
                       const SizedBox(
                         height: 25,
@@ -132,18 +131,48 @@ class _SignInPageState extends State<SignInPage> {
                         child: SizedBox(
                           height: 50,
                           width: 175,
-                          child: ElevatedButton.icon(
+                          child: OutlinedButton.icon(
                             onPressed: () {
-                              bool valid = formkey.currentState!.validate();
-                              formkey.currentState!.save();
-                              print(valid);
-                              print("$entered_email ,$entered_password");
+                              if (formkey.currentState!.validate()) {
+                                print("Email: ${emailController.text}");
+                                print("Password: ${passwordController.text}");
+                              }
                             },
                             label: const Text("LOGIN"),
                             icon: const Icon(Icons.arrow_right_rounded),
-                            iconAlignment: IconAlignment.end,
+                            style: OutlinedButton.styleFrom(
+                                side: BorderSide(
+                                    width: 2,
+                                    color:
+                                        Theme.of(context).colorScheme.primary)),
                           ),
                         ),
+                      ),
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            "Don't have an account?",
+                            style: TextStyle(fontSize: 15),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    builder: (ctx) =>
+                                        const CreateAccountPage()),
+                              );
+                            },
+                            child: const Text(
+                              "Sign up",
+                              style: TextStyle(fontSize: 15),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),

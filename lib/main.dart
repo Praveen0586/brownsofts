@@ -1,3 +1,4 @@
+import "package:brownsofts/authentivation/log_in.dart";
 import "package:brownsofts/authentivation/sign_In.dart";
 import "package:flutter/material.dart";
 
@@ -56,8 +57,10 @@ class _HomePageState extends State<HomePage> {
                   width: MediaQuery.of(context).size.width / 1.5,
                   child: OutlinedButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (ctx) => const SignInPage()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) => const SignInPage()));
                     },
                     style: OutlinedButton.styleFrom(
                         side: BorderSide(
@@ -78,12 +81,14 @@ class _HomePageState extends State<HomePage> {
                   child: OutlinedButton(
                     onPressed: () {
                       // Handle create account action here
+                      Navigator.of(context).push(MaterialPageRoute(builder: (ctx){return CreateAccountPage();}));
                     },
                     style: OutlinedButton.styleFrom(
                         side: BorderSide(
                             color: Theme.of(context).colorScheme.primary,
                             width: 3)),
-                    child: const Text(
+                    child:
+                     const Text(
                       "Create Account",
                       style: TextStyle(fontSize: 15),
                     ),
