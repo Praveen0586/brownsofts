@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                   child: OutlinedButton(
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (ctx) => SIgnInPage()));
+                          MaterialPageRoute(builder: (ctx) => const SignInPage()));
                     },
                     style: OutlinedButton.styleFrom(
                         side: BorderSide(
