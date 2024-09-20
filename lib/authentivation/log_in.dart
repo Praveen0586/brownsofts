@@ -223,11 +223,11 @@ class _CreateAccountPage extends State<CreateAccountPage> {
                             ),
                             TextButton(
                               onPressed: () {
-                                Navigator.pop(context);
                                 Navigator.of(context).push(
                                   MaterialPageRoute(
                                       builder: (ctx) => const SignInPage()),
                                 );
+                            //    Navigator.pop(context);
                               },
                               child: const Text(
                                 "Sign In",

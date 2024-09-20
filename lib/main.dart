@@ -1,6 +1,11 @@
+import "dart:js_interop";
+
+import "package:brownsofts/authentivation/google_signin.dart";
 import "package:brownsofts/authentivation/log_in.dart";
 import "package:brownsofts/authentivation/sign_In.dart";
 import "package:flutter/material.dart";
+import 'package:fluttertoast/fluttertoast.dart';
+import "package:google_sign_in/google_sign_in.dart";
 
 void main() {
   runApp(MaterialApp(
@@ -73,7 +78,37 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 const SizedBox(
-                  height: 60,
+                  height: 20,
+                ),
+                SizedBox(
+                  height: 55,
+                  width: MediaQuery.of(context).size.width / 1.5,
+                  child: OutlinedButton(
+                    onPressed: () async {
+                      var user = await Google_Login.login();
+                      Fluttertoast.showToast(
+                          msg:
+                              "${user!.displayName} ,\n ${user.email} ,\n${user.id} ,\n ${user.photoUrl} ,\n${user.displayName}");
+                              Future<GoogleSignInAuthentication> gh=user.authentication;
+                       
+                      if (user != null) {
+                        Fluttertoast.showToast(
+                            msg:
+                                "${user.displayName} ,\n ${user.email} ,\n${user.id} ,\n ${user.photoUrl} ,\n${user.serverAuthCode}");
+                      }
+                    },
+                    style: OutlinedButton.styleFrom(
+                        side: BorderSide(
+                            color: Theme.of(context).colorScheme.primary,
+                            width: 3)),
+                    child: const Text(
+                      "Google Sign In ",
+                      style: TextStyle(fontSize: 15),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
                 ),
                 SizedBox(
                   height: 55,
@@ -81,21 +116,23 @@ class _HomePageState extends State<HomePage> {
                   child: OutlinedButton(
                     onPressed: () {
                       // Handle create account action here
-                      Navigator.of(context).push(MaterialPageRoute(builder: (ctx){return CreateAccountPage();}));
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (ctx) {
+                        return const CreateAccountPage();
+                      }));
                     },
                     style: OutlinedButton.styleFrom(
                         side: BorderSide(
                             color: Theme.of(context).colorScheme.primary,
                             width: 3)),
-                    child:
-                     const Text(
+                    child: const Text(
                       "Create Account",
                       style: TextStyle(fontSize: 15),
                     ),
                   ),
                 ),
                 const SizedBox(
-                  height: 35,
+                  height: 10,
                 ),
               ],
             ),
