@@ -1,5 +1,11 @@
-import 'package:brownsofts/authentivation/log_in.dart';
+import 'dart:convert';
+
+import 'package:brownsofts/API/api.dart';
+import 'package:brownsofts/authentivation/create_user.dart';
+import 'package:brownsofts/screens/dummyscreen.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:http/http.dart' as http;
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -19,6 +25,37 @@ class _SignInPageState extends State<SignInPage> {
     super.dispose();
     emailController.dispose();
     passwordController.dispose();
+  }
+
+  String entered_email = "";
+  String entered_password = "";
+
+  Future login_user() async {
+    try {
+      print("sending started");
+      var send = await http.post(Uri.parse(API.loginuser), body: {
+        "user_email": entered_email.toString(),
+        "user_password": entered_password.toString(),
+      });
+      Fluttertoast.showToast(msg: "${send.statusCode}");
+      if (send.statusCode == 200) {
+        Fluttertoast.showToast(msg: "2");
+        var resBody = jsonDecode(send.body);
+        if (resBody["success"] == true) {
+          Fluttertoast.showToast(msg: "${entered_email},${entered_password}");
+          Fluttertoast.showToast(msg: "You Logged in sucesfuly");
+          Fluttertoast.showToast(msg: "${resBody['userData']}");
+          Future.delayed(
+              Duration(microseconds: 100),
+              () => Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (ctx) => Homescreen())));
+        } else {
+          Fluttertoast.showToast(msg: "User Email Id and passwod not exist");
+        }
+      }
+    } catch (e) {
+      Fluttertoast.showToast(msg: "$e");
+    }
   }
 
   @override
@@ -69,6 +106,9 @@ class _SignInPageState extends State<SignInPage> {
                           return null;
                         },
                         autofocus: false,
+                        onSaved: (newValue) {
+                          entered_email = newValue!;
+                        },
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                           prefixIcon: const Icon(Icons.email_outlined),
@@ -97,6 +137,9 @@ class _SignInPageState extends State<SignInPage> {
                           return null;
                         },
                         obscureText: !visible,
+                        onSaved: (newValue) {
+                          entered_password = newValue!;
+                        },
                         decoration: InputDecoration(
                           contentPadding: const EdgeInsets.symmetric(
                               vertical: 8, horizontal: 10),
@@ -133,7 +176,10 @@ class _SignInPageState extends State<SignInPage> {
                           width: 175,
                           child: OutlinedButton.icon(
                             onPressed: () {
+                              formkey.currentState!.validate();
+                              formkey.currentState!.save();
                               if (formkey.currentState!.validate()) {
+                                login_user();
                                 print("Email: ${emailController.text}");
                                 print("Password: ${passwordController.text}");
                               }

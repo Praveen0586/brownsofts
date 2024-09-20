@@ -1,5 +1,11 @@
+import 'dart:convert';
+
+import 'package:brownsofts/API/api.dart';
 import 'package:brownsofts/authentivation/sign_In.dart';
+import 'package:brownsofts/screens/dummyscreen.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:http/http.dart' as http;
 
 class CreateAccountPage extends StatefulWidget {
   const CreateAccountPage({super.key});
@@ -28,6 +34,28 @@ class _CreateAccountPage extends State<CreateAccountPage> {
     email.dispose();
     pass1.dispose();
     pass2.dispose();
+  }
+
+  Future Create_user() async {
+    try {
+      print("sending started");
+      var send = await http.post(Uri.parse(API.createuser), body: {
+        "user_name": e_name,
+        "user_email": e_email.toString(),
+        "user_password": e_pass1.toString(),
+      });
+      Fluttertoast.showToast(msg: "${send.statusCode}");
+      if (send.statusCode == 200) {
+        Fluttertoast.showToast(msg: "2");
+        var resBody = jsonDecode(send.body);
+        if (resBody["success"]) {
+          Fluttertoast.showToast(msg: "You Logged in sucesfuly");
+          Future.delayed(Duration(microseconds: 100),()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>Homescreen())));
+        }
+      }
+    } catch (e) {
+      Fluttertoast.showToast(msg: "$e");
+    }
   }
 
   @override
@@ -194,9 +222,11 @@ class _CreateAccountPage extends State<CreateAccountPage> {
                               onPressed: () {
                                 formkey1.currentState!.validate();
                                 formkey1.currentState!.save();
+                              
+                                
                                 print(formkey1.currentState!.validate());
                                 if (formkey1.currentState!.validate()) {
-                                  print("$e_email,$e_name,$e_pass1,$e_pass2");
+                                   Create_user();
                                 }
                               },
                               iconAlignment: IconAlignment.end,
@@ -227,7 +257,7 @@ class _CreateAccountPage extends State<CreateAccountPage> {
                                   MaterialPageRoute(
                                       builder: (ctx) => const SignInPage()),
                                 );
-                            //    Navigator.pop(context);
+                                //    Navigator.pop(context);
                               },
                               child: const Text(
                                 "Sign In",
