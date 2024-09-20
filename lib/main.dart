@@ -1,11 +1,15 @@
+import "dart:convert";
 import "dart:js_interop";
 
+import "package:brownsofts/API/api.dart";
 import "package:brownsofts/authentivation/google_signin.dart";
 import "package:brownsofts/authentivation/log_in.dart";
 import "package:brownsofts/authentivation/sign_In.dart";
 import "package:flutter/material.dart";
 import 'package:fluttertoast/fluttertoast.dart';
 import "package:google_sign_in/google_sign_in.dart";
+
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(MaterialApp(
@@ -24,6 +28,27 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // Future googleLogintoSQL(GoogleSignInAccount? user) async {
+  //   try {
+  //     var send = await http.post(Uri.parse(API.googe_loin), body: {
+  //       "user_name": user!.displayName,
+  //       "user_email": user.email,
+  //       "user_password": null,
+  //       "user_login_id": user.id,
+  //       "user_login_type": user.runtimeType
+  //     });
+
+  //     if (send.statusCode == 200) {
+  //       var resBody = jsonDecode(send.body);
+  //       if (resBody["success"]) {
+  //         Fluttertoast.showToast(msg: "You Logged in sucesfuly");
+  //       }
+  //     }
+  //   } catch (e) {
+  //     Fluttertoast.showToast(msg: "$e");
+  //   }
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,13 +114,14 @@ class _HomePageState extends State<HomePage> {
                       Fluttertoast.showToast(
                           msg:
                               "${user!.displayName} ,\n ${user.email} ,\n${user.id} ,\n ${user.photoUrl} ,\n${user.displayName}");
-                              Future<GoogleSignInAuthentication> gh=user.authentication;
-                       
-                      if (user != null) {
-                        Fluttertoast.showToast(
-                            msg:
-                                "${user.displayName} ,\n ${user.email} ,\n${user.id} ,\n ${user.photoUrl} ,\n${user.serverAuthCode}");
-                      }
+
+                      //  googleLogintoSQL(user);
+
+                      // if (user != null) {
+                      //   Fluttertoast.showToast(
+                      //       msg:
+                      //           "${user.displayName} ,\n ${user.email} ,\n${user.id} ,\n ${user.photoUrl} ,\n${user.serverAuthCode}");
+                      // }
                     },
                     style: OutlinedButton.styleFrom(
                         side: BorderSide(
