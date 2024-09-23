@@ -1,7 +1,9 @@
 import 'dart:convert';
 
-import 'package:brownsofts/API/api.dart';
-import 'package:brownsofts/authentivation/sign_In.dart';
+import 'package:brownsofts/activities/API/api.dart';
+import 'package:brownsofts/activities/authentivation/sign_In.dart';
+import 'package:brownsofts/activities/models/remember_user.dart';
+import 'package:brownsofts/activities/models/user.dart';
 import 'package:brownsofts/screens/dummyscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -50,7 +52,15 @@ class _CreateAccountPage extends State<CreateAccountPage> {
         var resBody = jsonDecode(send.body);
         if (resBody["success"]) {
           Fluttertoast.showToast(msg: "You Logged in sucesfuly");
-          Future.delayed(Duration(microseconds: 100),()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>Homescreen())));
+          //save my user credentials
+          Remembrprefs.saveMyUserInfo(
+              User(name: e_name, user_email: e_email, user_password: e_pass1));
+
+          //navigate to next page
+          Future.delayed(
+              Duration(microseconds: 100),
+              () => Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (ctx) => Homescreen())));
         }
       }
     } catch (e) {
@@ -222,11 +232,10 @@ class _CreateAccountPage extends State<CreateAccountPage> {
                               onPressed: () {
                                 formkey1.currentState!.validate();
                                 formkey1.currentState!.save();
-                              
-                                
+
                                 print(formkey1.currentState!.validate());
                                 if (formkey1.currentState!.validate()) {
-                                   Create_user();
+                                  Create_user();
                                 }
                               },
                               iconAlignment: IconAlignment.end,

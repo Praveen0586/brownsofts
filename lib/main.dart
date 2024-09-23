@@ -1,17 +1,19 @@
 import "dart:convert";
 
-import "package:brownsofts/API/api.dart";
-import "package:brownsofts/authentivation/google_signin.dart";
+import "package:brownsofts/activities/API/api.dart";
+import "package:brownsofts/activities/authentivation/google_signin.dart";
 // import "package:brownsofts/authentivation/log_in.dart";
-import "package:brownsofts/authentivation/sign_In.dart";
+import "package:brownsofts/activities/authentivation/sign_In.dart";
 import "package:brownsofts/screens/dummyscreen.dart";
 import "package:flutter/material.dart";
 import 'package:fluttertoast/fluttertoast.dart';
+import "package:get/get.dart";
 import "package:google_sign_in/google_sign_in.dart";
 import 'package:http/http.dart' as http;
 
 void main() {
-  runApp(MaterialApp(
+  WidgetsFlutterBinding.ensureInitialized;
+  runApp(GetMaterialApp(
     theme: ThemeData(useMaterial3: true).copyWith(
         colorScheme: ColorScheme.fromSeed(
             seedColor: const Color.fromARGB(225, 91, 44, 31))),

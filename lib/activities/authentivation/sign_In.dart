@@ -1,7 +1,9 @@
 import 'dart:convert';
 
-import 'package:brownsofts/API/api.dart';
-import 'package:brownsofts/authentivation/create_user.dart';
+import 'package:brownsofts/activities/API/api.dart';
+import 'package:brownsofts/activities/authentivation/create_user.dart';
+import 'package:brownsofts/activities/models/remember_user.dart';
+import 'package:brownsofts/activities/models/user.dart';
 import 'package:brownsofts/screens/dummyscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -32,21 +34,34 @@ class _SignInPageState extends State<SignInPage> {
 
   Future login_user() async {
     try {
-      print("sending started");
       var send = await http.post(Uri.parse(API.loginuser), body: {
         "user_email": entered_email.toString(),
         "user_password": entered_password.toString(),
       });
-      Fluttertoast.showToast(msg: "${send.statusCode}");
+      // Fluttertoast.showToast(msg: "${send.statusCode}");
       if (send.statusCode == 200) {
         Fluttertoast.showToast(msg: "2");
         var resBody = jsonDecode(send.body);
         if (resBody["success"] == true) {
-          Fluttertoast.showToast(msg: "${entered_email},${entered_password}");
-          Fluttertoast.showToast(msg: "You Logged in sucesfuly");
-          Fluttertoast.showToast(msg: "${resBody['userData']}");
+          // Fluttertoast.showToast(msg: "${entered_email},${entered_password}");
+          // Fluttertoast.showToast(msg: "You Logged in sucesfuly");
+          // Fluttertoast.showToast(msg: "${resBody['userData']}");
+
+          var datafromSQL = resBody['userData'];
+
+          //save my user credentials
+
+          Remembrprefs.saveMyUserInfo(User(
+              name: datafromSQL["user_name"],
+              user_email: datafromSQL["user_email"],
+              user_password: datafromSQL["user_password"],
+              google_login_id: "App Login",
+              id: datafromSQL["id"]));
+          User? current;
+          current = await Remembrprefs.readCurrentUser();
+         
           Future.delayed(
-              Duration(microseconds: 100),
+             const Duration(microseconds: 100),
               () => Navigator.of(context)
                   .push(MaterialPageRoute(builder: (ctx) => Homescreen())));
         } else {
