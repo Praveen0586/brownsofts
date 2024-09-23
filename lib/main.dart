@@ -1,10 +1,13 @@
 import "dart:convert";
 
 import "package:brownsofts/activities/API/api.dart";
+import "package:brownsofts/activities/authentivation/create_user.dart";
 import "package:brownsofts/activities/authentivation/google_signin.dart";
 // import "package:brownsofts/authentivation/log_in.dart";
 import "package:brownsofts/activities/authentivation/sign_In.dart";
+import "package:brownsofts/activities/models/remember_user.dart";
 import "package:brownsofts/screens/dummyscreen.dart";
+import "package:brownsofts/screens/fragments/Dashboard.dart";
 import "package:flutter/material.dart";
 import 'package:fluttertoast/fluttertoast.dart';
 import "package:get/get.dart";
@@ -14,6 +17,8 @@ import 'package:http/http.dart' as http;
 void main() {
   WidgetsFlutterBinding.ensureInitialized;
   runApp(GetMaterialApp(
+    debugShowCheckedModeBanner: false,
+    debugShowMaterialGrid: false,
     theme: ThemeData(useMaterial3: true).copyWith(
         colorScheme: ColorScheme.fromSeed(
             seedColor: const Color.fromARGB(225, 91, 44, 31))),
@@ -43,10 +48,13 @@ class _HomePageState extends State<HomePage> {
         var resBody = jsonDecode(send.body);
         if (resBody["success"]) {
           Fluttertoast.showToast(msg: "You Logged in sucesfuly");
-          Future.delayed(
-              const Duration(microseconds: 1000),
-              () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (ctx) => const Homescreen())));
+          // Future.delayed(
+          //     const Duration(microseconds: 1000),
+          //     () => Navigator.of(context).push(
+          //         MaterialPageRoute(builder: (ctx) => const Homescreen())));
+
+          Future.delayed(Duration(milliseconds: 100),
+              () => Get.off(const DashBoardScreen()));
           const LinearProgressIndicator();
         }
       }
@@ -55,8 +63,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
+  Widget WelcomeScreen(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
@@ -147,19 +154,21 @@ class _HomePageState extends State<HomePage> {
                   width: MediaQuery.of(context).size.width / 1.5,
                   child: OutlinedButton(
                     onPressed: () {
-                      // Handle create account action here
-                      // Navigator.of(context)
-                      //     .push(MaterialPageRoute(builder: (ctx) {
-                      //   return const CreateAccountPage();
-                      // }));
-                      Google_Login.signOut();
+                      //  Handle create account action here
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (ctx) {
+                        return const CreateAccountPage();
+                      }));
+
+                      // Get.to(CreateAccountPage());
+                      //   Google_Login.signOut();
                     },
                     style: OutlinedButton.styleFrom(
                         side: BorderSide(
                             color: Theme.of(context).colorScheme.primary,
                             width: 3)),
                     child: const Text(
-                      "sign out",
+                      "Sign Up",
                       style: TextStyle(fontSize: 15),
                     ),
                   ),
@@ -173,5 +182,33 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+        future: Remembrprefs.readCurrentUser(),
+        builder: (ctx, datasnapshots) {
+          if (datasnapshots.data == null) {
+            return WelcomeScreen(ctx);
+          }
+
+          // if (datasnapshots.data != null) {
+          //   return Center(
+          //     child: Column(children: [
+          //       Text("Working "),
+          //       IconButton(
+          //           onPressed: () {
+          //             setState(() {
+          //               Remembrprefs.removeUser();
+          //             });
+          //           },
+          //           icon: Icon(Icons.abc_outlined))
+          //     ]),
+          //   );
+          // }
+
+          return const DashBoardScreen();
+        });
   }
 }

@@ -5,8 +5,10 @@ import 'package:brownsofts/activities/authentivation/create_user.dart';
 import 'package:brownsofts/activities/models/remember_user.dart';
 import 'package:brownsofts/activities/models/user.dart';
 import 'package:brownsofts/screens/dummyscreen.dart';
+import 'package:brownsofts/screens/fragments/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
 class SignInPage extends StatefulWidget {
@@ -59,11 +61,14 @@ class _SignInPageState extends State<SignInPage> {
               id: datafromSQL["id"]));
           User? current;
           current = await Remembrprefs.readCurrentUser();
-         
-          Future.delayed(
-             const Duration(microseconds: 100),
-              () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (ctx) => Homescreen())));
+
+          // Future.delayed(
+          //     const Duration(microseconds: 100),
+          //     () => Navigator.of(context)
+          //         .push(MaterialPageRoute(builder: (ctx) => Homescreen())));
+
+          Future.delayed(Duration(milliseconds: 100),
+              () => Get.off(const DashBoardScreen()));
         } else {
           Fluttertoast.showToast(msg: "User Email Id and passwod not exist");
         }
@@ -221,12 +226,13 @@ class _SignInPageState extends State<SignInPage> {
                           ),
                           TextButton(
                             onPressed: () {
-                              Navigator.pop(context);
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                    builder: (ctx) =>
-                                        const CreateAccountPage()),
-                              );
+                              // Navigator.pop(context);
+                              // Navigator.of(context).push(
+                              //   MaterialPageRoute(
+                              //       builder: (ctx) =>
+                              //           const CreateAccountPage()),
+                              // );
+                              Get.off(CreateAccountPage());
                             },
                             child: const Text(
                               "Sign up",

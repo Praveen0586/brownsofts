@@ -5,9 +5,11 @@ import 'package:brownsofts/activities/authentivation/sign_In.dart';
 import 'package:brownsofts/activities/models/remember_user.dart';
 import 'package:brownsofts/activities/models/user.dart';
 import 'package:brownsofts/screens/dummyscreen.dart';
+import 'package:brownsofts/screens/fragments/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
+import 'package:get/get.dart';
 
 class CreateAccountPage extends StatefulWidget {
   const CreateAccountPage({super.key});
@@ -57,10 +59,13 @@ class _CreateAccountPage extends State<CreateAccountPage> {
               User(name: e_name, user_email: e_email, user_password: e_pass1));
 
           //navigate to next page
-          Future.delayed(
-              Duration(microseconds: 100),
-              () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (ctx) => Homescreen())));
+          // Future.delayed(
+          //     Duration(microseconds: 100),
+          //     () => Navigator.of(context)
+          //         .push(MaterialPageRoute(builder: (ctx) => Homescreen())));
+
+          Future.delayed(Duration(milliseconds: 100),
+              () => Get.off(const DashBoardScreen()));
         }
       }
     } catch (e) {
@@ -262,10 +267,11 @@ class _CreateAccountPage extends State<CreateAccountPage> {
                             ),
                             TextButton(
                               onPressed: () {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                      builder: (ctx) => const SignInPage()),
-                                );
+                                // Navigator.of(context).push(
+                                //   MaterialPageRoute(
+                                //       builder: (ctx) => const SignInPage()),
+                                // );
+                                Get.off(SignInPage());
                                 //    Navigator.pop(context);
                               },
                               child: const Text(
