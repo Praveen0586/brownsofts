@@ -9,3 +9,7 @@ class API {
   static const createuser = "$user/adduser.php";
   static const loginuser="$user/loginuser.php";
 }
+
+
+
+// view-source:https://clustratio.com/brownsofts_app/service/home.php
