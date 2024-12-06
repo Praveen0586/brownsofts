@@ -4,8 +4,8 @@ import 'package:brownsofts/activities/API/api.dart';
 import 'package:brownsofts/activities/authentivation/create_user.dart';
 import 'package:brownsofts/activities/models/remember_user.dart';
 import 'package:brownsofts/activities/models/user.dart';
-import 'package:brownsofts/screens/dummyscreen.dart';
-import 'package:brownsofts/screens/fragments/Dashboard.dart';
+import 'package:brownsofts/main%20screen.dart';
+import 'package:brownsofts/screens/fragments/home%20screen.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
@@ -68,7 +68,7 @@ class _SignInPageState extends State<SignInPage> {
           //         .push(MaterialPageRoute(builder: (ctx) => Homescreen())));
 
           Future.delayed(Duration(milliseconds: 100),
-              () => Get.off(const DashBoardScreen()));
+              () => Get.off(const MainScreen()));
         } else {
           Fluttertoast.showToast(msg: "User Email Id and passwod not exist");
         }

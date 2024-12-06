@@ -6,8 +6,8 @@ import "package:brownsofts/activities/authentivation/google_signin.dart";
 // import "package:brownsofts/authentivation/log_in.dart";
 import "package:brownsofts/activities/authentivation/sign_In.dart";
 import "package:brownsofts/activities/models/remember_user.dart";
-import "package:brownsofts/screens/dummyscreen.dart";
-import "package:brownsofts/screens/fragments/Dashboard.dart";
+import "package:brownsofts/main%20screen.dart";
+import "package:brownsofts/screens/fragments/home%20screen.dart";
 import "package:flutter/material.dart";
 import 'package:fluttertoast/fluttertoast.dart';
 import "package:get/get.dart";
@@ -53,8 +53,8 @@ class _HomePageState extends State<HomePage> {
           //     () => Navigator.of(context).push(
           //         MaterialPageRoute(builder: (ctx) => const Homescreen())));
 
-          Future.delayed(Duration(milliseconds: 100),
-              () => Get.off(const DashBoardScreen()));
+          Future.delayed(
+              Duration(milliseconds: 100), () => Get.off(const MainScreen()));
           const LinearProgressIndicator();
         }
       }
@@ -208,8 +208,8 @@ class _HomePageState extends State<HomePage> {
           //   );
           // }
 
-          return const DashBoardScreen();
-         // return const CreateAccountPage();
+          return const MainScreen();
+          // return const CreateAccountPage();
         });
   }
 }
