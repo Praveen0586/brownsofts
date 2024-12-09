@@ -127,7 +127,7 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
 
     // print(just_topics_andtheir_keys);
     return Container(
-      height: double.maxFinite,
+    //  height: double.maxFinite,
       width: MediaQuery.of(context).size.width,
       child: ListView(
         shrinkWrap: true,
@@ -807,7 +807,7 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
                 ],
               ),
               SizedBox(
-                height: 400,
+                height: 55,
               )
             ],
           ),
