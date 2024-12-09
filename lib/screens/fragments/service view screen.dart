@@ -72,30 +72,69 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
   final bag = const Color.fromARGB(255, 255, 241, 235).withOpacity(0.8);
   double screenheight = 0;
   double screensize = 0;
-  String word_description = "sas";
+  String word_description = "";
+  List Description_topics = [];
+
+  Widget buildContainer(String title, String content) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16.0),
+      child: Container(
+        padding: EdgeInsets.all(16.0),
+        decoration: BoxDecoration(
+          color: Colors.blue.shade50,
+          borderRadius: BorderRadius.circular(8.0),
+          border: Border.all(color: Colors.blue, width: 1.0),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blueAccent,
+              ),
+            ),
+            SizedBox(height: 8.0),
+            Text(
+              content,
+              style: TextStyle(fontSize: 14, color: Colors.black87),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 
 // desscritpion conetents
   Container description_content() {
-    String word_description = "";
-    Map la = {};
-    List t1 = BSdescription[3]["topics"];
-    for (var top in topics) {
-      la["$top"] = BSdescription[3]["$top"];
+    Map something = BSdescription[2];
+    List words_list = something["topics"];
+    Map just_topics_andtheir_keys = {};
+    for (var topicss in words_list) {
+      // print(topicss);
+      Description_topics.add(topicss);
     }
-    word_description = BSdescription[3]["phase1"];
-    //  get_description(){
-    //     t1.forEach((element) {
-    //     return
-    //   },);
-    // }
+    for (var keyss in Description_topics) {
+      if (something.containsKey(keyss)) {
+        just_topics_andtheir_keys["$keyss"] = something["$keyss"];
+        // just_topics_andtheir_keys.entries.map((entry) {
+        //   return buildContainer(entry.key, entry.value);
+        // });
+      }
+    }
+
+    // print(just_topics_andtheir_keys);
     return Container(
-      width: screensize,
-      child: Padding(
-        padding: EdgeInsets.only(bottom: 80, left: 12, right: 10),
-        child: Text(
-          word_description,
-          style: TextStyle(color: Color.fromARGB(255, 56, 56, 56)),
-        ),
+      height: double.maxFinite,
+      width: MediaQuery.of(context).size.width,
+      child: ListView(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        children: just_topics_andtheir_keys.entries.map((entry) {
+          return buildContainer(entry.key, entry.value);
+        }).toList(),
       ),
     );
   }
@@ -267,7 +306,7 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
                     borderRadius: BorderRadius.circular(15)),
                 child: TextButton(
                     onPressed: () {
-                      print(word_description);
+                      print("");
                     },
                     child: Text("Purchase",
                         style: GoogleFonts.ubuntu(
