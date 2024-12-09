@@ -77,13 +77,13 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
 
   Widget buildContainer(String title, String content) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 16.0),
+      padding: const EdgeInsets.only(bottom: 14.0, left: 6, right: 6),
       child: Container(
-        padding: EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(15.0),
         decoration: BoxDecoration(
-          color: Colors.blue.shade50,
-          borderRadius: BorderRadius.circular(8.0),
-          border: Border.all(color: Colors.blue, width: 1.0),
+          color: const Color.fromARGB(0, 239, 235, 233),
+          borderRadius: BorderRadius.circular(18.0),
+          border: Border.all(color: const Color.fromARGB(43, 121, 85, 72), width: 1.0),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -91,15 +91,15 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
             Text(
               title,
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Colors.blueAccent,
+                color: const Color.fromARGB(255, 194, 105, 73),
               ),
             ),
             SizedBox(height: 8.0),
             Text(
               content,
-              style: TextStyle(fontSize: 14, color: Colors.black87),
+              style: TextStyle(fontSize: 15, color: Colors.black87),
             ),
           ],
         ),
@@ -127,7 +127,7 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
 
     // print(just_topics_andtheir_keys);
     return Container(
-    //  height: double.maxFinite,
+      //  height: double.maxFinite,
       width: MediaQuery.of(context).size.width,
       child: ListView(
         shrinkWrap: true,
