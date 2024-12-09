@@ -554,7 +554,7 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
               Padding(
                 padding: EdgeInsets.all(10),
                 child: Container(
-                  height: 400,
+                  height: 375,
                   width: w,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
