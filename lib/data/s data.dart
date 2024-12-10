@@ -233,7 +233,7 @@ Affordable Price and Good Quality: Our services are competitively priced without
   {
     "name": "Education and Training Videos",
     "category": "Video & Animation",
-    "category_code": "VA0401",
+    "category_code": "VA0301",
     "image":
         "https://brownsofts.com/assets/img/services/slider-images/66502e211acc1.jpg",
     "FAQ": [],
@@ -323,7 +323,7 @@ At Brownsofts, you can count on us to enhance your videos and podcast editing wi
   {
     "name": "Documentary Film Video Editing",
     "category": "Video & Animation",
-    "category_code": "VA0501",
+    "category_code": "VA0401",
     "image":
         "https://brownsofts.com/assets/img/services/slider-images/66504150dbbc5.jpg",
     "FAQ": [],
@@ -411,7 +411,7 @@ Explore our other web pages for more exciting packages. Don’t hesitate to reac
   {
     "name": "Film and Trailer Video Editing",
     "category": "Video & Animation",
-    "category_code": "VA0502",
+    "category_code": "VA0402",
     "image":
         "https://brownsofts.com/assets/img/services/slider-images/66501e3dcd333.jpg",
     "FAQ": [],
@@ -478,7 +478,7 @@ Explore our other web pages for more exciting packages. Don’t hesitate to reac
   {
     "name": "Music Video Editing Suit",
     "category": "Video & Animation",
-    "category_code": "VA0503",
+    "category_code": "VA0403",
     "image":
         "https://brownsofts.com/assets/img/services/slider-images/665023ce2e81e.jpg",
     "FAQ": [],
@@ -556,7 +556,7 @@ Are you ready to bring your vision to life? Let us handle the entire visual aspe
   {
     "name": "Music Video Editing Suit",
     "category": "Video & Animation",
-    "category_code": "VA0504",
+    "category_code": "VA0404",
     "image":
         "https://brownsofts.com/assets/img/services/slider-images/665037d3c49c9.jpg",
     "FAQ": [],
@@ -609,25 +609,274 @@ Are you ready to bring your vision to life? Let us handle the entire visual aspe
       "Turn your audio podcasts into engaging videos with Brownsofts. We offer professional filming, seamless editing, and platform distribution to expand your reach. Enhance visuals, boost branding, and captivate your audience with polished video podcasts.",
       {
         "topics": [
-          """Forget about just hearing your voice!F""",
+          """Forget about just hearing your voice!""",
           "What’s Included",
-          "We don’t leave you hanging!"
+          """With This Package, You’ll Gain\nExplosive Audience""",
+          """Deeper Engagement""",
+          """Professional Branding"""
         ],
         "phase1":
             """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
         "Forget about just hearing your voice!":
             """With our ultimate podcast video package, you can turn your audio podcast into a magnificent video for your viewers. Our successful video editor in Austin, TX, will handle everything, from professional filming in a studio setting to seamless editing using free video editing software incorporating dynamic graphics.
 
-""",        "What’s Included":
-            '''Videography Services: Your podcast filming will be shot effectively with exceptional visuals matching your audio content. We utilize good video editing software to ensure stunning results. 
-Editing and Motion Graphics: Our skilled video editors will edit your footage well, using dynamic motions, graphics, and transitions to create a flawless viewing experience.
-Social Media Reach: We convert your video content for maximum reach on social media platforms, using related captions and video thumbnails that resonate with your audience. We’ll also assist you in removing background sound from the clip to enhance audio quality, all while using the best video editing software available.
-Podcast Hosting & Distribution: We ensure your video podcast is hosted and distributed across major platforms like YouTube, Spotify, and Apple Podcasts. ''',
-        "We don’t leave you hanging!":
-            """Your final video will be delivered in various formats optimized for online platforms, essential for effective video marketing. If you're curious about how to loop a video, we have excellent tips to simplify that process. 
+""",
+        "What’s Included":
+            '''\x1BVideography Services:\x1B Your podcast filming will be shot effectively with exceptional visuals matching your audio content. We utilize good video editing software to ensure stunning results. 
+\x1BEditing and Motion Graphics:\x1B Our skilled video editors will edit your footage well, using dynamic motions, graphics, and transitions to create a flawless viewing experience.
+\x1BSocial Media Reach:\x1B We convert your video content for maximum reach on social media platforms, using related captions and video thumbnails that resonate with your audience. We’ll also assist you in removing background sound from the clip to enhance audio quality, all while using the best video editing software available.
+\x1BPodcast Hosting & Distribution:\x1B We ensure your video podcast is hosted and distributed across major platforms like YouTube, Spotify, and Apple Podcasts. ''',
+        """With This Package, You’ll Gain\nExplosive Audience""":
+            """\u25CF\tVideos can reach a wider audience because most prefer visual content over audio narratives. 
+\u25CF\tThis is especially true when using a video editor that can optimize your content for engagement and facilitate the conversion of video to MP4 for better viewing.
+ \u25CF\tOur editing process strongly focuses on removing background sound from the clip for a polished final product.""",
+        "Deeper Engagement":
+            """\u25CF\tUsing videos to tell your story builds stronger connections with your listeners, increases engagement, and boosts reliability, especially when using a video background remover for enhanced visuals.
+ \u25CF\tThis background remover tool helps create a clean, professional look, ensuring your message stands out.
+\u25CF\tWe’ll guide you through making videos that captivate your audience and enhance your storytelling.""",
+        """Professional Branding""":
+            """\u25CF\tAn excellent video presentation improves brand recognition and establishes you as an influential figure in your industry.
+\u25CF\tWith our expertise, you can also remove background video distractions to keep the focus on your message. Additionally, we’ll show you how to hide watermarks in the video to maintain a professional appearance.\n\nFor exceptional video production companies in Austin, Texas, choose us as your go-to podcast video editor. Our expertise ensures high-quality results. Don’t forget—we can also help remove background video elements to keep your content clean and professional. 
 
-Are you ready to bring your vision to life? Let us handle the entire visual aspect. By utilizing our expert post-production and video editing services, we will create a music video that complements your song and takes it to the next level, making your video marketing efforts shine."""
+Select our package today and make the most of your time! If you’re eager to dive deeper into podcast editing or learn more about how to make a podcast, we’re here to help!"""
+      }
+    ]
+  },
+  {
+    "name": "Story Infographic Video Editing",
+    "category": "Video & Animation",
+    "category_code": "VA0405",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/66503e9e739e8.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 3,
+      "basic": {
+        "price": 79,
+        "cross cut": 179,
+        "delivery": 2,
+        "revisions": 3,
+        "restrictions": [
+          'Up to 1 minute of infographic video',
+          'Basic animation and transitions',
+          'Standard infographic',
+        ],
+      },
+      "standard": {
+        "price": 149,
+        "cross cut": 259,
+        "delivery": 3,
+        "revisions": 5,
+        "restrictions": [
+          'Up to 3 minutes of infographic video',
+          'Custom animations and advanced transitions',
+          'Wide selection of infographic templates',
+        ],
+      },
+      "premium": {
+        "price": 199,
+        "cross cut": 299,
+        "delivery": 8,
+        "revisions": 7,
+        "restrictions": [
+          'Up to 5 minutes of infographic video',
+          'High-end custom animations and dynamic transitions',
+          'Exclusive infographic design tailored to your story',
+          "Custom composed background music",
+        ],
+      }
+    },
+    "description": [
+      "Brownsofts transforms your content with dynamic infographic videos, offering custom storytelling, seamless integration, and affordable editing services to maximize impact.",
+      "Engage your audience with Brownsofts' creative infographic video services, combining custom visuals, dynamic design, and seamless integration. We ensure brand consistency, clean audio, and optimized file sizes for effective delivery. Our affordable packages include transcription, video background removal, and online editing for a polished, professional result.",
+      {
+        "topics": [
+          """Package Includes""",
+          "Affordable Video Editing Package",
+        ],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        "Package Includes": """\x1BCustom Visual Storytelling\x1B
+In Austin, Texas, our video production and visual effects studio uses photography, charts, and images to share a story. If you need to transcribe audio, we can ensure that your video narrative accurately captures all spoken content.
+
+\x1BDynamic Infographic Design\x1B
+Here, we use powerful tools to ensure the information is well-organized and easily understood. Our team can also assist you in lowering the video file size to enhance delivery efficiency without compromising quality. Our intuitive platform makes editing videos online seamless and straightforward.
+
+\x1BSeamless Integration\x1B
+This feature allows everything to work smoothly without any negative impact on the system. It enhances the accuracy of the data and will enable you to clean noise from video, ensuring clarity in your message.
+
+\x1BBrand Consistency\x1B
+The secret to a great brand is trust. It ensures the brand's value and customers' inner wishes. We provide affordable video editing services according to your needs, including the ability to use a video background remover to enhance your visuals. We can also transcribe audio to maintain consistency in your messaging.
+
+\x1BInteractive Elements\x1B
+It helps customers find the desired experience in your video. 
+
+\x1BEffective Delivery\x1B
+We make it more important to deliver your video without delay. We focus on ensuring that you can lower the video's file size for easier sharing while also ensuring that all necessary edits are made to clean the noise from the video for a polished final product.
+
+""",
+        "Affordable Video Editing Package":
+            '''We assure you that we will work closely with you to understand your story and bring it to life through the power of video. Using a video background remover, we can create a clean, engaging visual experience.
+
+Use this affordable video editing package and experience “Professional Editing in the Proper Place: Making the Unique Experience of Style.” Whether you need to transcribe audio, edit videos online, or lower your video file size, we’ve got you covered! ''',
+      }
+    ]
+  },
+  {
+    "name": "Weddings and Events Videos",
+    "category": "Video & Animation",
+    "category_code": "VA0501",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/6650291da1c74.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 3,
+      "basic": {
+        "price": 499,
+        "cross cut": 599,
+        "delivery": 3,
+        "revisions": 3,
+        "restrictions": [
+          'Up to 5 hours of footage editing',
+          'A 5-7 minute cinematic highlight film',
+          '30-second Instagram reel to share on social media',
+          "Digital delivery of the final edited video."
+        ],
+      },
+      "standard": {
+        "price": 749,
+        "cross cut": 849,
+        "delivery": 6,
+        "revisions": 6,
+        "restrictions": [
+          'Up to 9 hours of footage editing',
+          'A 6-8 minute highlight video that tells the story of your day',
+          'Drone footage to add a dramatic perspective to your video',
+          "Teaser trailer to get a glimpse of your video before final delivery",
+          "Digital downloads and USB drive delivery options."
+        ],
+      },
+      "premium": {
+        "price": 999,
+        "cross cut": 1099,
+        "delivery": 10,
+        "revisions": 10,
+        "restrictions": [
+          'A 7-10 minute premium highlight film with advanced editing',
+          "A blooper reel editing to enjoy the lighter moments of your special day",
+          'Teaser trailer to get a glimpse of your video before final delivery',
+          "Digital downloads and USB drive delivery options ",
+        ],
+      }
+    },
+    "description": [
+      "Brownsofts crafts cinematic wedding memories with expert editing, stunning visuals, and personalized storytelling to cherish forever.",
+      "Capture every magical moment with Brownsofts’ wedding video editing services, blending professional color correction, seamless editing, and motion graphics to bring your story to life. We enhance your footage with pristine audio, vibrant visuals, and personalized touches that preserve the day’s unique essence. Whether transforming photos into videos or compressing large files, we ensure a polished, heartfelt final product tailored to your love story.",
+      {
+        "topics": [
+          """Best Video Editing""",
+          "Reasons to Choose Brownsofts, LLC's Video Animation Company",
+          "Connect With Us",
+          "Are you curious about how to create videos from photos?",
+          "Ready to Turn Your Ordinary Footage into Extraordinary Masterpieces?"
+        ],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        "Best Video Editing":
+            """A wedding may include various events, such as the proposal, engagement party, bridal shower, bachelorette parties, and the ceremony itself.
+
+Only memories can show you how the day ran from start to finish. If a picture speaks thousands of words, imagine what a film says! Motion graphics services are the best way to showcase every moment and relive the day repeatedly.
+
+""",
+        "Reasons to Choose Brownsofts, LLC's Video Animation Company":
+            '''We are not just video editors; through our editing, we are beautiful storytellers. We provide various services, such as video-to-editor capabilities, that make every project shine. Our expertise allows us to seamlessly remove background sound from clips so you can enjoy clear audio. Understanding how to create video from photos is essential for capturing your unique story.
+
+\u25CF\tProfessional Color Correction
+
+\u25CF\tAudio Enhancements
+
+\u25CF\tVisual Effects
+
+\u25CF\tSeamless Editing
+
+\u25CF\tPersonalized Touches
+
+Our team excels in video editing video editor tasks, ensuring every frame captures the day's magic. We also specialize in methods to remove background noise from videos, making your wedding memories sound as beautiful as they look. We provide step-by-step guidance if you want to learn how to make videos through photos.''',
+        "Connect With Us":
+            """We have a professional video editing studio. We work closely with each client. We understand that a love story is unique and special, so we take a personalized approach to every project. At Brownsofts LLC, quality is our top priority. Our team reviews each project before finalizing it to ensure it meets our high standards.
+
+We utilize good video editing software to enhance your footage, ensuring every detail shines. With our software, we can transform your raw clips into stunning memories. Our efficient process guides you through the video-to-editor journey so your vision comes to life.
+
+Whether you need assistance with the video-to-editor process or are looking for good video editing software, we’re here to help! Our expertise ensures that your project receives the attention it deserves, resulting in a polished final product.""",
+        "Are you curious about how to create videos from photos?":
+            """Our experts can show you how to make a video using images that beautifully narrate your story. If you’re wondering how to compress a video more significant than 2GB, we have efficient solutions, including how to remove background sound from the clip for a pristine audio experience.""",
+        "Ready to Turn Your Ordinary Footage into Extraordinary Masterpieces?":
+            """Explore our package today, and let the magic begin! Our expertise in video editing and video editor services guarantees your wedding memories will be beautifully crafted.
+
+We can assist you in removing background sound from the clip and background noise from the video to ensure your audio shines. Additionally, our guidance is invaluable if you want to learn how to create videos from photos. Let us transform your footage into a work of art and show you how to compress video more than 2GB efficiently!"""
+      }
+    ]
+  },
+  {
+    "name": "Short Film Videos",
+    "category": "Video & Animation",
+    "category_code": "VA0502",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/665039fa8cd20.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 2,
+      "basic": {
+        "price": 249,
+        "cross cut": 349,
+        "delivery": 3,
+        "revisions": 3,
+        "restrictions": [
+          'Basic editing and color correction',
+          'Royalty-free music inclusion',
+          'Digital delivery of the final film (up to 15 minutes in length)',
+        ],
+      },
+      "standard": {
+        "price": 449,
+        "cross cut": 579,
+        "delivery": 6,
+        "revisions": 6,
+        "restrictions": [
+          'Advanced editing, color grading, and sound design',
+          'Custom music score or licensed tracks',
+          '2 rounds of revisions',
+          "Digital delivery of the final film (up to 30 minutes in length)",
+        ],
+      },
+    },
+    "description": [
+      "Brownsofts enhances short films with expert video animation, seamless editing, and tools like text and background removers for polished, professional results.",
+      "Elevate your short film with Brownsofts' video animation services, designed to improve continuity and visual clarity. Our tools and user-friendly editing software simplify tasks like format conversion and removing text or distractions from videos. With motion graphics and expert editing, we bring your vision to life, ensuring a smooth and stress-free process.",
+      {
+        "topics": [
+          """video Animation Services""",
+          "Benefits of Our Services",
+          "Get in touch with us",
+        ],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        "video Animation Services":
+            """We are aware of the demands placed on filmmakers. We'll coordinate and simplify our processes to guarantee easy, stress-free editing. We can help you convert video and audio efficiently, smoothing the editing process. We have the tools to assist you if you need to convert video and audio formats for compatibility. Our team uses the easiest video editing software to ensure our clients can adjust quickly.
+
+Our services enhance productivity by saving time, effort, and money. We utilize the easiest video editing software, which is perfect for beginners. This software allows for quick edits and seamless workflow. Motion graphics and visual effects enhance your short film's quality and clarity, including the ability to remove text from video to keep your visuals clean and professional.
+
+We also specialize in using a background remover for videos to eliminate distractions and make your film more engaging. Our tools allow you to effortlessly remove text from videos, ensuring your content remains clear. Our services provide the perfect solution if you need a background remover for videos.
+
+If you're looking for good video editing software for beginners, we have recommendations that fit your needs. Good video editing software for beginners is user-friendly and practical, making the editing process enjoyable.
+
+""",
+        "Get in touch with us":
+            '''Let's discuss your project and how we can help it reach the next level. Our professional video production Austin Texas team's video editing service will bring your vision to life and make your short film successful. Pick our package now!'''
       }
     ]
   },
 ];
+
+//radio \u25CF\t
+// bold \x1B
