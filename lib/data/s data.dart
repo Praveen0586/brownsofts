@@ -201,7 +201,7 @@ Plus, we can help you remove watermarks and, based on your demands, select the i
       "Looking to elevate your YouTube videos or vlogs? Our package includes filming, editing, and custom graphics to enhance your content. We offer services like thumbnail design, noise-canceling audio editing, animation, and smooth transitions to help attract more viewers and subscribers.",
       {
         "topics": [
-          """Our services include\n\nThumbnail Design""",
+          """Our services include\nThumbnail Design""",
           "Noise-Canceling Audio Editing"
               "Video Animation Service",
           "Zoom In or Out at Specific Point",
@@ -211,7 +211,7 @@ Plus, we can help you remove watermarks and, based on your demands, select the i
         ],
         "phase1":
             """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
-        "Our services include\n\nThumbnail Design":
+        "Our services include\nThumbnail Design":
             """Our video editing service will design good-quality thumbnails, ensuring your video clips get noticed. It is crucial, as good video editing software for YouTube will help create thumbnails that draw viewers in.""",
         "Noise-Canceling Audio Editing":
             '''We specialize in helping you remove background noise from audio clips and video. Our efforts include noise cancellation, pitch correction, and applying harmonization equalizer effects to enhance your audio quality. We also provide solutions to effectively remove background noise from audio, ensuring a superior sound experience for your audience. If you need to delete video sound, we can handle that seamlessly. ''',
