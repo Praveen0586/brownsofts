@@ -65,8 +65,8 @@ class _CategoryServicePageState extends State<CategoryServicePage> {
                                   height: 150,
                                   decoration: BoxDecoration(
                                     border: Border.all(
-                                      color:
-                                          const Color.fromARGB(80, 121, 85, 72),
+                                      color: Colors.orange[100]!,
+                                         // const Color.fromARGB(80, 121, 85, 72),
                                     ),
                                     borderRadius: BorderRadius.circular(13),
                                   ),
@@ -78,7 +78,8 @@ class _CategoryServicePageState extends State<CategoryServicePage> {
                                         child: SizedBox(
                                           width: 150,
                                           child: Image(
-                                            image:NetworkImage("${video_animation[index]["image"]}"),
+                                            image: NetworkImage(
+                                                "${video_animation[index]["image"]}"),
                                           ),
                                         ),
                                       ),
@@ -99,6 +100,8 @@ class _CategoryServicePageState extends State<CategoryServicePage> {
                                                 maxLines: 1,
                                                 overflow: TextOverflow.ellipsis,
                                                 style: const TextStyle(
+                                                  color: const Color.fromARGB(
+                                                      255, 194, 105, 73),
                                                   fontWeight: FontWeight.bold,
                                                   fontSize: 15,
                                                 ),
@@ -106,8 +109,8 @@ class _CategoryServicePageState extends State<CategoryServicePage> {
                                               const SizedBox(height: 5),
                                               Text(
                                                 "${video_animation[index]["description"][1]}",
-                                                style: const TextStyle(
-                                                  fontSize: 10,
+                                                style: const TextStyle(color: Colors.brown,
+                                                  fontSize: 11,
                                                 ),
                                                 maxLines: 4,
                                                 overflow: TextOverflow.ellipsis,
@@ -181,29 +184,29 @@ class _CategoryServicePageState extends State<CategoryServicePage> {
     ];
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Browse Our Collection',
-          style: TextStyle(
-            fontFamily: GoogleFonts.aBeeZeeTextTheme().titleLarge!.fontFamily,
-            fontSize: 20, // Adjust size as needed
+        appBar: AppBar(
+          title: Text(
+            'Browse Our Collection',
+            style: TextStyle(
+              fontFamily: GoogleFonts.aBeeZeeTextTheme().titleLarge!.fontFamily,
+              fontSize: 20, // Adjust size as needed
 
-            color: Colors.black, // Text color
+              color: Colors.black, // Text color
+            ),
           ),
         ),
-      ),
-      body: DynamicTabBarWidget(
-        padding: const EdgeInsets.only(top: 15, bottom: 10),
-        isScrollable: true,
-        showNextIcon: false,
-        showBackIcon: false,
-        onAddTabMoveTo: MoveToTab.first,
-        indicator: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
+        body: DynamicTabBarWidget(
+          padding: const EdgeInsets.only(top: 15, bottom: 10),
+          isScrollable: true,
+          showNextIcon: false,
+          showBackIcon: false,
+          onAddTabMoveTo: MoveToTab.first,
+          indicator: BoxDecoration(
+            borderRadius: BorderRadius.circular(5),
+          ),
+          dynamicTabs: tabdata,
+          onTabControllerUpdated: (controller) {},
         ),
-        dynamicTabs: tabdata,
-        onTabControllerUpdated: (controller) {},
-      ),
-    );
+        );
   }
 }
