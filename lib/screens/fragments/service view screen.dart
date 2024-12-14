@@ -83,7 +83,8 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
         decoration: BoxDecoration(
           color: const Color.fromARGB(0, 239, 235, 233),
           borderRadius: BorderRadius.circular(18.0),
-          border: Border.all(color: const Color.fromARGB(43, 121, 85, 72), width: 1.0),
+          border: Border.all(
+              color: const Color.fromARGB(43, 121, 85, 72), width: 1.0),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -297,6 +298,31 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
         children: [
           Padding(
             padding: EdgeInsets.only(left: size * 0.09),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: Material(
+                child: Container(
+                  height: 45,
+                  width: 180,
+                  decoration: BoxDecoration(
+                      border: Border.all(style: BorderStyle.none),
+                      color: const Color.fromARGB(255, 224, 103, 28),
+                      borderRadius: BorderRadius.circular(15)),
+                  child: TextButton(
+                      onPressed: () {
+                        print("");
+                      },
+                      child: Text("Purchase",
+                          style: GoogleFonts.ubuntu(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500))),
+                ),
+              ),
+            ),
+          ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(15),
             child: Material(
               child: Container(
                 height: 45,
@@ -306,145 +332,128 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
                     borderRadius: BorderRadius.circular(15)),
                 child: TextButton(
                     onPressed: () {
-                      print("");
+                      showModalBottomSheet(
+                          context: context,
+                          builder: (jk) {
+                            return BottomSheet(onClosing: () {
+                              Fluttertoast.showToast(msg: "Thats it");
+                            }, builder: (ss) {
+                              return Container(
+                                height: 700,
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      "Contact Us ",
+                                      style: TextStyle(
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 25, right: 25),
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                            label: Text("Name"),
+                                            contentPadding: EdgeInsets.only(
+                                                top: 1, left: 20),
+                                            border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(15))),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 25, right: 25),
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                            label: Text("Email"),
+                                            contentPadding: EdgeInsets.only(
+                                                top: 20, left: 20),
+                                            border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(15))),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 25, right: 25),
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                            label: Text("Subject"),
+                                            contentPadding: EdgeInsets.only(
+                                                top: 20, left: 20),
+                                            border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(15))),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 25, right: 25),
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                            label: Text("Questions"),
+                                            contentPadding: EdgeInsets.only(
+                                                top: 20, left: 20),
+                                            border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(15))),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 80,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(right: 15),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          Material(
+                                              child: Container(
+                                            height: 45,
+                                            width: 180,
+                                            decoration: BoxDecoration(
+                                                color: const Color.fromARGB(
+                                                    255, 224, 103, 28),
+                                                borderRadius:
+                                                    BorderRadius.circular(15)),
+                                            child: TextButton(
+                                                onPressed: () {},
+                                                child: Text("Get Touch",
+                                                    style: GoogleFonts.ubuntu(
+                                                        color: Colors.white,
+                                                        fontSize: 20,
+                                                        fontWeight:
+                                                            FontWeight.w500))),
+                                          )),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            });
+                          });
                     },
-                    child: Text("Purchase",
+                    child: Text("Contact us",
                         style: GoogleFonts.ubuntu(
                             color: Colors.white,
                             fontSize: 20,
                             fontWeight: FontWeight.w500))),
               ),
-            ),
-          ),
-          Material(
-            child: Container(
-              height: 45,
-              width: 180,
-              decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 224, 103, 28),
-                  borderRadius: BorderRadius.circular(15)),
-              child: TextButton(
-                  onPressed: () {
-                    showModalBottomSheet(
-                        context: context,
-                        builder: (jk) {
-                          return BottomSheet(onClosing: () {
-                            Fluttertoast.showToast(msg: "Thats it");
-                          }, builder: (ss) {
-                            return Container(
-                              height: 700,
-                              child: Column(
-                                children: [
-                                  Text(
-                                    "Contact Us ",
-                                    style: TextStyle(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 25, right: 25),
-                                    child: TextField(
-                                      decoration: InputDecoration(
-                                          label: Text("Name"),
-                                          contentPadding:
-                                              EdgeInsets.only(top: 1, left: 20),
-                                          border: OutlineInputBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(15))),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 25, right: 25),
-                                    child: TextField(
-                                      decoration: InputDecoration(
-                                          label: Text("Email"),
-                                          contentPadding: EdgeInsets.only(
-                                              top: 20, left: 20),
-                                          border: OutlineInputBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(15))),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 25, right: 25),
-                                    child: TextField(
-                                      decoration: InputDecoration(
-                                          label: Text("Subject"),
-                                          contentPadding: EdgeInsets.only(
-                                              top: 20, left: 20),
-                                          border: OutlineInputBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(15))),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 25, right: 25),
-                                    child: TextField(
-                                      decoration: InputDecoration(
-                                          label: Text("Questions"),
-                                          contentPadding: EdgeInsets.only(
-                                              top: 20, left: 20),
-                                          border: OutlineInputBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(15))),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 80,
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(right: 15),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
-                                        Material(
-                                            child: Container(
-                                          height: 45,
-                                          width: 180,
-                                          decoration: BoxDecoration(
-                                              color: const Color.fromARGB(
-                                                  255, 224, 103, 28),
-                                              borderRadius:
-                                                  BorderRadius.circular(15)),
-                                          child: TextButton(
-                                              onPressed: () {},
-                                              child: Text("Get Touch",
-                                                  style: GoogleFonts.ubuntu(
-                                                      color: Colors.white,
-                                                      fontSize: 20,
-                                                      fontWeight:
-                                                          FontWeight.w500))),
-                                        )),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          });
-                        });
-                  },
-                  child: Text("Contact us",
-                      style: GoogleFonts.ubuntu(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500))),
             ),
           )
         ],
@@ -466,9 +475,12 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
                     height: 290,
                     width: double.infinity,
                     color: Colors.grey[300],
-                    child: Image(
-                      image: NetworkImage("${BSimage}"),
-                      fit: BoxFit.cover,
+                    child: Hero(
+                      tag: "${BSimage}",
+                      child: Image(
+                        image: NetworkImage("${BSimage}"),
+                        fit: BoxFit.cover,
+                      ),
                     )),
               ),
               SizedBox(
@@ -519,7 +531,8 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
                               Icon(Icons.business_center,
                                   size: 16, color: Colors.grey),
                               SizedBox(width: 4),
-                              Text("GraphicDesigning",
+                              Text(bscategory.toString(),
+                                  overflow: TextOverflow.ellipsis,
                                   style: TextStyle(color: Colors.grey)),
                               SizedBox(width: 16),
                               Icon(Icons.location_on,
@@ -554,7 +567,7 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
               Padding(
                 padding: EdgeInsets.all(10),
                 child: Container(
-                  height: 375,
+                  // height: 375,
                   width: w,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
@@ -613,7 +626,7 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
                       ),
 
                       Container(
-                        height: 310,
+                        // height: 310,
                         width: w,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
@@ -732,13 +745,16 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
                                               child: Text(
                                                 "${content1!["restrictions"][inf]}",
                                                 style:
-                                                    TextStyle(fontSize: 16.5),
+                                                    TextStyle(fontSize: 15.5),
                                                 maxLines: 2,
                                               ),
                                             )
                                           ],
                                         ),
                                       )),
+                            ),
+                            SizedBox(
+                              height: 25,
                             )
 
                             ///
@@ -751,7 +767,9 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
                   ),
                 ),
               ),
-
+              SizedBox(
+                height: 5,
+              ),
               Column(
                 children: [
                   Row(

@@ -851,8 +851,8 @@ We can assist you in removing background sound from the clip and background nois
       },
     },
     "description": [
-      "Brownsofts enhances short films with expert video animation, seamless editing, and tools like text and background removers for polished, professional results.",
-      "Elevate your short film with Brownsofts' video animation services, designed to improve continuity and visual clarity. Our tools and user-friendly editing software simplify tasks like format conversion and removing text or distractions from videos. With motion graphics and expert editing, we bring your vision to life, ensuring a smooth and stress-free process.",
+      "Transform your short film with expert editing, animation, and seamless production services from our Austin, Texas, team.",
+      "Make your short film award-winning with our Austin, Texas, video production team specializing in editing, animation, and motion graphics. We streamline the process with beginner-friendly tools, removing distractions and ensuring compatibility across platforms. Contact us today to bring your vision to life with our professional video editing services!",
       {
         "topics": [
           """video Animation Services""",
@@ -862,17 +862,377 @@ We can assist you in removing background sound from the clip and background nois
         "phase1":
             """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
         "video Animation Services":
-            """We are aware of the demands placed on filmmakers. We'll coordinate and simplify our processes to guarantee easy, stress-free editing. We can help you convert video and audio efficiently, smoothing the editing process. We have the tools to assist you if you need to convert video and audio formats for compatibility. Our team uses the easiest video editing software to ensure our clients can adjust quickly.
-
-Our services enhance productivity by saving time, effort, and money. We utilize the easiest video editing software, which is perfect for beginners. This software allows for quick edits and seamless workflow. Motion graphics and visual effects enhance your short film's quality and clarity, including the ability to remove text from video to keep your visuals clean and professional.
-
-We also specialize in using a background remover for videos to eliminate distractions and make your film more engaging. Our tools allow you to effortlessly remove text from videos, ensuring your content remains clear. Our services provide the perfect solution if you need a background remover for videos.
-
-If you're looking for good video editing software for beginners, we have recommendations that fit your needs. Good video editing software for beginners is user-friendly and practical, making the editing process enjoyable.
-
+            """We offer video animation services designed to improve continuity in your short film. They will take your project to the next level. Whether you need to convert video and audio for various platforms or want to remove text from video to enhance clarity, we’ve got you covered. Our team utilizes the easiest video editing software to ensure your editing experience is smooth and enjoyable.
 """,
+        "Benefits of Our Services":
+            '''We are aware of the demands placed on filmmakers. We'll coordinate and simplify our processes to guarantee easy, stress-free editing. We can help you convert video and audio efficiently, smoothing the editing process. We have the tools to assist you if you need to convert video and audio formats for compatibility. Our team uses the easiest video editing software to ensure our clients can adjust quickly.\nOur services enhance productivity by saving time, effort, and money. We utilize the easiest video editing software, which is perfect for beginners. This software allows for quick edits and seamless workflow. Motion graphics and visual effects enhance your short film's quality and clarity, including the ability to remove text from video to keep your visuals clean and professional.\nWe also specialize in using a background remover for videos to eliminate distractions and make your film more engaging. Our tools allow you to effortlessly remove text from videos, ensuring your content remains clear. Our services provide the perfect solution if you need a background remover for videos.
+
+If you're looking for good video editing software for beginners, we have recommendations that fit your needs. Good video editing software for beginners is user-friendly and practical, making the editing process enjoyable.''',
         "Get in touch with us":
-            '''Let's discuss your project and how we can help it reach the next level. Our professional video production Austin Texas team's video editing service will bring your vision to life and make your short film successful. Pick our package now!'''
+            "Let's discuss your project and how we can help it reach the next level. Our professional video production Austin Texas team's video editing service will bring your vision to life and make your short film successful. Pick our package now!",
+        "It is more important to us to deliver your video right away":
+            """Our production companies in Austin, TX, provide various services, from development to final delivery. We offer different video editing solutions to satisfy your demands. If you need to remove background noise from a video, we have the tools to help you achieve crystal-clear audio. We can guide you on effectively removing background noise from video to ensure the best sound quality.
+
+Our affordable video editing packages and excellent video animation service are why customers choose us. Whether you want to delete video sound for a cleaner experience or find the best video editing software, we are here to help you every step of the way. If you're looking for a simple video editing program, we recommend options that fit your needs.
+
+If you want to delete video sound or learn about the best software for video editing, our team can help you find a simple video editing program that meets your requirements.
+
+ 
+
+Feel free to contact us today. We can't wait to discuss how we can improve your social media advertising. With our expertise, you’ll learn how to compress a video, remove watermarks effectively, and delete video sound as needed. Plus, we'll show you how to remove background noise from videos to enhance the overall quality."""
+      }
+    ]
+  },
+  {
+    "name": "Travel Video Editing",
+    "category": "Video & Animation",
+    "category_code": "VA0503",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/66503bd52f223.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 3,
+      "basic": {
+        "price": 259,
+        "cross cut": 359,
+        "delivery": 3,
+        "revisions": 2,
+        "restrictions": [
+          'Up to 15 hours of footage editing',
+          'Color correction and basic audio enhancement',
+          'Royalty-free background music',
+          "Digital delivery in Full HD",
+        ],
+      },
+      "standard": {
+        "price": 459,
+        "cross cut": 559,
+        "delivery": 6,
+        "revisions": 5,
+        "restrictions": [
+          'Up to 25 hours of footage editing',
+          'Advanced color grading and sound design',
+          'Licensed music tracks',
+          "Custom graphics and text overlays",
+          "Digital delivery in 4K resolution",
+        ],
+      },
+      "premium": {
+        "price": 749,
+        "cross cut": 849,
+        "delivery": 9,
+        "revisions": 8,
+        "restrictions": [
+          '40 editing hours',
+          "Professional color grading and audio mastering",
+          'Motion graphics, and animation',
+          "Licensed music tracks",
+          "Digital and physical delivery (USB drive)"
+        ],
+      }
+    },
+    "description": [
+      "Turn your travel memories into stunning cinematic experiences with Brownsofts LLC's professional and affordable video editing services.",
+      "Share your adventures like never before with our travel video editing services, including watermark removal, audio integration, and expert guidance on video formats and compression. Our team ensures your content is polished, visually captivating, and easy to share, with a focus on 4K resolution and seamless online editing. Contact us today to elevate your travel videos and relive your memories in style!",
+      {
+        "topics": [
+          """Here's Why So Many Travelers Choose Us\nSave Time and Energy""",
+          "Expert Editing Skills",
+          "Music and Sound Design",
+          "Reach Out to Us"
+        ],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        """Here's Why So Many Travelers Choose Us\nSave Time and Energy""":
+            """\u25CF\tWe know that time is very precious in the world. Time doesn't wait for anyone.
+\u25CF\tThat's why Austin production companies like us strive to be efficient, taking the editing burden and enabling you of all editing responsibilities so you may concentrate on what counts. 
+\u25CF\tWe can help you seamlessly remove watermarks from your videos, allowing you to present your content professionally.
+\u25CF\tKnowing how to add music to a video is essential; our team can guide you through this process. If you're unsure about the best video file format for sharing, we can also help.""",
+        "Expert Editing Skills":
+            '''\u25CF\tWe are professional video editors. We can turn your raw video into a polished and professional travel video that will impress your audience.
+\u25CF\tWhether you need guidance on compressing a video for better sharing or want to ensure your content is in the correct video file format, our team is here to assist you. 
+\u25CF\tOur video editor expertise ensures you receive the highest quality output. If you're curious about making videos, We can guide you through each stage so you feel comfortable with your final product. For example, employing video cropping techniques can significantly improve your images.
+\u25CF\tIt's easier to share videos when you can compress them efficiently and preserve quality while lowering file size. We also concentrate on providing you with convenient online video editing so you can make changes while on the road.''',
+        "Music and Sound Design":
+            """\u25CF\tWe carefully select music and sound design to enhance the viewing experience and make your travel adventures unforgettable.
+
+\u25CF\tIf you're wondering how to add music to a video, we have the expertise to integrate audio beautifully. 
+
+\u25CF\tOur editing tools also include options for video crop, allowing you to refine your footage perfectly.
+
+\u25CF\tWe emphasize the importance of achieving a 4K screen resolution to ensure your final video looks stunning.""",
+        "Reach Out to Us":
+            """Our platform allows you to edit videos online easily, making the entire process convenient and user-friendly. We also prioritize 4K screen resolution for your videos, ensuring that every detail is crisp and clear.
+
+We can also assist with hiding watermarks in videos. Our expertise team can guide you through each procedure stage, ensuring your content looks polished. We are committed to teaching you the best practices in making videos so you can create captivating content on your own.
+
+So, if you want to remove watermarks, understand the best video file format, or learn how to add music to a video, we're here to help. Additionally, our resources will cover how to compress a video effectively and show you how to edit videos online easily. 
+
+Why wait? Select your ideal package now and experience the professional video editing services that will make your memories last a lifetime. Don't hesitate to reach out and let us know how we can assist you further!"""
+      }
+    ]
+  },
+  {
+    "name": "Corporate and Business Videos",
+    "category": "Video & Animation",
+    "category_code": "VA0601",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/66500fc04769f.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 3,
+      "basic": {
+        "price": 99,
+        "cross cut": 199,
+        "delivery": 2,
+        "revisions": 2,
+        "restrictions": [
+          'Video Length: Up to 3 minutes of professional video content.',
+          'Stock Footage: Access to basic royalty-free stock footage. Text Graphics: Simple text overlays for titles and essential information.',
+          'Voice-over: Standard voice-over from a selection of voice talents.',
+          "Editing: Professional editing including cuts, transitions, and basic color grading.",
+          "Revisions: Two rounds of revisions to ensure client satisfaction"
+        ],
+      },
+      "standard": {
+        "price": 149,
+        "cross cut": 249,
+        "delivery": 4,
+        "revisions": 4,
+        "restrictions": [
+          'Video Length: Up to 5 minutes of engaging video content.',
+          'Stock Footage: A wider range of high-quality, royalty-free stock footage.',
+          'Custom Graphics: Custom text graphics and lower thirds.',
+          "Professional Voice-over: A diverse choice of professional voice-over artists.",
+          "Advanced Editing: Color correction, sound mixing, and basic motion graphics.",
+          "Revisions: Up to four rounds of revisions for detailed refinement."
+        ],
+      },
+      "premium": {
+        "price": 249,
+        "cross cut": 349,
+        "delivery": 8,
+        "revisions": 9,
+        "restrictions": [
+          'Video Length: Up to 10 minutes or multiple shorter videos totaling 10 minutes.',
+          "Premium Stock Footage: Premium and exclusive royalty-free stock footage.",
+          'Animated Graphics: Fully animated text and graphic elements. Expert Voice-over: Premium voice-over talent, including industry-specific experts.',
+          "Comprehensive Editing: Advanced editing with special effects, animation, and custom sound design.",
+          "Revisions: Unlimited revisions until the final product meets all expectations."
+        ],
+      }
+    },
+    "description": [
+      "Reach your audience with professional video editing that transforms raw footage into polished, on-brand content.",
+      "Elevate your business with tailored video editing, including color correction, cropping, and background enhancements. We ensure high-quality, on-time delivery that aligns with your brand. Contact us to bring your vision to life!",
+      {
+        "topics": [
+          """Do you want to reach your business's global audience?""",
+          """Here's the Deal\n
+Tailored just for you""",
+          "Stay True to Your Brand",
+          "Quality",
+          "On-Time, Every Time"
+              "Let’s get started!",
+        ],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        """Do you want to reach your business's global audience?""":
+            """ In the digital age, people mostly like visual enhancement. Therefore, creating videos about your business can help get the widest audience possible. A professional video editing application can elevate your content, making it stand out and engaging viewers effectively.
+
+Good video editing software is essential for transforming raw footage into polished videos. With the right tools, you can edit videos online quickly and tailor them to your audience’s preferences. This ability to edit videos online allows for quick adjustments and real-time feedback.
+
+A professional video editing service will help you with this, ensuring you achieve your vision in a particular field. Because an experienced video editor only knows how to attract your audience, you won't have to worry about a thing. You are in the right place. Our corporate and business video editing package is here to take your footage from raw to remarkable.""",
+        """Here's the Deal\n
+Tailored just for you""":
+            '''Our video editing services team will collaborate closely with you to understand your goals and vision for the project. ''',
+        "Stay True to Your Brand":
+            """Congruence is critical in branding. We'll make sure your videos reflect your company's vibe and values so you can maintain that trust and recognition with your audience. Need to add background to video? We’ve got you covered, ensuring the background complements your message perfectly. Our experts know how to add background to video that resonates with your audience.
+""",
+        "Quality":
+            """A color correction service is also available. Our top priority is providing high-quality video production to showcase your brand in the best light possible. If you need to video crop your footage for optimal framing, our team can also help. We'll make it seamless whether you want to video crop for social media or presentations.""",
+        "On-Time, Every Time":
+            """Once everything's perfect, we'll send your shiny new videos, ready to impress your audience. We will deliver your videos on time, ensuring you’re satisfied with the results. And if you want to keep things clean, we can assist you in ”hide the watermark in video” when needed. Understanding how to “hide the watermark in video” can also enhance the professionalism of your content.""",
+        "Let’s get started!":
+            """We’ll begin by discussing your project goals and vision for the final product. Please don’t waste your time; choose our package now! Your vision will come to life with our expertise in video editing applications, good video editing software, and online tools. 
+
+You’ll love how easy it is to edit videos online, add background to videos, and create stunning visuals. """
+      }
+    ]
+  },
+  {
+    "name": "Product Demo Videos",
+    "category": "Video & Animation",
+    "category_code": "VA0602",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/665032c0854d6.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 3,
+      "basic": {
+        "price": 79,
+        "cross_cut": 89,
+        "delivery": 2,
+        "revisions": 2,
+        "restrictions": [
+          "Video Length: Up to 2 minutes of high-definition product demo video.",
+          "Stock Footage: Use of standard royalty-free stock footage to enhance the video.",
+          "Graphics & Text Overlays: Basic motion graphics and text overlays to highlight product features.",
+          "Voice-over: Professional voice-over narration to guide viewers through the demo.",
+          "Editing: Standard editing, including cuts, transitions, and basic sound mixing.",
+          "Revisions: One round of revisions for client satisfaction."
+        ]
+      },
+      "standard": {
+        "price": 149,
+        "cross_cut": 249,
+        "delivery": 4,
+        "revisions": 4,
+        "restrictions": [
+          "Video Length: Up to 5 minutes of a premium product demo video.",
+          "Advanced Graphics: Custom-designed motion graphics and animations.",
+          "Professional Voice-over: Selection of voice-over artists to match your brand's tone.",
+          "Enhanced Editing: Advanced editing with color grading, sound design, and visual effects.",
+          "Revisions: Up to three rounds of revisions for detailed adjustments."
+        ]
+      },
+      "premium": {
+        "price": 249,
+        "cross_cut": 349,
+        "delivery": 4,
+        "revisions": 7,
+        "restrictions": [
+          "Video Length: Up to 10 minutes or multiple short videos with a cumulative length of 10 minutes.",
+          "Exclusive Footage: Custom shot footage specifically for the product.",
+          "High-End Graphics: High-end motion graphics, 3D animations, and visual storytelling elements.",
+          "Expert Voice-over: Top-tier voice talent, including options for well-known narrators.",
+          "Revisions: Unlimited revisions until the final product is perfect."
+        ]
+      }
+    },
+    "description": [
+      "Showcase your product with high-quality demo videos featuring animation, motion graphics, and expert editing for maximum impact.",
+      "Create captivating product demo videos with our expert team, offering animation, quick turnaround, and flexible packages to suit your needs. We specialize in enhancing visual storytelling and audio quality to make your product stand out. Contact us today to elevate your video marketing strategy!",
+      {
+        "topics": [
+          "Do you need a high-quality product demo video?",
+          """Here's what you can expect
+High-Quality Production""",
+          "Animation and Motion Graphics",
+          "Quick Turnaround",
+          "Explainer Animation Magic",
+          "Flexible Packages",
+          "Bulk Order Discount Pricing"
+        ],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        "Do you need a high-quality product demo video?":
+            """We are excited to work with you to bring your product to life! We interact closely with you to understand your product's unique selling points and target audience.
+
+We will guarantee that your product is visually appealing and engaging with our team of skilled editors and videographers. Our expertise in video marketing ensures that your demo resonates with your audience. Take the opportunity to elevate your video marketing strategy with a professional product demo video.
+
+We aim to get it right on the first attempt, so clear communication is essential. Please provide us with precise details about what you need. If we make a mistake in the video editing application, we will do everything possible to fix it. As one of the best video producers in Austin, Texas, we pride ourselves on delivering flawless results.""",
+        """Here's what you can expect
+High-Quality Production""":
+            "Our team uses the latest equipment and techniques to ensure your product looks great on screen. We specialize in video and editing to enhance your visual storytelling.",
+        "Animation and Motion Graphics":
+            "We offer video and motion graphics services to demonstrate product functionality visually. These techniques perfectly showcase how to loop a video and simplify complex features.",
+        "Quick Turnaround":
+            "We know the importance of speed in business and offer a fast turnaround time for your product demo video, ensuring you can implement your video marketing strategy quickly.",
+        "Explainer Animation Magic":
+            "Incorporate captivating 2D or 3D animations to visually represent product benefits, making them crystal clear for any audience. Our video and editing skills can clean noise from video, enhancing audio quality for your audience.",
+        "Flexible Packages":
+            "Our package allows us to create videos of different lengths and formats to suit your needs.",
+        "Bulk Order Discount Pricing":
+            """We offer discounts for creating multiple product demo videos, perfect for a comprehensive video marketing approach.
+So why wait? Choose our product demo video package, and let's make your product launch successful! Whether you need to edit videos online or require assistance in perfecting your footage, we are here to help every step of the way. Together, we’ll make your product shine!""",
+      },
+    ]
+  },
+  {
+    "name": "Social Media Video Ads",
+    "category": "Video & Animation",
+    "category_code": "VA0603",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/66503e36c817f.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 3,
+      "basic": {
+        "price": 49,
+        "cross cut": 149,
+        "delivery": 3,
+        "revisions": 2,
+        "restrictions": [
+          'Video Length: Up to 30 secs minutes',
+          'Video Type: Standard Image Ads',
+          'Content: Custom graphics and branded images',
+          "Ad Targeting: Basic ad targeting to reach your audience",
+          "Ad Management: Bid management and optimization",
+          "Revisions: One round of revisions included"
+        ],
+      },
+      "standard": {
+        "price": 99,
+        "cross cut": 199,
+        "delivery": 5,
+        "revisions": 4,
+        "restrictions": [
+          'Video Length: Up to 1 minutes',
+          'Video Type: Featured Video Ads',
+          'Content: 2 vertical videos, professional quality',
+          "Ad Targeting: Advanced ad targeting for precision reach",
+          "Ad Management: Full bid management and optimization",
+          "Revisions: Up to two rounds of revisions included"
+        ],
+      },
+      "premium": {
+        "price": 149,
+        "cross cut": 249,
+        "delivery": 10,
+        "revisions": 10,
+        "restrictions": [
+          'Video Length: Up to 2 minutes',
+          "Video Type: Combination of Video and Image Ads",
+          'Content: 2 vertical videos with high production value, plus custom image ads',
+          "Ad Targeting: Comprehensive ad targeting strategy",
+          "Ad Management: Premium bid management and optimization"
+        ],
+      }
+    },
+    "description": [
+      "We offer affordable, professional video marketing and editing services, including ads, sound design, watermark removal, and targeted strategies to enhance your brand’s reach and quality.",
+      "Elevate your short film with Brownsofts' video animation services, designed to improve continuity and visual clarity. Our tools and user-friendly editing software simplify tasks like format conversion and removing text or distractions from videos. With motion graphics and expert editing, we bring your vision to life, ensuring a smooth and stress-free process.",
+      {
+        "topics": [
+          """Hey guys, are you seeking an affordable and effective video marketing package?""",
+          "Royalty-free Sound Design and Music",
+          "Targeted Audience Targeting and Analytics",
+          "It is more important to us to deliver your video right away"
+        ],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        "Hey guys, are you seeking an affordable and effective video marketing package?":
+            """Our video editor in Austin, TX, is here to help you produce any video ad on social media for your business, product, or service. We offer professionally produced content tailored to engage viewers and improve conversions.
+
+We know the importance of standing out in a crowded digital space, so we offer a selection of video marketing packages to suit different budgets and objectives. 
+
+Save your time and energy struggling to create engaging video ads. Let our professional team handle all the editing and production for you. We specialize in helping you remove watermarks from your videos, ensuring a polished final product.
+""",
+        "Royalty-free Sound Design and Music":
+            '''Captivating sound effects and catchy music set the tone and add a professional touch that keeps viewers interested. Our services include techniques for compressing a video effectively, helping you lower the file size without sacrificing quality.''',
+        "Targeted Audience Targeting and Analytics":
+            "Use social media tools to target your ads' specific demographics, interests, and online behaviors. Our video marketing strategies ensure your message reaches the right audience.",
+        "It is more important to us to deliver your video right away":
+            """Our production companies in Austin, TX, provide various services, from development to final delivery. We offer different video editing solutions to satisfy your demands. If you need to remove background noise from a video, we have the tools to help you achieve crystal-clear audio. We can guide you on effectively removing background noise from video to ensure the best sound quality.
+
+Our affordable video editing packages and excellent video animation service are why customers choose us. Whether you want to delete video sound for a cleaner experience or find the best video editing software, we are here to help you every step of the way. If you're looking for a simple video editing program, we recommend options that fit your needs.
+
+If you want to delete video sound or learn about the best software for video editing, our team can help you find a simple video editing program that meets your requirements.
+
+ 
+
+Feel free to contact us today. We can't wait to discuss how we can improve your social media advertising. With our expertise, you’ll learn how to compress a video, remove watermarks effectively, and delete video sound as needed. Plus, we'll show you how to remove background noise from videos to enhance the overall quality."""
       }
     ]
   },

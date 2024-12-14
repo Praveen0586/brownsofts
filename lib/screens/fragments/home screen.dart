@@ -1,11 +1,13 @@
 import 'package:brownsofts/activities/models/service/categeries.dart';
 import 'package:brownsofts/data/data%20type.dart';
 import 'package:brownsofts/data/s%20data.dart';
+import 'package:brownsofts/screens/fragments/category_service.dart';
 import 'package:brownsofts/screens/fragments/service%20view%20screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -249,9 +251,7 @@ class _HomeScreenState extends State<HomeScreen> {
               setState(() {
                 selected_category = index;
               });
-              //  Get.to(CategoryServicePage());
-
-              //
+       Get.to(CategoryServicePage());
             },
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
@@ -315,108 +315,120 @@ class _HomeScreenState extends State<HomeScreen> {
                 bottom: 10,
                 left: index == 0 ? 18 : 5,
                 right: index == all_service.length - 1 ? 18 : 10),
-            child: Container(
-              height: 290,
-              width: 200,
-              decoration: BoxDecoration(
-                border:
-                    Border.all(color: const Color.fromARGB(255, 236, 223, 217)),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(top: 5),
-                    height: 150,
-                    width: 190,
-                    child: ClipRRect(
-                        borderRadius: BorderRadius.circular(15),
-                        child: Image(
-                          image: NetworkImage("${ct_ser["image"]}"),
-                          fit: BoxFit.cover,
-                        )),
-                  ),
-                  SizedBox(
-                    height: 20,
-                    width: 170,
-                    child: Text(
-                      "${ct_ser["name"]}",
-                      maxLines: 2,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.brown,
-                        //      fontSize: 20, // Adjust font size as needed
-                        fontWeight: FontWeight.bold, // Bold text
-                        //    color: Colors.brown, // Text color in brown
-                        decoration: TextDecoration.none,
-                        fontSize: 12,
-                        overflow: TextOverflow.fade,
-                      ),
+            child: InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+                  return Serviceviewscreen(
+                    currentServiceMap: ct_ser,
+                  );
+                }));
+              },
+              child: Container(
+                height: 290,
+                width: 200,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                      color: const Color.fromARGB(255, 236, 223, 217)),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(top: 5),
+                      height: 150,
+                      width: 190,
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Hero(
+                            tag: "${ct_ser["image"]}",
+                            child: Image(
+                              image: NetworkImage("${ct_ser["image"]}"),
+                              fit: BoxFit.cover,
+                            ),
+                          )),
                     ),
-                  ),
-                  SizedBox(
-                    height: 50,
-                    width: 170,
-                    child: Text(
-                      "${ct_ser["description"][0]}",
-                      maxLines: 2,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.brown,
-                        //      fontSize: 20, // Adjust font size as needed
-                        fontWeight: FontWeight.w500, // Bold text
-                        //    color: Colors.brown, // Text color in brown
-                        decoration: TextDecoration.none,
-                        fontSize: 12,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 5),
-                    child: Container(
-                      height: 40,
+                    SizedBox(
+                      height: 20,
                       width: 170,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Color.fromARGB(225, 245, 235, 232),
-                      ),
-                      child: TextButton(
-                        onPressed: () {
-                          // Button action
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (ctx) {
-                            return Serviceviewscreen(
-                              currentServiceMap: ct_ser,
-                            );
-                          }));
-                          //pass
-                          //bs service with there current num
-                        },
-                        style: TextButton.styleFrom(
-                          //  backgroundColor: Colors.white, // Button background color
-                          //   primary: Colors.blue, // Text color
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 20,
-                              vertical: 10), // Padding inside the button
-                          shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.circular(10), // Rounded corners
-                          ),
+                      child: Text(
+                        "${ct_ser["name"]}",
+                        maxLines: 2,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.brown,
+                          //      fontSize: 20, // Adjust font size as needed
+                          fontWeight: FontWeight.bold, // Bold text
+                          //    color: Colors.brown, // Text color in brown
+                          decoration: TextDecoration.none,
+                          fontSize: 12,
+                          overflow: TextOverflow.fade,
                         ),
-                        child: Text(
-                          'View More',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold, // Bold text
-                            color:
-                                Colors.brown, // Text color to match the image
+                      ),
+                    ),
+                    SizedBox(
+                      height: 50,
+                      width: 170,
+                      child: Text(
+                        "${ct_ser["description"][0]}",
+                        maxLines: 2,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.brown,
+                          //      fontSize: 20, // Adjust font size as needed
+                          fontWeight: FontWeight.w500, // Bold text
+                          //    color: Colors.brown, // Text color in brown
+                          decoration: TextDecoration.none,
+                          fontSize: 12,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 5),
+                      child: Container(
+                        height: 40,
+                        width: 170,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: Color.fromARGB(225, 245, 235, 232),
+                        ),
+                        child: TextButton(
+                          onPressed: () {
+                            // Button action
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (ctx) {
+                              return Serviceviewscreen(
+                                currentServiceMap: ct_ser,
+                              );
+                            }));
+                            //pass
+                            //bs service with there current num
+                          },
+                          style: TextButton.styleFrom(
+                            //  backgroundColor: Colors.white, // Button background color
+                            //   primary: Colors.blue, // Text color
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 20,
+                                vertical: 10), // Padding inside the button
+                            shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.circular(10), // Rounded corners
+                            ),
+                          ),
+                          child: Text(
+                            'View More',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold, // Bold text
+                              color:
+                                  Colors.brown, // Text color to match the image
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           );
