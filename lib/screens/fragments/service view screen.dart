@@ -476,7 +476,7 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
                     width: double.infinity,
                     color: Colors.grey[300],
                     child: Hero(
-                      tag: "${BSimage}",
+                      tag: "hero-${category_code}",
                       child: Image(
                         image: NetworkImage("${BSimage}"),
                         fit: BoxFit.cover,

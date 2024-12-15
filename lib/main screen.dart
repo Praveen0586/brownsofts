@@ -1,4 +1,8 @@
+import 'package:brownsofts/activities/models/remember_user.dart';
+import 'package:brownsofts/screens/fragments/category_service.dart';
+import 'package:brownsofts/screens/fragments/contact.dart';
 import 'package:brownsofts/screens/fragments/home%20screen.dart';
+import 'package:brownsofts/screens/fragments/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -17,6 +21,30 @@ class _MainScreenState extends State<MainScreen> {
   // Moved currentindex to the class level
 
   RxInt currentindex = 0.obs;
+
+  RxString uname = "".obs;
+  RxString uuser_email = "".obs;
+  RxString uuser_password = "".obs;
+  RxString ugoogle_login_id = "".obs;
+  RxString uid = "".obs;
+  retriving_data() async {
+    var _current_user = await Remembrprefs.readCurrentUser();
+
+    uname.value = _current_user!.name;
+    uuser_email.value = _current_user.user_email;
+    uuser_password.value = _current_user.user_password!;
+    ugoogle_login_id.value = _current_user.google_login_id!;
+    uid.value = _current_user.id!;
+    print(uname.value);
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    retriving_data();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,26 +127,26 @@ class _MainScreenState extends State<MainScreen> {
                           SizedBox(
                             height: 7,
                           ),
-                          Text(
-                            'User Name',
-                            style: TextStyle(
-                              fontFamily: GoogleFonts.aBeeZee().fontFamily,
-                              fontSize: 15, // Adjust size as needed
+                          Obx(() => Text(
+                                '${uname.value}',
+                                style: TextStyle(
+                                  fontFamily: GoogleFonts.aBeeZee().fontFamily,
+                                  fontSize: 15, // Adjust size as needed
 
-                              color: Colors.black, // Text color
-                            ),
-                          ),
-                          Text(
-                            'sample6754@gmail.com',
-                            style: TextStyle(
-                              fontFamily: GoogleFonts.aBeeZeeTextTheme()
-                                  .titleLarge!
-                                  .fontFamily,
-                              fontSize: 12, // Adjust size as needed
+                                  color: Colors.black, // Text color
+                                ),
+                              )),
+                          Obx(() => Text(
+                                uuser_email.value,
+                                style: TextStyle(
+                                  fontFamily: GoogleFonts.aBeeZeeTextTheme()
+                                      .titleLarge!
+                                      .fontFamily,
+                                  fontSize: 12, // Adjust size as needed
 
-                              color: Colors.black, // Text color
-                            ),
-                          ),
+                                  color: Colors.black, // Text color
+                                ),
+                              )),
                         ],
                       ),
                     ),
@@ -156,7 +184,13 @@ class _MainScreenState extends State<MainScreen> {
                     InkWell(
                       onTap: () {
                         Navigator.of(context).pop();
-
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (vbn) {
+                          return CategoryServicePage(
+                            index_of_Category: 0,
+                            topic: true,
+                          );
+                        }));
                         ScaffoldMessenger.of(context)
                             .showSnackBar(SnackBar(content: Text("Service")));
                       },
@@ -191,6 +225,13 @@ class _MainScreenState extends State<MainScreen> {
                         return InkWell(
                           onTap: () {
                             Navigator.of(context).pop();
+                            Navigator.of(context)
+                                .push(MaterialPageRoute(builder: (vbn) {
+                              return CategoryServicePage(
+                                index_of_Category: nd,
+                                topic: true,
+                              );
+                            }));
                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                                 content:
                                     Text("${drawer_categery[nd]["name"]}")));
@@ -374,15 +415,12 @@ List<Widget> screenList = [
   // const DesignedContact(),
   // const Profile()
   HomeScreen(),
-  Center(
-    child: Text("home"),
+  CategoryServicePage(
+    index_of_Category: 0,
+    topic: false,
   ),
-  Center(
-    child: Text("home"),
-  ),
-  Center(
-    child: Text("home"),
-  )
+  DesignedContact(),
+  Profile()
 ];
 
 List<Map> bottom_bar_icons = [

@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:brownsofts/activities/models/user.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Remembrprefs {
@@ -27,4 +28,7 @@ class Remembrprefs {
     SharedPreferences pref = await SharedPreferences.getInstance();
     await pref.remove("Current User");
   }
+
 }
+
+

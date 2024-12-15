@@ -251,7 +251,10 @@ class _HomeScreenState extends State<HomeScreen> {
               setState(() {
                 selected_category = index;
               });
-       Get.to(CategoryServicePage());
+              Get.to(CategoryServicePage(
+                index_of_Category: index,
+                topic: true,
+              ));
             },
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
@@ -268,11 +271,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 0.1,
                     ),
                     Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             // border: Border.all(
                             //     color: const Color.fromARGB(255, 236, 223, 217)),
                             ),
@@ -341,7 +344,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(15),
                           child: Hero(
-                            tag: "${ct_ser["image"]}",
+                            tag: "hero-${ct_ser["category_code"]}",
                             child: Image(
                               image: NetworkImage("${ct_ser["image"]}"),
                               fit: BoxFit.cover,
