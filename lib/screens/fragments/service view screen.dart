@@ -1,5 +1,4 @@
-import 'package:brownsofts/data/data%20type.dart';
-import 'package:flutter/foundation.dart';
+import 'package:brownsofts/screens/fragments/purchase_recipt.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
@@ -29,7 +28,13 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
   late var BSprice;
   late var BSdescription;
   Map? content1;
+  String? passing_to_purchase = "Basic";
 
+  int price_1 = 0;
+  int cut_price = 0;
+  String delivery_1 = "";
+  String revision_1 = "";
+  List regulations_1 = [];
   @override
   void initState() {
     // TODO: implement initState
@@ -55,6 +60,7 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
     content1 = BSprice["basic"];
   }
 
+  Map? selected_price_details;
   // final MyTabController tabController = Get.put(MyTabController());
 
 //content for price tabs
@@ -310,7 +316,25 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
                       borderRadius: BorderRadius.circular(15)),
                   child: TextButton(
                       onPressed: () {
-                        print("");
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (cvb) {
+                          price_1 = content1!["price"];
+                          cut_price = content1!["cross cut"];
+                          delivery_1 = content1!["delivery"].toString();
+                          revision_1 = content1!["revisions"].toString();
+                          regulations_1 = content1!["restrictions"];
+                          return PurchaseReciptScreen(
+                            delivery_1: delivery_1,
+                            revision_1: revision_1,
+                            cut_price: cut_price,
+                            price_1: price_1,
+                            selectedPrice: selected_price_details,
+                            chosed: passing_to_purchase,
+                            currentServiceMap1: widget.currentServiceMap,
+                            image: BSimage,
+                            regulations_1: regulations_1,
+                          );
+                        }));
                       },
                       child: Text("Purchase",
                           style: GoogleFonts.ubuntu(
@@ -583,15 +607,24 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
                                 selected_price = ind;
                                 if (selected_price == 0) {
                                   setState(() {
+                                    selected_price_details = BSprice["basic"];
+
                                     content1 = BSprice["basic"];
+                                    passing_to_purchase = "Basic";
                                   });
                                 } else if (selected_price == 1) {
+                                  selected_price_details = BSprice["standard"];
+
                                   setState(() {
                                     content1 = BSprice["standard"];
+                                    passing_to_purchase = "Standard";
                                   });
                                 } else if (ind == 2) {
+                                  selected_price_details = BSprice["premium"];
+
                                   setState(() {
                                     content1 = BSprice["premium"];
+                                    passing_to_purchase = "Premium";
                                   });
                                 }
                               });
@@ -713,7 +746,7 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
                                           child: Icon(Icons.sync),
                                         ),
                                         Text(
-                                          "${content1!["delivery"]} Revisions",
+                                          "${content1!["revisions"]} Revisions",
                                           style: TextStyle(fontSize: 15),
                                         )
                                       ],
