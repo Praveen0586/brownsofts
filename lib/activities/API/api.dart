@@ -7,9 +7,10 @@ class API {
   //acces to php files
   static const googlelogin = "$user/google_signin.php";
   static const createuser = "$user/adduser.php";
-  static const loginuser="$user/loginuser.php";
+  static const loginuser = "$user/loginuser.php";
 }
 
-
-
 // view-source:https://clustratio.com/brownsofts_app/service/home.php
+
+//paypal keys
+var hostLink = "https://clustratio.com/bs_php/bs_host_checkout_key.php";

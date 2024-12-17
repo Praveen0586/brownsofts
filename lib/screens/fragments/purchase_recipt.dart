@@ -79,7 +79,10 @@ class _PurchaseReciptScreenState extends State<PurchaseReciptScreen> {
         child: FloatingActionButton.extended(
           onPressed: () {
             Navigator.of(context).push(MaterialPageRoute(builder: (cvb) {
-              return CustomerEntryScreen();
+              return CustomerEntryScreen(
+                product_name: BSname1,
+                price_2: widget.price_1!,
+              );
             }));
           },
           label: const Row(

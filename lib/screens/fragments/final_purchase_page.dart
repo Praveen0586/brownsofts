@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
 
 class FinalPurchasePage extends StatefulWidget {
   const FinalPurchasePage({super.key});
@@ -10,6 +11,6 @@ class FinalPurchasePage extends StatefulWidget {
 class _FinalPurchasePageState extends State<FinalPurchasePage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold();
   }
 }
