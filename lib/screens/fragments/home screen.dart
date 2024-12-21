@@ -1,8 +1,11 @@
+import 'dart:ffi';
+
 import 'package:brownsofts/activities/models/service/categeries.dart';
 import 'package:brownsofts/data/data%20type.dart';
 import 'package:brownsofts/data/s%20data.dart';
 import 'package:brownsofts/screens/fragments/category_service.dart';
 import 'package:brownsofts/screens/fragments/service%20view%20screen.dart';
+import 'package:brownsofts/screens/search.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
@@ -28,36 +31,59 @@ class _HomeScreenState extends State<HomeScreen> {
 
 //search bar
   Widget _buildSearchBar() {
-    return Padding(
-      padding: EdgeInsets.only(top: 15, left: 10, right: 10),
-      child: Container(
-        decoration: BoxDecoration(
-          color: const Color.fromARGB(
-              255, 247, 233, 227), // Background color for the search bar
-          borderRadius: BorderRadius.circular(20), // Rounded corners
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.black26, // Shadow color
-              blurRadius: 5, // Shadow blur
-              offset: Offset(0, 2), // Shadow position
-            ),
-          ],
-        ),
-        child: TextField(
-          controller: _searchController,
-          decoration: const InputDecoration(
-            hintText: 'Search...',
-            prefixIcon: Icon(
-              Icons.search,
-              color: Colors.brown,
-            ),
-            border: InputBorder.none, // Removes the underline
-            contentPadding: EdgeInsets.symmetric(vertical: 15.0),
+    return InkWell(
+      child: Padding(
+        padding: EdgeInsets.only(top: 15, left: 10, right: 10),
+        child: Container(
+          decoration: BoxDecoration(
+            color: const Color.fromARGB(
+                255, 247, 233, 227), // Background color for the search bar
+            borderRadius: BorderRadius.circular(20), // Rounded corners
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black26, // Shadow color
+                blurRadius: 5, // Shadow blur
+                offset: Offset(0, 2), // Shadow position
+              ),
+            ],
           ),
-          onChanged: (value) {
-            // Logic to handle search text change
-            print("Search text: $value");
-          },
+          child: Hero(
+            tag: "search",
+            child: TextFormField(
+              onTap: () {
+                setState(() {
+                  // Only navigate if there is text in the search bar
+                  if (_searchController.text.isNotEmpty) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SearchPage(
+                            word: _searchController.text
+                            // You can pass data like search history or current search query here
+                            // searchHistory: _searchHistory,
+                            ),
+                      ),
+                    );
+                  }
+                  // No action needed if the search bar is empty
+                });
+              },
+              controller: _searchController,
+              decoration: const InputDecoration(
+                hintText: 'Search...',
+                prefixIcon: Icon(
+                  Icons.search,
+                  color: Colors.brown,
+                ),
+                border: InputBorder.none, // Removes the underline
+                contentPadding: EdgeInsets.symmetric(vertical: 15.0),
+              ),
+              onChanged: (value) {
+                // Logic to handle search text change
+                print("Search text: $value");
+              },
+            ),
+          ),
         ),
       ),
     );
@@ -86,8 +112,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 top: 15),
             child: InkWell(
               onTap: () {
-                Fluttertoast.cancel();
-                Fluttertoast.showToast(msg: "${suggesions[index]}");
+                Navigator.of(context).push(MaterialPageRoute(builder: (ctx) {
+                  return SearchPage(
+                    word: suggesions[index],
+                  );
+                }));
+                //   _searchController.text = suggesions[index];
               },
               child: Container(
                 padding:
@@ -234,22 +264,29 @@ class _HomeScreenState extends State<HomeScreen> {
 
 //Grid section of categories - without image
   Widget gridsection_no_image1(BuildContext context) {
+    if (appCategory == null || appCategory.isEmpty) {
+      return Center(child: Text("No categories available."));
+    }
+
+    int? selectedCategory;
+
     return Container(
-      height: 270, // Fixed height for the grid container
-      width: double.infinity, // Full width of the screen
-      child: GridView.count(
-        crossAxisCount: 3, // 3 items per row
-        crossAxisSpacing: 15, // Spacing between columns
-        mainAxisSpacing: 15, // Spacing between rows
-        padding: EdgeInsets.all(15), // Padding around the grid
-        physics:
-            NeverScrollableScrollPhysics(), // Prevent internal scrolling if needed
-        children: List.generate(appCategory.length, (index) {
-          late int? selected_category;
+      height: MediaQuery.of(context).size.height * 0.3, // Dynamic height
+      width: double.infinity, // Full screen width
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          crossAxisSpacing: 15,
+          mainAxisSpacing: 15,
+        ),
+        itemCount: appCategory.length,
+        padding: EdgeInsets.all(15),
+        physics: NeverScrollableScrollPhysics(),
+        itemBuilder: (context, index) {
           return InkWell(
             onTap: () {
               setState(() {
-                selected_category = index;
+                selectedCategory = index;
               });
               Get.to(CategoryServicePage(
                 index_of_Category: index,
@@ -261,45 +298,41 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Container(
                 decoration: BoxDecoration(
                   border: Border.all(
-                      color: const Color.fromARGB(255, 236, 223, 217),
-                      width: 1.5),
-                  color: const Color.fromARGB(
-                      254, 254, 247, 255), // Background color
-                  borderRadius: BorderRadius.circular(10), // Rounded corners
+                    color: const Color.fromARGB(255, 236, 223, 217),
+                    width: 1.5,
+                  ),
+                  color: const Color.fromARGB(254, 254, 247, 255),
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const SizedBox(
-                      height: 0.1,
-                    ),
+                    const SizedBox(height: 0.1),
                     Container(
-                        decoration: const BoxDecoration(
-                            // border: Border.all(
-                            //     color: const Color.fromARGB(255, 236, 223, 217)),
-                            ),
-                        height: 70,
-                        width: 100,
-                        child: Center(
-                          child: Text(
-                            "${appCategory[index].titles}",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                                color: const Color.fromARGB(255, 126, 67, 45)),
+                      height: 70,
+                      width: 100,
+                      child: Center(
+                        child: Text(
+                          appCategory[index].titles,
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            color: const Color.fromARGB(255, 126, 67, 45),
                           ),
-                        )),
-                    SizedBox(
-                      height: 0.1,
-                    )
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 0.1),
                   ],
                 ),
               ),
             ),
           );
-        }),
+        },
       ),
     );
   }

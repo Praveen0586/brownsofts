@@ -49,6 +49,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: true,
+        backgroundColor: Theme.of(context).cardTheme.surfaceTintColor,
         key: _scaffoldKey,
         appBar: AppBar(
           shape: RoundedRectangleBorder(
@@ -152,7 +153,11 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.of(context).pop();
+                        Navigator.pop(context);
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (cc) {
+                          return MainScreen();
+                        }));
                         ScaffoldMessenger.of(context)
                             .showSnackBar(SnackBar(content: Text("Home")));
                       },

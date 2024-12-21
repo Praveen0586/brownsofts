@@ -1,4 +1,5 @@
 import 'package:brownsofts/activities/models/remember_user.dart';
+import 'package:brownsofts/main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,13 +12,14 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-   RxString uname = "".obs;
-    RxString uuser_email = "".obs;
-    RxString uuser_password = "".obs;
-    RxString ugoogle_login_id = "".obs;
-    RxString uid = "".obs;
+  final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
+
+  RxString uname = "".obs;
+  RxString uuser_email = "".obs;
+  RxString uuser_password = "".obs;
+  RxString ugoogle_login_id = "".obs;
+  RxString uid = "".obs;
   retriving_data() async {
-   
     var _current_user = await Remembrprefs.readCurrentUser();
 
     uname.value = _current_user!.name;
@@ -89,15 +91,16 @@ class _ProfileState extends State<Profile> {
                 )),
           ],
         ),
-     Obx ( ()=> Text(
-          '${uuser_email.value}',
-          style: TextStyle(
-            fontFamily: GoogleFonts.aBeeZeeTextTheme().titleLarge!.fontFamily,
-            fontSize: 12, // Adjust size as needed
+        Obx(() => Text(
+              '${uuser_email.value}',
+              style: TextStyle(
+                fontFamily:
+                    GoogleFonts.aBeeZeeTextTheme().titleLarge!.fontFamily,
+                fontSize: 12, // Adjust size as needed
 
-            color: Colors.black, // Text color
-          ),
-        )),
+                color: Colors.black, // Text color
+              ),
+            )),
         SizedBox(
           height: 30,
         ),
@@ -168,19 +171,27 @@ class _ProfileState extends State<Profile> {
                 ScaffoldMessenger.of(context)
                     .showSnackBar(SnackBar(content: Text("Profile Edited ")));
               },
-              child: Text(
-                "Edit Profile",
-                style: TextStyle(
-                  fontFamily:
-                      GoogleFonts.aBeeZeeTextTheme().titleLarge!.fontFamily,
-                  fontSize: 14, // Adjust size as needed
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "Edit Profile",
+                  style: TextStyle(
+                    fontFamily:
+                        GoogleFonts.aBeeZeeTextTheme().titleLarge!.fontFamily,
+                    fontSize: 14, // Adjust size as needed
 
-                  color: const Color.fromARGB(255, 0, 0, 0), // Text color
+                    color: const Color.fromARGB(255, 0, 0, 0), // Text color
+                  ),
                 ),
               ),
             ),
             InkWell(
               onTap: () {
+                Remembrprefs.removeUser();
+                _navigatorKey.currentState
+                    ?.pushReplacement(MaterialPageRoute(builder: (v) {
+                  return HomePage();
+                }));
                 ScaffoldMessenger.of(context)
                     .showSnackBar(SnackBar(content: Text("Log out Succes")));
               },

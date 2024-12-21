@@ -1,7 +1,8 @@
 import 'package:brownsofts/activities/models/remember_user.dart';
-import 'package:brownsofts/screens/fragments/final_purchase_page.dart';
+import 'package:brownsofts/widgets/Loading_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class CustomerEntryScreen extends StatefulWidget {
   CustomerEntryScreen(
@@ -64,13 +65,27 @@ class _CustomerEntryScreenState extends State<CustomerEntryScreen> {
                       "EN3xk2NB23hty3iPs87A_0sfcteGi2XlSjlE6sTMJUHKjG3ZGubyUhbnDTwDq899EV_lM5KKjjdwNWJ2",
                   onSuccess: (Map params) async {
                     print("onSuccess: $params");
+                    Fluttertoast.showToast(msg: "Payment Succes");
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: Text(
+                      "Payment Succes",
+                    )));
                   },
                   onError: (error) {
                     print("onError: $error");
                     Navigator.pop(context);
+                    Fluttertoast.showToast(msg: "Payment Errorb : $error");
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: Text(
+                      "Payment Error ",
+                    )));
                   },
                   onCancel: () {
-                    print('cancelled:');
+                    Fluttertoast.showToast(msg: "Payment Cancellerd");
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: Text(
+                      "Payment Cancelled",
+                    )));
                   },
                   transactions: [
                     {
@@ -84,10 +99,9 @@ class _CustomerEntryScreenState extends State<CustomerEntryScreen> {
                         }
                       },
                       "description": "The payment transaction description.",
-                      // "payment_options": {
-                      //   "allowed_payment_method":
-                      //       "INSTANT_FUNDING_SOURCE"
-                      // },
+                      "payment_options": {
+                        "allowed_payment_method": "INSTANT_FUNDING_SOURCE"
+                      },
                       "item_list": {
                         "items": [
                           {
