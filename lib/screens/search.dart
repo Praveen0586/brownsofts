@@ -1,7 +1,6 @@
 import 'package:brownsofts/data/s%20data.dart';
 import 'package:brownsofts/screens/fragments/service%20view%20screen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class SearchPage extends StatefulWidget {
   SearchPage({super.key, required this.word});
@@ -18,6 +17,7 @@ class _SearchPageState extends State<SearchPage> {
   @override
   void dispose() {
     _searchController.dispose();
+
     super.dispose();
   }
 
@@ -47,10 +47,18 @@ class _SearchPageState extends State<SearchPage> {
   // Build the list of filtered items
   Widget _buildItemList() {
     return ListView.builder(
+      primary: true,
+      reverse: false,
+      addAutomaticKeepAlives: true,
+      padding: EdgeInsets.only(top: 15, bottom: 35),
       itemCount: serachList.length,
       itemBuilder: (context, index) {
         return Padding(
-          padding: const EdgeInsets.only(left: 20,top: 10,bottom: 5,),
+          padding: const EdgeInsets.only(
+            left: 20,
+            top: 10,
+            bottom: 5,
+          ),
           child: InkWell(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (s) {
@@ -67,7 +75,10 @@ class _SearchPageState extends State<SearchPage> {
                     maxRadius: 26,
                     foregroundImage: NetworkImage(serachList[index]["image"]),
                   ),
-                ),SizedBox(width: 10,),
+                ),
+                SizedBox(
+                  width: 8,
+                ),
                 Column(
                   children: [
                     Text(
@@ -103,7 +114,11 @@ class _SearchPageState extends State<SearchPage> {
           children: [
             InkWell(
               child: Padding(
-                padding: const EdgeInsets.only(top: 50, left: 10, right: 10),
+                padding: const EdgeInsets.only(
+                  top: 50,
+                  left: 10,
+                  right: 10,
+                ),
                 child: Container(
                   decoration: BoxDecoration(
                     color: const Color.fromARGB(255, 247, 233, 227),

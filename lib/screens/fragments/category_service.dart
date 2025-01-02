@@ -6,8 +6,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:brownsofts/data/s data.dart';
 
 class CategoryServicePage extends StatefulWidget {
-  CategoryServicePage({super.key, this.topic,this.index_of_Category});
-  int? index_of_Category=0;
+  CategoryServicePage({super.key, this.topic, this.index_of_Category});
+  int? index_of_Category = 0;
   bool? topic = true;
 
   @override
@@ -230,7 +230,7 @@ class _CategoryServicePageState extends State<CategoryServicePage> {
             onAddTabMoveTo: MoveToTab.last,
             dynamicTabs: tabdata_video_Animation,
             onTabControllerUpdated: (ctl) {
-             ;
+              ;
             }),
       );
     }
@@ -296,8 +296,8 @@ class _CategoryServicePageState extends State<CategoryServicePage> {
           borderRadius: BorderRadius.circular(5),
         ),
         dynamicTabs: tabdata,
-        onTabControllerUpdated: (ctl){
-           ctl.animateTo(widget.index_of_Category!);
+        onTabControllerUpdated: (ctl) {
+          ctl.animateTo(widget.index_of_Category!);
         },
       ),
     );

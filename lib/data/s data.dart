@@ -1236,6 +1236,58 @@ Feel free to contact us today. We can't wait to discuss how we can improve your 
       }
     ]
   },
+  {
+    "name": "Professional Web development",
+    "category": "Web Design ",
+    "category_code": "WD0101",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/66fa6469a0e08.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 1,
+      "basic": {
+        "price": 50,
+        "cross cut": 2000.1,
+        "delivery": 3,
+        "revisions": 5,
+        "restrictions": [
+          'Free Domain Name',
+          'Free Hosting',
+          'Free website Demo',
+          "Secure SSL Certificate",
+          "30 days of free updates",
+        ],
+      },
+    },
+    "description": [
+      "Get a professional website with domain, hosting, SSL, demo, and 30 days of updates for just \$50/month!",
+      """Establish your online presence for only \$50/month!
+Enjoy free domain, hosting, SSL, and a demo site with 30 days of updates.
+Contact us now to bring your business online affordably!""",
+      {
+        "topics": [
+          """What's Included in Our Package""",
+          "Free Hosting",
+          "Free Website Demo",
+          "Secure SSL Certificate",
+          "30 Days of Free Updates"
+        ],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        "What's Included in Our Package":
+            """Free website domain: After conducting thorough keyword research, we select a memorable website domain name . We provide a free, high quality website domain name for your business, which helps to establish your identity.
+""",
+        "Free Hosting":
+            '''Enjoy lightning-fast website performance with our free hosting. Your website will be hosted on a high speed server, which will make your site run flawlessly.''',
+        "Free Website Demo":
+            "Before the website goes live, we will create a demo version of your website so you can visualise the final product and make any necessary adjustments. We are always ready to hear your feedback. Customer satisfaction is our top priority.",
+        "Secure SSL Certificate":
+            """As a web development company, we value the privacy and security. That’s why we provide a secure SSL certificate to safeguard your data and build customer trust.""",
+        "30 Days of Free Updates":
+            "Our dedicated team is always available to make any changes according to your feedback. We provide free updates for 30 days to make any improvements to your website."
+      }
+    ]
+  },
 ];
 
 //radio \u25CF\t

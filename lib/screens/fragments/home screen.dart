@@ -1,15 +1,11 @@
-import 'dart:ffi';
-
 import 'package:brownsofts/activities/models/service/categeries.dart';
 import 'package:brownsofts/data/data%20type.dart';
 import 'package:brownsofts/data/s%20data.dart';
 import 'package:brownsofts/screens/fragments/category_service.dart';
 import 'package:brownsofts/screens/fragments/service%20view%20screen.dart';
 import 'package:brownsofts/screens/search.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -22,12 +18,52 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final _searchController = TextEditingController();
 
+//empty list declaration for Empty declaration
+  List VA = [];
+  List DW = [];
+//mapped list storation
+  List<Map<dynamic, dynamic>> _video_animation = [];
+  List<Map<dynamic, dynamic>> _web_designs = [];
+//allservice from S data
+  List all = all_service;
+
+//sorting from the data
+  sorting_from_all() {
+    all.forEach((__element) {
+      String charcode = __element["category_code"];
+
+      if (charcode.contains("VA")) {
+        _video_animation.add(__element);
+      } else if (charcode.contains("WD")) {
+        _web_designs.add(__element);
+      }
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    sorting_from_all();
+    fn.addListener(() {
+      if (fn.hasFocus) {
+        fn.unfocus();
+        Navigator.push(context, MaterialPageRoute(builder: (wq) {
+          return SearchPage(word: _searchController.text);
+        }));
+      }
+    });
+  }
+
   @override
   void dispose() {
     // TODO: implement dispose
     super.dispose();
     _searchController.dispose();
+    fn.dispose();
   }
+
+  final FocusNode fn = FocusNode();
 
 //search bar
   Widget _buildSearchBar() {
@@ -50,6 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Hero(
             tag: "search",
             child: TextFormField(
+              focusNode: fn,
               onTap: () {
                 setState(() {
                   // Only navigate if there is text in the search bar
@@ -338,19 +375,19 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
 //Popular service - horizontal alignment
-  Widget popservice() {
+  Widget popservice(List<dynamic> prefered_service) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
-        children: List.generate(all_service.length, (index) {
-          final ct_ser = all_service[index];
+        children: List.generate(prefered_service.length, (index) {
+          final ct_ser = prefered_service[index];
 
           return Padding(
             padding: EdgeInsets.only(
                 top: 10,
                 bottom: 10,
                 left: index == 0 ? 18 : 5,
-                right: index == all_service.length - 1 ? 18 : 10),
+                right: index == prefered_service.length - 1 ? 18 : 10),
             child: InkWell(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (ctx) {
@@ -485,9 +522,11 @@ class _HomeScreenState extends State<HomeScreen> {
             bar("Categories"),
             gridsection_no_image1(context),
             bar("Popular Service"),
-            popservice(),
+            popservice(all_service),
             bar("Video & Animation"),
-            popservice(),
+            popservice(_video_animation),
+            bar("Web Design"),
+            popservice(_web_designs),
           ],
         )
       ],

@@ -27,11 +27,13 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
   late var BSfAQ;
   late var BSprice;
   late var BSdescription;
+
+  late var BSpurchase_package_count;
   Map? content1;
   String? passing_to_purchase = "Basic";
 
   int price_1 = 0;
-  int cut_price = 0;
+  double? cut_price = 0;
   String delivery_1 = "";
   String revision_1 = "";
   List regulations_1 = [];
@@ -58,6 +60,11 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
     BSprice = BScurrentService["price"];
     BSdescription = BScurrentService["description"];
     content1 = BSprice["basic"];
+    BSpurchase_package_count = BSprice["count"];
+    if (BSpurchase_package_count == 1) {
+      selected_price = 0;
+      content1 = BSprice["basic"];
+    }
   }
 
   Map? selected_price_details;
@@ -588,218 +595,439 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
                 height: 10,
               ),
               /////////////////////////////////////////////////////////////////
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: Container(
-                  // height: 375,
-                  width: w,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: List.generate(pricelist.length, (ind) {
-                          return InkWell(
-                            onTap: () {
-                              setState(() {
-                                selected_price = ind;
-                                if (selected_price == 0) {
-                                  setState(() {
-                                    selected_price_details = BSprice["basic"];
+              ///
+              if (BSpurchase_package_count == 1)
+                Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Container(
+                    // height: 375,
+                    width: w,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Column(
+                      children: [
+                        // Row(
+                        //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        //   children: List.generate(pricelist.length, (ind) {
+                        //     return InkWell(
+                        //       onTap: () {
+                        //         setState(() {
+                        //           selected_price = ind;
+                        //           if (selected_price == 0) {
+                        //             setState(() {
+                        //               selected_price_details = BSprice["basic"];
 
-                                    content1 = BSprice["basic"];
-                                    passing_to_purchase = "Basic";
-                                  });
-                                } else if (selected_price == 1) {
-                                  selected_price_details = BSprice["standard"];
+                        //               content1 = BSprice["basic"];
+                        //               passing_to_purchase = "Basic";
+                        //             });
+                        //           } else if (selected_price == 1) {
+                        //             selected_price_details =
+                        //                 BSprice["standard"];
 
-                                  setState(() {
-                                    content1 = BSprice["standard"];
-                                    passing_to_purchase = "Standard";
-                                  });
-                                } else if (ind == 2) {
-                                  selected_price_details = BSprice["premium"];
+                        //             setState(() {
+                        //               content1 = BSprice["standard"];
+                        //               passing_to_purchase = "Standard";
+                        //             });
+                        //           } else if (ind == 2) {
+                        //             selected_price_details = BSprice["premium"];
 
-                                  setState(() {
-                                    content1 = BSprice["premium"];
-                                    passing_to_purchase = "Premium";
-                                  });
-                                }
-                              });
-                              print(ind);
-                              print(content1);
-                            },
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 5),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: ind == selected_price
-                                        ? const Color.fromARGB(
-                                            255, 224, 103, 28)
-                                        : Colors.orange[100],
-                                    borderRadius: BorderRadius.circular(10)),
-                                height: 40,
-                                width: 100,
-                                child: Center(
-                                    child: Text(
-                                  pricelist[ind],
-                                  style: TextStyle(
-                                      fontSize: ind == selected_price ? 15 : 11,
-                                      color: ind == selected_price
-                                          ? Colors.white
-                                          : Colors.black),
-                                )),
-                              ),
-                            ),
-                          );
-                        }),
-                      ),
+                        //             setState(() {
+                        //               content1 = BSprice["premium"];
+                        //               passing_to_purchase = "Premium";
+                        //             });
+                        //           }
+                        //         });
+                        //         print(ind);
+                        //         print(content1);
+                        //       },
+                        //       child: Padding(
+                        //         padding: const EdgeInsets.symmetric(
+                        //             horizontal: 10, vertical: 5),
+                        //         child: Container(
+                        //           decoration: BoxDecoration(
+                        //               color: ind == selected_price
+                        //                   ? const Color.fromARGB(
+                        //                       255, 224, 103, 28)
+                        //                   : Colors.orange[100],
+                        //               borderRadius: BorderRadius.circular(10)),
+                        //           height: 40,
+                        //           width: 100,
+                        //           child: Center(
+                        //               child: Text(
+                        //             pricelist[ind],
+                        //             style: TextStyle(
+                        //                 fontSize:
+                        //                     ind == selected_price ? 15 : 11,
+                        //                 color: ind == selected_price
+                        //                     ? Colors.white
+                        //                     : Colors.black),
+                        //           )),
+                        //         ),
+                        //       ),
+                        //     );
+                        //   }),
+                        // ),
 
-                      Container(
-                        // height: 310,
-                        width: w,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Colors.orange[100],
-                        ),
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                const Padding(
-                                  padding: EdgeInsets.only(left: 40, top: 20),
-                                  child: Text(
-                                    "Price",
-                                    style: TextStyle(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                                Container(
-                                  child: Row(
-                                    children: [
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.only(right: 5, top: 20),
-                                        child: Text(
-                                          "\$ ${content1!["price"]}",
-                                          style: TextStyle(
-                                              fontSize: 30,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.only(right: 30, top: 20),
-                                        child: Text(
-                                          "\$${content1!["cross cut"]}",
-                                          style: TextStyle(
-                                              decoration:
-                                                  TextDecoration.lineThrough,
-                                              decorationColor:
-                                                  const Color.fromARGB(
-                                                      176, 0, 0, 0),
-                                              decorationThickness: 5,
-                                              color: const Color.fromARGB(
-                                                  137, 0, 0, 0),
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-
-                            /// days delivery and revisions
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15),
-                              child: Row(
+                        Container(
+                          // height: 310,
+                          width: w,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.orange[100],
+                          ),
+                          child: Column(
+                            children: [
+                              Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Row(
-                                    children: [
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 20),
-                                        child: Icon(Icons.timer),
-                                      ),
-                                      Text(
-                                        "${content1!["delivery"]} Days Delivery",
-                                        style: TextStyle(fontSize: 15),
-                                      ),
-                                    ],
+                                  const Padding(
+                                    padding: EdgeInsets.only(left: 40, top: 20),
+                                    child: Text(
+                                      "Price",
+                                      style: TextStyle(
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.bold),
+                                    ),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(right: 20),
+                                  Container(
                                     child: Row(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              right: 5, top: 20),
+                                          child: Text(
+                                            "\$ ${content1!["price"]}",
+                                            style: TextStyle(
+                                                fontSize: 30,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              right: 30, top: 20),
+                                          child: Text(
+                                            "\$${content1!["cross cut"]}",
+                                            style: TextStyle(
+                                                decoration:
+                                                    TextDecoration.lineThrough,
+                                                decorationColor:
+                                                    const Color.fromARGB(
+                                                        176, 0, 0, 0),
+                                                decorationThickness: 5,
+                                                color: const Color.fromARGB(
+                                                    137, 0, 0, 0),
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+
+                              /// days delivery and revisions
+                              Padding(
+                                padding: const EdgeInsets.only(top: 15),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
                                       children: [
                                         Padding(
                                           padding:
                                               const EdgeInsets.only(left: 20),
-                                          child: Icon(Icons.sync),
+                                          child: Icon(Icons.timer),
                                         ),
                                         Text(
-                                          "${content1!["revisions"]} Revisions",
+                                          "${content1!["delivery"]} Days Delivery",
                                           style: TextStyle(fontSize: 15),
-                                        )
+                                        ),
                                       ],
                                     ),
-                                  )
-                                ],
+                                    Padding(
+                                      padding: const EdgeInsets.only(right: 20),
+                                      child: Row(
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(left: 20),
+                                            child: Icon(Icons.sync),
+                                          ),
+                                          Text(
+                                            "${content1!["revisions"]} Revisions",
+                                            style: TextStyle(fontSize: 15),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
-                            ),
 
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Column(
-                              children: List.generate(
-                                  content1!["restrictions"].length,
-                                  (inf) => Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 10, bottom: 7),
-                                        child: Row(
-                                          children: [
-                                            Icon(
-                                              Icons.check,
-                                              color: Colors.orange,
-                                            ),
-                                            SizedBox(
-                                              width: 5,
-                                            ),
-                                            Expanded(
-                                              child: Text(
-                                                "${content1!["restrictions"][inf]}",
-                                                style:
-                                                    TextStyle(fontSize: 15.5),
-                                                maxLines: 2,
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Column(
+                                children: List.generate(
+                                    content1!["restrictions"].length,
+                                    (inf) => Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 10, bottom: 7),
+                                          child: Row(
+                                            children: [
+                                              Icon(
+                                                Icons.check,
+                                                color: Colors.orange,
                                               ),
-                                            )
-                                          ],
-                                        ),
-                                      )),
-                            ),
-                            SizedBox(
-                              height: 25,
-                            )
+                                              SizedBox(
+                                                width: 5,
+                                              ),
+                                              Expanded(
+                                                child: Text(
+                                                  "${content1!["restrictions"][inf]}",
+                                                  style:
+                                                      TextStyle(fontSize: 15.5),
+                                                  maxLines: 2,
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        )),
+                              ),
+                              SizedBox(
+                                height: 25,
+                              )
 
-                            ///
-                          ],
+                              ///
+                            ],
+                          ),
                         ),
-                      ),
 
-                      //contents indside price box
-                    ],
+                        //contents indside price box
+                      ],
+                    ),
                   ),
                 ),
-              ),
+              if (BSpurchase_package_count == 3)
+                Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Container(
+                    // height: 375,
+                    width: w,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: List.generate(pricelist.length, (ind) {
+                            return InkWell(
+                              onTap: () {
+                                setState(() {
+                                  selected_price = ind;
+                                  if (selected_price == 0) {
+                                    setState(() {
+                                      selected_price_details = BSprice["basic"];
+
+                                      content1 = BSprice["basic"];
+                                      passing_to_purchase = "Basic";
+                                    });
+                                  } else if (selected_price == 1) {
+                                    selected_price_details =
+                                        BSprice["standard"];
+
+                                    setState(() {
+                                      content1 = BSprice["standard"];
+                                      passing_to_purchase = "Standard";
+                                    });
+                                  } else if (ind == 2) {
+                                    selected_price_details = BSprice["premium"];
+
+                                    setState(() {
+                                      content1 = BSprice["premium"];
+                                      passing_to_purchase = "Premium";
+                                    });
+                                  }
+                                });
+                                print(ind);
+                                print(content1);
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 5),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: ind == selected_price
+                                          ? const Color.fromARGB(
+                                              255, 224, 103, 28)
+                                          : Colors.orange[100],
+                                      borderRadius: BorderRadius.circular(10)),
+                                  height: 40,
+                                  width: 100,
+                                  child: Center(
+                                      child: Text(
+                                    pricelist[ind],
+                                    style: TextStyle(
+                                        fontSize:
+                                            ind == selected_price ? 15 : 11,
+                                        color: ind == selected_price
+                                            ? Colors.white
+                                            : Colors.black),
+                                  )),
+                                ),
+                              ),
+                            );
+                          }),
+                        ),
+
+                        Container(
+                          // height: 310,
+                          width: w,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.orange[100],
+                          ),
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const Padding(
+                                    padding: EdgeInsets.only(left: 40, top: 20),
+                                    child: Text(
+                                      "Price",
+                                      style: TextStyle(
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                  Container(
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              right: 5, top: 20),
+                                          child: Text(
+                                            "\$ ${content1!["price"]}",
+                                            style: TextStyle(
+                                                fontSize: 30,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              right: 30, top: 20),
+                                          child: Text(
+                                            "\$${content1!["cross cut"]}",
+                                            style: TextStyle(
+                                                decoration:
+                                                    TextDecoration.lineThrough,
+                                                decorationColor:
+                                                    const Color.fromARGB(
+                                                        176, 0, 0, 0),
+                                                decorationThickness: 5,
+                                                color: const Color.fromARGB(
+                                                    137, 0, 0, 0),
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+
+                              /// days delivery and revisions
+                              Padding(
+                                padding: const EdgeInsets.only(top: 15),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 20),
+                                          child: Icon(Icons.timer),
+                                        ),
+                                        Text(
+                                          "${content1!["delivery"]} Days Delivery",
+                                          style: TextStyle(fontSize: 15),
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(right: 20),
+                                      child: Row(
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(left: 20),
+                                            child: Icon(Icons.sync),
+                                          ),
+                                          Text(
+                                            "${content1!["revisions"]} Revisions",
+                                            style: TextStyle(fontSize: 15),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Column(
+                                children: List.generate(
+                                    content1!["restrictions"].length,
+                                    (inf) => Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 10, bottom: 7),
+                                          child: Row(
+                                            children: [
+                                              Icon(
+                                                Icons.check,
+                                                color: Colors.orange,
+                                              ),
+                                              SizedBox(
+                                                width: 5,
+                                              ),
+                                              Expanded(
+                                                child: Text(
+                                                  "${content1!["restrictions"][inf]}",
+                                                  style:
+                                                      TextStyle(fontSize: 15.5),
+                                                  maxLines: 2,
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        )),
+                              ),
+                              SizedBox(
+                                height: 25,
+                              )
+
+                              ///
+                            ],
+                          ),
+                        ),
+
+                        //contents indside price box
+                      ],
+                    ),
+                  ),
+                ),
               SizedBox(
                 height: 5,
               ),

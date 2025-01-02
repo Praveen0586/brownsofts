@@ -19,7 +19,7 @@ class PurchaseReciptScreen extends StatefulWidget {
   Map? selectedPrice;
   String? chosed = "Basic";
   int? price_1;
-  int? cut_price = 0;
+  double? cut_price = 0.0;
   String? delivery_1 = "";
   String? revision_1 = "";
   List? regulations_1 = [];
