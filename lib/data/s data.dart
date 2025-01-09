@@ -1238,8 +1238,8 @@ Feel free to contact us today. We can't wait to discuss how we can improve your 
   },
   {
     "name": "Professional Web development",
-    "category": "Web Design ",
-    "category_code": "WD0101",
+    "category": "Web Design",
+    "category_code": "WD0301",
     "image":
         "https://brownsofts.com/assets/img/services/slider-images/66fa6469a0e08.jpg",
     "FAQ": [],
@@ -1285,6 +1285,432 @@ Contact us now to bring your business online affordably!""",
             """As a web development company, we value the privacy and security. That’s why we provide a secure SSL certificate to safeguard your data and build customer trust.""",
         "30 Days of Free Updates":
             "Our dedicated team is always available to make any changes according to your feedback. We provide free updates for 30 days to make any improvements to your website."
+      }
+    ]
+  },
+  {
+    "name": "Corporate Websites",
+    "category": "Web Design",
+    "category_code": "WD0101",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/6666c8e099f9b.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 3,
+      "basic": {
+        "price": 249,
+        "cross cut": 349,
+        "delivery": 2,
+        "revisions": 2,
+        "restrictions": [
+          "5 Pages",
+          'Mobile-Friendly Design',
+          'Contact Form',
+          'Slider',
+          'Google Maps Integration',
+          'Social Media Integration'
+        ],
+      },
+      "standard": {
+        "price": 499,
+        "cross cut": 599,
+        "delivery": 5,
+        "revisions": 4,
+        "restrictions": [
+          "8 Pages",
+          'Mobile-Friendly Design',
+          'Contact Form',
+          'Slider',
+          'Google Maps Integration',
+          'Social Media Integration',
+          'Admin Panel / C panel',
+          'Complimentary Domain & Hosting',
+          'Top-Notch Tech Support',
+        ],
+      },
+      "premium": {
+        "price": 799,
+        "cross cut": 899,
+        "delivery": 8,
+        "revisions": 5,
+        "restrictions": [
+          "15 Pages",
+          " Mobile-Friendly Design",
+          "Contact Form",
+          "Slider",
+          "Google Maps Integration",
+          "Social Media Integration",
+          "Admin Panel / C panel",
+          "Complimentary Domain & Hosting",
+          "Top-Notch Tech Support",
+          "Unlimited Data Transfer",
+          "Image Optimization"
+        ],
+      }
+    },
+    "description": [
+      "Looking to elevate your corporate website? We specialize in modernizing WordPress sites and migrating Wix sites seamlessly.",
+      "Our services focus on creating, updating, and enhancing WordPress sites to deliver a better user experience.If you have a Wix website, we’ll help you transition to a modern, feature-rich platform. With 95+ websites built and 120+ redesigned, we ensure satisfaction and improved visibility. Let us create a tailored solution that aligns perfectly with your business goals.",
+      {
+        "topics": [
+          """Corporate Website """,
+          """Key Features of Our Services\nResponsive and User-Friendly""",
+          """Straightforward Navigation and Information Architecture""",
+          """Why Choose Us?\nCustomized Solutions""",
+          """Professionalism""",
+          """Analytics and Insights"""
+        ],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        "Corporate Website ":
+            """ Hey guys, Are you looking to elevate your corporate website? Our design services focus on creating, updating, and enhancing your WordPress site to ensure an outstanding experience for your visitors. If you currently have a website on Wix, we will also assist you in migrating from there, allowing you to enjoy the benefits of a modern website design.
+
+Our web designers have built over 95 websites and redesigned more than 120 websites. Our services are tailored to ensure 100% satisfaction with your website design while enhancing your website visibility to ensure you effectively reach your target audience. """,
+        """Key Features of Our Services\nResponsive and User-Friendly""":
+            '''\u25CF\tYour website will function flawlessly across various devices and resolutions, providing a uniform user experience on PCs, tablets, and smartphones. It is essential for website exposure in the current mobile-first industry.
+\u25CF\tConstant updates, security fixes, and backups ensure your website's operation and security, all essential for preserving website visibility.''',
+        """Straightforward Navigation and Information Architecture""":
+            """\u25CF\tWe prioritize creating intuitive navigation in our website redesign services. Your site's reasonable page designs, well-arranged navigation, and concise information allow users to find what they need quickly. Sustaining user engagement requires a website with a modern design.
+\u25CF\tRegular updates, security fixes, and backups ensure your website's functionality and security, which are vital for keeping it visible.
+\u25CF\tOur team provides ongoing support to address technical issues swiftly, safeguarding your website design investment and enhancing overall website visibility. By prioritizing these elements, we help ensure that your site remains effective, which is vital for competitive website design prices. Understanding the relationship between website visibility and website design prices allows us to offer you the best value for your investment.""",
+        """Why Choose Us?\nCustomized Solutions""":
+            """Our website development team understands that every company has unique requirements. Our customized approach guarantees that your website aligns with your business objectives in Austin, Texas. Whether you need website redesign services or a new modern website design, we have covered you.""",
+        "Professionalism":
+            """Your stakeholders and clients will gain confidence from our designs, which radiate professionalism in website design in Austin, Texas. A well-crafted sample website showcases our commitment to quality and aesthetics.""",
+        """Analytics and Insights""":
+            """We incorporate tools to track user behaviour, monitor performance, and refine strategies, enhancing your website visibility. Recognizing user behaviour on your website is crucial for ongoing improvement and helps you achieve the best website design possible.
+
+By analyzing user data, we continuously adapt and enhance your site by researching and delivering the best website design that meets your business goals. Our focus on user insights guarantees that your website looks great and functions effectively, ensuring you achieve the best website design for your audience.
+
+Our devoted web design and development team is available to guide you through every process step, ensuring you receive the best website design that meets your needs, just like our sample website demonstrates. Our sample website highlights the quality and creativity we bring to every project."""
+      }
+    ]
+  },
+  {
+    "name": "Small Business Websites",
+    "category": "Web Design",
+    "category_code": "WD0102",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/665097c36a010.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 3,
+      "basic": {
+        "price": 199,
+        "cross cut": 299,
+        "delivery": 2,
+        "revisions": 2,
+        "restrictions": [
+          "5 Pages",
+          "Custom layout design with basic features.",
+          "Basic navigation menu & sub-menu.",
+          "100% responsive design across all devices",
+          "(CMS): WordPress platform.",
+          "Unlimited email IDs (Webmail/Outlook)",
+          "Basic live chat setup.",
+          "Standard SSL certificate installation.",
+          "Unlimited images and videos.",
+          "Basic SEO setup with meta tags and keywords.",
+        ],
+      },
+      "standard": {
+        "price": 499,
+        "cross cut": 549,
+        "delivery": 3,
+        "revisions": 5,
+        "restrictions": [
+          "8 Pages",
+          "Custom layout design with advanced elements.",
+          "Advanced navigation menu & sub-menu.",
+          "Fully responsive design with enhanced mobile optimization",
+          "CMS: WordPress platform with essential plugins",
+          "Unlimited email IDs with advanced features.",
+          "Live chat with AI chatbot features.",
+          " SSL certificate with extended validation.",
+          "Unlimited images and videos with basic optimization",
+          "SEO-friendly code with sitemap integration and basic optimization",
+          "Schema markup with basic structured data.",
+        ],
+      },
+      "premium": {
+        "price": 799,
+        "cross cut": 899,
+        "delivery": 8,
+        "revisions": 7,
+        "restrictions": [
+          "10 pages",
+          "Advanced custom layout with interactive features.",
+          "Custom navigation with dynamic menu options.",
+          "Responsive design with advanced mobile features.",
+          "CMS: WordPress platform with premium plugins and custom functionality",
+          "Unlimited email IDs with premium spam protection.",
+          "Advanced live chat with CRM integration."
+              "Premium SSL certificate with advanced security features",
+          'Unlimited high-resolution images and videos with advanced media optimization',
+          "Comprehensive SEO setup with advanced sitemap, schema markup, and meta tags",
+          " Advanced schema markup with rich snippets and structured data."
+        ],
+      }
+    },
+    "description": [
+      "Looking to elevate your corporate website? We specialize in modernizing WordPress sites and migrating Wix sites seamlessly.",
+      "Our services focus on creating, updating, and enhancing WordPress sites to deliver a better user experience.If you have a Wix website, we’ll help you transition to a modern, feature-rich platform. With 95+ websites built and 120+ redesigned, we ensure satisfaction and improved visibility. Let us create a tailored solution that aligns perfectly with your business goals.",
+      {
+        "topics": [
+          """Here’s What’s Inside\nMobile-Responsive Design""",
+          "Simple Content Creation",
+          "User-Friendly Editing",
+          """The Benefits of Going Digital\nDevelop Credibility and Trust""",
+          """Extend Your Audience""",
+          "Bring in Customers",
+          "Get Started Today!"
+        ],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        """Here’s What’s Inside\nMobile-Responsive Design""":
+            """\u25CF\tNo coding knowledge is required! Your website will adapt itself to appear fantastic on any device, ensuring a flawless experience for every visitor. 
+\u25CF\tThis feature significantly impacts the overall website design price, providing a high-quality site without excessive costs. 
+\u25CF\tUnderstanding the average cost of website design for small businesses will assist you in making a well-informed choice.
+\u25CF\tPlease review our site samples to see how mobile responsiveness enhances user experience. Additionally, incorporating standard website ad sizes into your design can improve your advertising strategy, ensuring your ads fit perfectly and capture attention.""",
+        "Simple Content Creation":
+            """\u25CF\tShare your story with excellence! Create up to 5 pages showcasing your services, team, and contact information easily. 
+\u25CF\tWhen evaluating the cost of website design, you’ll find that our package offers comprehensive features at a competitive price. Crafting engaging content for a small business website is essential; our service ensures you highlight what matters most. 
+\u25CF\tCheck our site samples for inspiration to see how we effectively present business narratives. Standard website ad sizes will help ensure your ads are visually appealing and effective.""",
+        "User-Friendly Editing":
+            """Edit content, menus, or photographs with our intuitive drag-and-drop content management system—no coding skills necessary! This ease of use translates to lower ongoing website-making costs because you won’t need to hire someone for simple updates. """,
+        """The Benefits of Going Digital\nDevelop Credibility and Trust""":
+            """\u25CF\tA well-designed website enhances your credibility and gains the trust of potential customers. Understanding the average cost of website design for small businesses can help you invest wisely in your digital presence.
+\u25CF\tWhen you factor in the website design price, it becomes clear that a well-designed site is an essential asset.
+\u25CF\tOur site samples demonstrate how professional design enhances credibility and attracts more clients. 
+\u25CF\tUtilizing standard website ad sizes in your advertising can also contribute to a consistent and polished look.""",
+        """Extend Your Audience""":
+            """\u25CF\tReach a larger online audience and raise brand awareness with your professional website. One of the top things web developers can do to increase page visibility is to ensure your site represents to guarantee search engine optimization for your website.
+\u25CF\tThe website-making cost you invest now can lead to substantial returns by expanding your customer base.
+\u25CF\tOur site samples reflect successful strategies that have helped other businesses grow their online presence, and utilizing standard website ad sizes will ensure your ads effectively reach that audience.""",
+        "Bring in Customers":
+            """\u25CF\tA user-friendly interface and a clear call to action can convert website visitors into leads and sales.
+\u25CF\tIt not only attracts customers but also maximizes the effectiveness of your investment. Knowing how much it costs to design websites can guide your decisions and ensure you get the best value for your investment.
+\u25CF\tOur site samples illustrate effective calls to action that have successfully converted visitors. Standard website ad sizes can help you create functional and aesthetically pleasing ads.""",
+        "Get Started Today!":
+            """Ready to elevate your business? Get your small business's website today by partnering with our web design service company. With our transparent website making cost, you can expect high-quality service without hidden fees.
+
+Please explore our site samples to see our quality and how our services align with the website design price you’re willing to pay. Don’t wait—invest in your future now!
+
+By focusing on the top things web developers can do to increase page visibility, we can help you create a robust online presence that increases traffic and turns visitors into devoted clients. Standard website ad sizes will further enhance your site’s effectiveness and appeal."""
+      }
+    ]
+  },
+  {
+    "name": "E-commerce Websites",
+    "category": "Web Design",
+    "category_code": "WD0103",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/665061a89f446.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 3,
+      "basic": {
+        "price": 249,
+        "cross cut": 349,
+        "delivery": 2,
+        "revisions": 3,
+        "restrictions": [
+          "CMS & Woo Commerce setup.",
+          "Manage up to 8 products",
+          "Language and currency setup",
+          "Basic category optimization",
+          "Flat rate and weight-based shipping.",
+          "Basic tax setup",
+          "Product detail pages with images",
+          "Customer review management",
+          "Basic shopping cart with credit card and PayPal",
+          "Credit card and PayPal payment integration.",
+          "Basic newsletter setup",
+          "Basic discount coupons",
+          "Basic SEO setup"
+        ],
+      },
+      "standard": {
+        "price": 359,
+        "cross cut": 459,
+        "delivery": 4,
+        "revisions": 4,
+        "restrictions": [
+          "CMS & Woo Commerce setup.",
+          "Manage up to 15 products",
+          "Language, currency, and localization setup.",
+          "Advanced category optimization.",
+          "Flat rate, weight-based, and table rates shipping",
+          "Advanced tax setup",
+          "Custom product pages with images",
+          "Review management with moderation",
+          "Advanced cart with multiple payment options",
+          "Payment options including Stripe",
+          "Automated newsletter setup",
+          "Advanced discount coupons",
+          "Advanced SEO with keyword optimization."
+        ],
+      },
+      "premium": {
+        "price": 549,
+        "cross cut": 649,
+        "delivery": 10,
+        "revisions": 8,
+        "restrictions": [
+          "Full CMS & Woo Commerce setup.",
+          "Unlimited products",
+          "Multilingual support",
+          "Advanced optimization with filtering.",
+          "Custom shipping methods",
+          "Custom tax rules",
+          "Pages with zoom, swatches, videos",
+          "AI-driven review moderation",
+          "Upsell, cross-sell, and saved carts",
+          "Custom payment gateways",
+          "Advanced automation with campaign management",
+          'Complex discount rules and scheduling',
+          "Comprehensive SEO with analytics"
+        ],
+      }
+    },
+    "description": [
+      "Want a stunning WordPress e-commerce site that drives sales? We deliver affordable, high-impact websites built with WordPress and WooCommerce.",
+      "We emphasize conversion points to turn visitors into loyal customers.Our scalable solutions adapt to the size and goals of your business.Continuous support, updates, and performance analysis keep your site optimized. We craft websites that combine functionality, aesthetics, and customer-focused design.",
+      {
+        "topics": [
+          "Our Expertise",
+          "Features That Matter",
+          "Why Choose Us?",
+          "Getting Started"
+        ],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        "Our Expertise":
+            """Our experienced group of web designers produces distinctive WordPress e-commerce websites that are visually appealing, user-friendly, and sales-oriented. A stunning website header is crucial for capturing attention and setting the tone for your entire site. We focus on eye-catching layouts with effective website headers, ensuring every visitor understands your brand message immediately.""",
+        "Features That Matter":
+            """\u25CF\t\x1BResponsive and Mobile-Optimized\x1B: Your website will function efficiently on various devices, guaranteeing a uniform user experience on desktops, tablets, and smartphones. It is vital for improving your blog and post visibility. A responsive design ensures that each blog is simple to use.
+
+\u25CF\t\x1BSecure Payment Gateways\x1B: We integrate trustworthy payment gateways to guarantee secure transactions for your clients. It builds trust and encourages repeat business, which is especially important for affiliate marketing websites. By providing secure payments, we help you convert visitors who might otherwise hesitate to purchase.
+
+\u25CF\t\x1BCustomer Support Integration\x1B:  FAQs, contact forms, and live chat improve customer service, helping to build trust and loyalty. A robust support system can increase engagement on your blog and other pages. By integrating adequate support, we can enhance the user experience of your blog and post content.
+
+\u25CF\t\x1BSEO Optimization\x1B: Our specialists improve your website for engines like Google, significantly increasing its exposure and bringing in natural visitors. It includes strategies on “how to get website hits” through targeted keyword research. By improving your blog and post optimization, we help ensure that your articles reach a wider audience, making it easier to search your website for keywords that can enhance visibility.
+
+\u25CF\t\x1BInventory Management\x1B: Organize your product inventory effectively, monitor stock levels, and set up restocking notifications automatically. This element is necessary to keep your website samples flowing and ensure customers can easily find their needs. A well-managed inventory boosts user satisfaction and can lead to positive reviews on your blog.""",
+        "Why Choose Us?":
+            """\u25CF\tScalability: Depending on the size of your business, our web development and design services can expand to meet your needs. We provide flexibility to adjust your offerings as your needs change.
+
+\u25CF\tMaintenance and Updates: We offer ongoing support, security updates, and feature enhancements. Our team continuously analyzes your site’s performance to help you understand how to improve your website headers and overall design.
+
+\u25CF\tConversion Focus: Our designs emphasize conversion points, encouraging visitors to become loyal customers.""",
+        "Getting Started":
+            """\u25CF\tIf you're ready to take the plunge, consider choosing our package for all your web design and development needs. With our expertise in web page designers near me, we can provide local support tailored to your unique business goals.
+
+\u25CF\tExplore website pop examples that demonstrate our capability to create compelling online stores. These examples highlight the versatility of our designs, including how we effectively use the website header and navigation features that drive sales.
+
+\u25CF\tAre you curious about performance? We can help you search your website for keywords to find opportunities for improvement. This insight can guide your content strategy on your blog, helping you create posts that rank better and draw in more visitors. Our tips on how to get website hits will also maximize your exposure and reach.
+
+\u25CF\tAre you concerned about the budget? We provide options for every financial plan so you can find the right price for a design website that meets your needs without sacrificing quality. Whether you want a simple store or a complex e-commerce solution, our team will develop a website that meets your needs and budget.
+
+\u25CF\tIn addition, we encourage you to review our website samples, showcasing the diverse range of projects we’ve completed. Each sample highlights our ability to tailor the website headers and overall design to meet client needs.
+
+\u25CF\tLet’s help you with your journey, from understanding “what is a 304” response to crafting the perfect blog that engages your audience. We aim to make you more visible online and increase traffic to affiliate marketing websites. 
+
+Pick our package for all of your web design and development demands, and observe the immediate impact on your online presence.        """
+      }
+    ]
+  },
+  {
+    "name": "CMS Websites",
+    "category": "Web Design",
+    "category_code": "WD0104",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/665061a89f446.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 3,
+      "basic": {
+        "price": 129,
+        "cross cut": 229,
+        "delivery": 2,
+        "revisions": 4,
+        "restrictions": [
+          "5 content pages",
+          "layout design",
+          "navigation menu & sub-menu",
+          "Fully responsive design",
+          "Functional contact form",
+          "Social media integration",
+          "Powered by WordPress.",
+          "SSL certificate installation.",
+          "Initial SEO setup.",
+          "Basic speed optimization",
+        ],
+      },
+      "standard": {
+        "price": 299,
+        "cross cut": 399,
+        "delivery": 5,
+        "revisions": 4,
+        "restrictions": [
+          "14 content pages",
+          "layout design",
+          "navigation menu & sub-menu",
+          "Fully responsive design",
+          "Functional contact form",
+          "Social media integration",
+          "Powered by WordPress.",
+          "SSL certificate installation",
+          "Initial SEO setup",
+          "Speed optimization with caching"
+        ],
+      },
+      "premium": {
+        "price": 549,
+        "cross cut": 649,
+        "delivery": 9,
+        "revisions": 5,
+        "restrictions": [
+          "Unlimited content pages",
+          "layout design",
+          "navigation menu & sub-menu",
+          "Premium responsive design with mobile optimization",
+          "Advanced contact form with custom fields",
+          "Enhanced social media integration with custom widgets",
+          "WordPress platform with premium plugins",
+          "SSL certificate installation with extended validation",
+          "Comprehensive SEO setup, including meta tags and keywords.",
+          "Advanced speed optimization with CDN and image optimization",
+          "Market and competitor analysis.",
+          "Schema Optimization",
+        ],
+      }
+    },
+    "description": [
+      " Create stunning pages without coding skills or developer assistance. Boost your site’s visibility with built-in SEO and regular updates.",
+      "Our theme library and plugins make customization a breeze.Build galleries, integrate contact forms, or create an e-commerce store effortlessly.Explore our sample layouts for inspiration and see your vision come to life.Advertise effectively, write engaging blogs, and enhance your online presence.",
+      {
+        "topics": [
+          "Imagine this",
+          "That's the magic of a CMS website!",
+          "But wait, there is more!"
+        ],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        "Imagine this":
+            """You effortlessly create a winning blog post, update product descriptions with dazzling visuals, or manage a gallery overflowing with stunning photos, all through a user-friendly interface as intuitive as your favourite social media app. """,
+        "That's the magic of a CMS website!":
+            """\u25CF\tWithout coding knowledge, drag-and-drop editing allows you to create, edit, and publish anything you want, including blog posts and product descriptions.
+\u25CF\tOur price-designed website options make finding a plan that fits your budget easy, ensuring you get the best value for your investment. With various price design website packages available, you can choose the one that best suits your requirements.
+\u25CF\tWe offer a vast library of themes to personalize your website's look and feel. Whether you want to create a modern business website or a vibrant portfolio, we have the perfect starting point for your vision. Our competitive price design website options ensure you can accomplish your objectives without becoming bankrupt.
+\u25CF\tBuilt-in plugins offer endless possibilities. Integrate contact forms, build stunning galleries, or even create an e-commerce store. Our website SEO features allow you to update content quickly and regularly, helping your site climb search rankings for better online visibility.
+\u25CF\tTo boost your online presence, consider strategies for effectively advertising on websites. Learning how to advertise on websites can significantly enhance your reach. Check out our example website templates to see successful designs in action, or look at a website pop example to understand how engaging visuals can draw attention. Your website may sparkle if you use the right tools and techniques.
+\u25CF\tTo find inspiration for your project, look through our selection of sample website layouts. Each example website showcases unique elements that can help you visualize what your site could become. Whether it is a website pop example that grabs attention or a clean layout that speaks to your audience, we have something for everyone.
+\u25CF\tYou will create a powerful online presence by integrating effective methods to advertise on websites and optimizing your content using website SEO. Remember, a well-designed website pop example can captivate visitors and encourage them to explore further.""",
+        "But wait, there is more!":
+            """Our dedicated support team is here to guide you with any feature or question you have, ensuring a smooth experience. We can even help you write a blog that increases website traffic and audience engagement. Writing a blog that resonates with your readers is crucial for content creation.
+
+Our CMS Website Package is your key to a user-friendly online masterpiece. This package goes beyond content management and offers complete web development and design services. Contact us today, and let the content creation adventure for your website begin!"""
       }
     ]
   },
