@@ -7,15 +7,16 @@ import "package:brownsofts/activities/authentivation/google_signin.dart";
 import "package:brownsofts/activities/authentivation/sign_In.dart";
 import "package:brownsofts/activities/models/remember_user.dart";
 import "package:brownsofts/main%20screen.dart";
-import "package:brownsofts/screens/fragments/home%20screen.dart";
 import "package:flutter/material.dart";
 import 'package:fluttertoast/fluttertoast.dart';
 import "package:get/get.dart";
 import "package:google_sign_in/google_sign_in.dart";
 import 'package:http/http.dart' as http;
+import "package:flutter_dotenv/flutter_dotenv.dart";
 
-void main() {
+void main()  {
   WidgetsFlutterBinding.ensureInitialized;
+ // await dotenv.load(fileName: ".env");
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
     debugShowMaterialGrid: false,
@@ -72,10 +73,10 @@ class _HomePageState extends State<HomePage> {
               Container(
                 color: const Color.fromARGB(224, 238, 225, 215),
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 1.4,
+                height: MediaQuery.of(context).size.height / 1.8,
                 child: Center(
                   child: SizedBox(
-                    height: 350,
+                    //  height: MediaQuery.of(context).size.height ,
                     width: 350,
                     child: Image.asset(
                       "assets/logo.png",
@@ -89,14 +90,14 @@ class _HomePageState extends State<HomePage> {
           ),
           Expanded(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(
-                  height: 30,
+                  height: 10,
                 ),
                 SizedBox(
-                  height: 55,
+                  height: MediaQuery.of(context).size.height * 0.07,
                   width: MediaQuery.of(context).size.width / 1.5,
                   child: OutlinedButton(
                     onPressed: () {
@@ -119,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                   height: 20,
                 ),
                 SizedBox(
-                  height: 55,
+                  height: MediaQuery.of(context).size.height * 0.07,
                   width: MediaQuery.of(context).size.width / 1.5,
                   child: OutlinedButton(
                     onPressed: () async {
@@ -150,7 +151,7 @@ class _HomePageState extends State<HomePage> {
                   height: 20,
                 ),
                 SizedBox(
-                  height: 55,
+                  height: MediaQuery.of(context).size.height * 0.07,
                   width: MediaQuery.of(context).size.width / 1.5,
                   child: OutlinedButton(
                     onPressed: () {

@@ -5,7 +5,6 @@ import 'package:brownsofts/activities/authentivation/create_user.dart';
 import 'package:brownsofts/activities/models/remember_user.dart';
 import 'package:brownsofts/activities/models/user.dart';
 import 'package:brownsofts/main%20screen.dart';
-import 'package:brownsofts/screens/fragments/home%20screen.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';

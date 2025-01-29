@@ -1,5 +1,4 @@
 import 'package:brownsofts/activities/models/remember_user.dart';
-import 'package:brownsofts/widgets/Loading_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
 import 'package:fluttertoast/fluttertoast.dart';

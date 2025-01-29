@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 class Categeries {
   String titles;

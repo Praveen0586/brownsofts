@@ -1,6 +1,6 @@
 class API {
   //acces to folders
-  static const mainhost = "https://clustratio.com/brownsofts_app";
+  static const mainhost = "https://esccnm.com/brownsofts_app";
   static const connect = "$mainhost/connection.php";
   static const user = "$mainhost/user";
 

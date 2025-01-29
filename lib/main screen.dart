@@ -1,3 +1,4 @@
+
 import 'package:brownsofts/activities/models/remember_user.dart';
 import 'package:brownsofts/screens/fragments/category_service.dart';
 import 'package:brownsofts/screens/fragments/contact.dart';
@@ -7,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:brownsofts/service/mail_services.dart';
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
@@ -47,7 +48,9 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(floatingActionButton: FloatingActionButton(onPressed: (){
+      MailService().send_mail("PRAVEEN", "1@GMAIL.COM", "WHATSAPP GTDHWJD", "SOMETHING I WAT TO TELL", "COLOR GRADING", "PACKAGE", 23.toString(), DateTime.now().toString(), "gopal");
+    }),
         resizeToAvoidBottomInset: true,
         backgroundColor: Theme.of(context).cardTheme.surfaceTintColor,
         key: _scaffoldKey,
@@ -275,6 +278,7 @@ class _MainScreenState extends State<MainScreen> {
                         Navigator.of(context).pop();
                         ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(content: Text("Go To Site")));
+                           // Link();
                       },
                       child: Container(
                         padding: EdgeInsets.only(top: 5, left: 30, bottom: 5),

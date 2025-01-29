@@ -1,5 +1,4 @@
-import 'package:brownsofts/activities/models/service/categeries.dart';
-import 'package:brownsofts/data/data%20type.dart';
+import 'package:brownsofts/service/categeries.dart';
 import 'package:brownsofts/data/s%20data.dart';
 import 'package:brownsofts/screens/fragments/category_service.dart';
 import 'package:brownsofts/screens/fragments/service%20view%20screen.dart';
@@ -24,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
 //mapped list storation
   List<Map<dynamic, dynamic>> _video_animation = [];
   List<Map<dynamic, dynamic>> _web_designs = [];
+  List<Map<dynamic, dynamic>> _graphics_designs = [];
 //allservice from S data
   List all = all_service;
 
@@ -36,6 +36,8 @@ class _HomeScreenState extends State<HomeScreen> {
         _video_animation.add(__element);
       } else if (charcode.contains("WD")) {
         _web_designs.add(__element);
+      } else if (charcode.contains("GD")) {
+        _graphics_designs.add(__element);
       }
     });
   }
@@ -527,6 +529,8 @@ class _HomeScreenState extends State<HomeScreen> {
             popservice(_video_animation),
             bar("Web Design"),
             popservice(_web_designs),
+            bar("Graphics & Designs "),
+            popservice(_graphics_designs),
           ],
         )
       ],
