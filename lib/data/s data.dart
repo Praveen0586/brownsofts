@@ -2147,6 +2147,100 @@ By focusing on the top things web developers can do to increase page visibility,
     ]
   },
   {
+    "name": "UI UX Design For Websites",
+    "category": "Graphics Design",
+    "category_code": "GD0101",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/66556c7ab5bca.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 3,
+      "basic": {
+        "price": 99,
+        "cross cut": 199,
+        "delivery": 1,
+        "revisions": 2,
+        "restrictions": [
+          "User research and analysis",
+          "Up to 5 wireframes",
+          "Basic UI design",
+          "Up to 5 pages",
+          "Basic color scheme",
+          "Standard typography",
+          "Basic prototyping",
+          "Basic iconography",
+        ],
+      },
+      "standard": {
+        "price": 199,
+        "cross cut": 299,
+        "delivery": 3,
+        "revisions": 2,
+        "restrictions": [
+          "User research, analysis, and persona development",
+          "Up to 15 wireframes",
+          "Custom UI design",
+          "Up to 15 pages",
+          "Custom color scheme",
+          "Custom typography",
+          "Interactive prototyping",
+          "4 revisions",
+          "Custom iconography",
+          "User testing and feedback"
+        ],
+      },
+      "premium": {
+        "price": 349,
+        "cross cut": 449,
+        "delivery": 10,
+        "revisions": 8,
+        "restrictions": [
+          "Comprehensive user research, analysis, persona development, and user journey mapping",
+          "Up to 30 wireframes",
+          "Advanced custom UI design with animations",
+          "Up to 30 pages",
+          "Advanced custom color scheme with color psychology",
+          "Advanced custom typography with font licenses",
+          "High-fidelity interactive prototyping",
+          "Advanced custom iconography with illustrations",
+          "Comprehensive user testing, feedback, and A/B testing"
+        ],
+      }
+    },
+    "description": [
+      "Our UI/UX design ensures a beautiful, user-friendly, and results-driven website, guiding you from strategy to design, usability assessment, and optimization for maximum engagement and brand impact.",
+      "We create stunning, easy-to-navigate websites that drive engagement and conversions. From strategic planning and user research to seamless UI/UX design and usability testing, we ensure your website meets industry standards. Don't settle for average—partner with us to unlock your website’s full potential!",
+      {
+        "topics": [
+          "Here's what's inside",
+          "The Benefits",
+        ],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        "Here's what's inside":
+            """\u25CF\t\x1BStrategic Meeting\x1B: We'll figure out the characteristics of your ideal user and develop a website strategy that targets them specifically.
+
+\u25CF\t\x1BWebsite Sketch\x1B: You won't have any trouble surfing your website because of our clear and straightforward structure.
+
+\u25CF\t\x1BStunning Design\x1B: Our graphics designers will produce a user interface that appeals to your audience, is visually stunning, and stays true to your brand. This may include custom graphic design elements to make your website stand out.
+
+\u25CF\t\x1BAssessing Usability\x1B: To create a seamless experience, we can identify and fix problems using honest user feedback.
+
+\u25CF\t\x1BDesign Glue\x1B: We will optimize your website to its full potential based on user insights and innovative infographic ideas. This may involve altering both UI/UX design and custom graphic design.""",
+        "The Benefits":
+            """\u25CF\tMaintain visitor engagement with an easy-to-navigate website.
+
+\u25CF\tSee your website turn into a powerful source of leads.
+
+\u25CF\tEnsure your online presence is intense and accurately represents your unique brand identity.
+
+\u25CF\tMake a lasting impression with a website that sets the standard for user-centric design in your industry.
+
+\u25CF\tWe make sure your website's user-friendliness is top-notch while utilizing the best design sites for inspiration. With our focus on user-centric design and creative poster design, we help you leave a lasting impact."""
+      }
+    ]
+  },
+  {
     "name": "CMS Websites",
     "category": "Web Design",
     "category_code": "WD0304",
@@ -2257,7 +2351,502 @@ By focusing on the top things web developers can do to increase page visibility,
       }
     ]
   },
+  {
+    "name": "UI UX Design for Mobile Apps",
+    "category": "Graphics Design",
+    "category_code": "GD0102",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/66505d04ef6b7.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 3,
+      "basic": {
+        "price": 99,
+        "cross cut": 199,
+        "delivery": 1,
+        "revisions": 1,
+        "restrictions": [
+          "User research and analysis",
+          "Up to 5 wireframes",
+          "Basic UI design",
+          "Up to 5 screens",
+          "Basic color scheme",
+          "Standard typography",
+          "Basic prototyping",
+        ],
+      },
+      "standard": {
+        "price": 149,
+        "cross cut": 249,
+        "delivery": 3,
+        "revisions": 2,
+        "restrictions": [
+          "User research, analysis, and persona development",
+          "Up to 15 wireframes",
+          "Custom UI design",
+          "Up to 15 screens",
+          "Custom color scheme",
+          "Custom typography",
+          "Interactive prototyping",
+          "Custom iconography",
+          "User testing and feedback",
+        ],
+      },
+      "premium": {
+        "price": 249,
+        "cross cut": 349,
+        "delivery": 7,
+        "revisions": 5,
+        "restrictions": [
+          "Comprehensive user research, analysis, persona development, and user journey mapping",
+          "Up to 30 wireframes",
+          "Advanced custom UI design with animations",
+          "Up to 30 screens",
+          "Advanced custom color scheme with color psychology",
+          "Advanced custom typography with font licenses",
+          "High-fidelity interactive prototyping",
+          "Advanced custom iconography with illustrations",
+          "Comprehensive user testing, feedback, and A/B testing",
+        ],
+      }
+    },
+    "description": [
+      "Want to dominate the mobile app market? We create stunning, user-friendly designs that make your app shine!",
+      "Want your app to stand out? Our UI/UX experts craft sleek, engaging designs that captivate users and boost performance. With seamless integration and cutting-edge solutions, we bring your vision to life. Let’s elevate your app—contact us today!",
+      {
+        "topics": [
+          "Want to dominate the mobile app market?",
+          "With our UI/UX Design for Mobile Apps service, you can expect",
+          "Customized Design Solutions",
+          "Iterative Prototyping",
+          "Seamless Integration"
+        ],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        "Want to dominate the mobile app market?":
+            "Crafting a seamless and engaging user experience is paramount to the success of your mobile application in today’s digital era. Our UI/UX design agency specializes in delivering top-tier solutions that captivate your audience and raise your app above the competition.",
+        "With our UI/UX Design for Mobile Apps service, you can expect":
+            "Expert Consultation: Our skilled UI and UX designers will collaborate closely with you to understand your app’s unique vision, target audience, and business objectives. Through in-depth consultations, UI and UX designers ensure that every design decision aligns perfectly with your goals, setting the stage for a successful app launch.",
+        "Customized Design Solutions":
+            "Leveraging the latest trends and industry best practices, we create stunning visual graphic interfaces and intuitive user flows that improve usability and drive engagement. Our motion graphics designs are tailored to reflect your brand’s identity, ensuring consistency and fostering user trust.",
+        "Iterative Prototyping":
+            "We believe in an iterative digital design process that prioritizes user feedback and testing. With rapid prototyping, we refine and iterate on designs until we achieve an optimal user experience that meets and exceeds your expectations.",
+        "Seamless Integration":
+            """Our UI/UX design agency seamlessly integrates our digital designs into your app development workflow, working with your development team to ensure a smooth transition from design to implementation.
+
+By choosing our UI/UX Design agency for Mobile Apps, you invest in a partnership that delivers exceptional results that resonate with your target audience. Stay ahead and improve your mobile app’s performance with our expert design solutions. Contact us today to learn more and take your app to new heights."""
+      }
+    ]
+  },
+  {
+    "name": "Image Background Removal Services",
+    "category": "Graphics Design",
+    "category_code": "GD0201",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/66505b2d32be9.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 3,
+      "basic": {
+        "price": 149,
+        "cross cut": 249,
+        "delivery": 2,
+        "revisions": 2,
+        "restrictions": [
+          "Background removal for up to 20 images",
+          "Basic background removal",
+          "Basic edge refinement",
+          "Transparent background creation",
+        ],
+      },
+      "standard": {
+        "price": 259,
+        "cross cut": 350,
+        "delivery": 3,
+        "revisions": 2,
+        "restrictions": [
+          "Background removal for up to 50 images",
+          "Advanced background removal (complex images)",
+          "Detailed edge refinement",
+          "Transparent background creation",
+          "Background replacement (simple)",
+          "Shadow and reflection effects",
+          "Image optimization for e-commerce"
+        ],
+      },
+      "premium": {
+        "price": 399,
+        "cross cut": 499,
+        "delivery": 7,
+        "revisions": 4,
+        "restrictions": [
+          "Background removal for up to 100 images",
+          "Premium background removal (highly complex images)",
+          "Advanced edge refinement",
+          "Transparent background creation",
+          "Background replacement (complex)",
+          "Advanced shadow and reflection effects",
+          "Image optimization for e-commerce",
+        ],
+      }
+    },
+    "description": [
+      "Transform your visuals effortlessly with our expert Image Background Removal Services for crisp, professional results!",
+      "Want flawless, distraction-free images? Our Background Removal Services cater to photographers, e-commerce businesses, and designers, ensuring precision editing, bulk processing, and round-the-clock support. With strict privacy measures and a quality guarantee, we deliver perfection in every pixel. Contact us today for an affordable package!",
+      {
+        "topics": [
+          "Are you excited to transform your visuals with the Image Background Removal Services Package?",
+          "Precision Editing",
+          "Why choose us?",
+        ],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        "Are you excited to transform your visuals with the Image Background Removal Services Package?":
+            """In any case, save your valuable time. Our graphic design services are designed for photographers, e-commerce businesses, and graphic designers who demand perfection in every pixel.
+
+Our team is working safely; we don't share your image on unsecured platforms. Say goodbye to background distractions and hello to clean, professional images that will take your work to the next level. We know how to remove someone from a photo. Trust our photo editing company to deliver outstanding results every time.
+
+Our experienced creators team up with graphic designers to share fresh design ideas for graphic designers.""",
+        "Precision Editing":
+            """Our skilled editors use advanced techniques to remove backgrounds with care and attention to detail, ensuring clean, crisp edges every time.
+
+Bulk Processing Large volumes? No problem! Our graphic artist handle bulk orders efficiently, delivering consistent quality across all images.
+
+Help Around-the-Clock, Our graphics design staff is here to help you with any questions or special requests you may have at any time.""",
+        "Why choose us?":
+            """With years of experience, our team has honed the art of background removal to perfection, including the skill of removing someone from a photo.
+
+Quality Assurance We guarantee satisfaction with a rigorous quality check process before delivering the final images.
+
+Your pictures are safe with us. We maintain strict privacy and data protection standards.
+
+Contact us for an affordable package and see the difference that expert background removal can make."""
+      }
+    ]
+  },
+  {
+    "name": "Album Designing for Weddings & Real Estate",
+    "category": "Graphics Design",
+    "category_code": "GD0202",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/66505a11bb31a.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 3,
+      "basic": {
+        "price": 99,
+        "cross cut": 199,
+        "delivery": 1,
+        "revisions": 0,
+        "restrictions": [
+          "1 custom album design (up to 10 pages)",
+          "Up to 20 images",
+          "Basic layout design",
+          "Basic branding alignment",
+          "Basic color correction"
+        ],
+      },
+      "standard": {
+        "price": 179,
+        "cross cut": 270,
+        "delivery": 3,
+        "revisions": 2,
+        "restrictions": [
+          "1 custom album design (up to 20 pages)",
+          "Up to 40 images",
+          "Custom layout design",
+          "Detailed branding alignment",
+          "Extended color correction",
+          "Custom illustrations and icons"
+        ],
+      },
+      "premium": {
+        "price": 299,
+        "cross cut": 399,
+        "delivery": 5,
+        "revisions": 4,
+        "restrictions": [
+          "1 custom album design (up to 40 pages)",
+          "Up to 80 images",
+          "Advanced layout design with custom graphics",
+          "Unlimited revisions per design",
+          "Full branding alignment with brand guidelines",
+          "Comprehensive color correction",
+          "Advanced custom illustrations and icons",
+        ],
+      }
+    },
+    "description": [
+      "Our design package blends meaningful memories with marketable visuals, offering professional graphic design services for weddings, real estate, and business needs, ensuring stunning, lasting impressions.",
+      "We specialize in preserving cherished moments and enhancing brand appeal through expert graphic design. Whether it's an elegant wedding album, eye-catching real estate visuals, or polished marketing materials, our team ensures quality and creativity. Let us bring your vision to life—contact us today!",
+      {
+        "topics": ["Capture Memories That Last a Lifetime!", "What We Offer"],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        "Capture Memories That Last a Lifetime!":
+            """This \x1Bdesign package\x1B caters to both the meaningful and the marketable. We offer professional graphic design services to preserve your most cherished memories, ensuring they are beautifully captured for future generations.
+
+\x1BWedding Memories\x1B: With our elegantly designed album, unfold the tale of your memorable wedding day. With our expert photo editing services, we will gather your photos to create a stunning visual story you can cherish for years.
+
+\x1BReal Estate Listings\x1B: Present homes attractively and strikingly. To attract potential customers, our designers will produce eye-catching digital business card layouts showcasing each space's greatest attributes. For added impact, we can design posters or banners.""",
+        "What We Offer":
+            """\x1BProfessional Image\x1B Curation and Selection: With our photo editing services, we'll help you select the images that best tell your story. 
+
+\x1BElegant and Modern Design\x1B: Our graphic designers will create a unique album layout that matches your style. Do you need a new design for your business cards or presentation? That's what we do!
+
+\x1BPremium Materials\x1B: We ensure your album is a treasured memento using only the finest materials.
+
+\x1BFast Turnaround and Editing\x1B: Receive your album as soon as possible and have the chance to edit it until it's flawless"""
+      }
+    ]
+  },
+  {
+    "name": "Photo Editing, Retouching & Enhancement",
+    "category": "Graphics Design",
+    "category_code": "GD0203",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/6650583c5ba6b.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 3,
+      "basic": {
+        "price": 39,
+        "cross cut": 99,
+        "delivery": 1,
+        "revisions": 1,
+        "restrictions": [
+          "Basic photo editing (up to 10 images)",
+          "Basic retouching (skin smoothing, blemish removal)",
+          "Basic enhancement (brightness, contrast, saturation adjustments)",
+          "Basic object removal",
+        ],
+      },
+      "standard": {
+        "price": 59,
+        "cross cut": 69,
+        "delivery": 5,
+        "revisions": 5,
+        "restrictions": [
+          "Standard photo editing (up to 20 images)",
+          "Advanced retouching (detailed skin retouching, color correction)",
+          "Advanced enhancement (HDR, exposure correction)",
+          "Advanced object removal",
+          "Background enhancement",
+        ],
+      },
+      "premium": {
+        "price": 129,
+        "cross cut": 229,
+        "delivery": 4,
+        "revisions": 3,
+        "restrictions": [
+          "Premium photo editing (up to 50 images)",
+          "Expert retouching (high-end skin retouching, color grading)",
+          "Expert enhancement (creative effects, compositing)",
+          "Expert object removal",
+          "Background replacement",
+        ],
+      }
+    },
+    "description": [
+      "Our expert photo editing services transform ordinary images into stunning visuals with professional enhancements, tailored solutions, and quick delivery to meet your creative or business needs.",
+      "Enhance your images with our expert photo editing services, offering color correction, background removal, and tailored enhancements for photographers, businesses, and individuals. Whether it's portrait retouching, product imagery, or marketing visuals, we ensure high-quality results that captivate audiences. Contact us today to elevate your photos with professional editing!",
+      {
+        "topics": [
+          "Professional Editing",
+          "Tailored Solutions",
+          "Unlock Potential",
+          "Why Us?",
+          "Ready to Enhance Your Images?"
+        ],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        "Professional Editing":
+            "Our services cover a range of techniques, including colour correction, cropping, resizing, background removal, etc. Our skilled editors bring your vision to life, enhancing lighting, removing imperfections, and ensuring a cohesive look across your portfolio.",
+        "Tailored Solutions":
+            "From portrait retouching to product image enhancement, we offer customized solutions to meet every need. Whether you're a fashion brand perfecting campaign imagery or a real estate agent showcasing properties, our editing services from a top design studio in Austin exceed expectations.",
+        "Unlock Potential":
+            "With the proper photo editing, your images become powerful storytelling tools. Whether for marketing materials, personal projects, or professional portfolios, our services help your images stand out in the digital landscape, captivating audiences effectively.",
+        "Why Us?":
+            """\x1BExperience\x1B: Our team brings years of industry expertise and creativity to every project.
+
+\x1BQuality\x1B: We pride ourselves on delivering outstanding results that exceed expectations.
+
+\x1BEfficiency\x1B: Timely delivery is our priority, and graphic designers ensure that your edited images are promptly delivered to meet your deadlines.""",
+        "Ready to Enhance Your Images?":
+            "Whether you're a professional or amateur photographer, business owner, or individual, our photo editing services are here to improve your images. Contact us today to discover how we can help you achieve your goals through expert photo editing"
+      }
+    ]
+  },
+  {
+    "name": "Invitation Cards, Postcards & Posters Creation",
+    "category": "Graphics Design",
+    "category_code": "GD0301",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/665095de11397.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 3,
+      "basic": {
+        "price": 29,
+        "cross cut": 99,
+        "delivery": 1,
+        "revisions": 1,
+        "restrictions": [
+          "1 invitation card design",
+          "1 postcard design",
+          "1 poster design",
+          "Basic layout design",
+          "Basic branding alignment",
+        ],
+      },
+      "standard": {
+        "price": 119,
+        "cross cut": 199,
+        "delivery": 3,
+        "revisions": 3,
+        "restrictions": [
+          "2 invitation card designs",
+          "2 postcard designs",
+          "2 poster designs",
+          "Custom layout design",
+          "Custom illustrations and icons",
+          "Detailed branding alignment",
+          "Mockups for invitation, postcard, and poster presentation",
+        ],
+      },
+      "premium": {
+        "price": 299,
+        "cross cut": 320,
+        "delivery": 5,
+        "revisions": 5,
+        "restrictions": [
+          "3 invitation card designs",
+          "3 postcard designs",
+          "3 poster designs",
+          "Advanced layout design with graphics and illustrations",
+          "Advanced custom illustrations and icons",
+          "Full branding alignment with brand",
+          "Advanced mockups for invitation, postcard, and poster presentation",
+        ],
+      }
+    },
+    "description": [
+      "Our expert graphic design services create stunning invitations, postcards, posters, and business cards, ensuring high-quality, impactful visuals for events and marketing needs.",
+      "Elevate your events and branding with our professional graphic design services, offering custom invitations, postcards, posters, and business cards. Whether for personal celebrations or business promotions, we ensure eye-catching, print-ready designs with fast turnaround times. Contact us today to create visually striking materials that leave a lasting impression!",
+      {
+        "topics": [
+          "Invitation Cards and Postcards Design",
+          "Posters",
+          "Business card design",
+          "Why choose us?"
+        ],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        "Invitation Cards and Postcards Design":
+            """\u25CF\tIt is ideal for birthday parties, weddings, corporate functions, and celebrations.
+
+\u25CF\tStart with a custom design or select from a range of our pre-made themes.
+
+\u25CF\tWe'll handle your branding and event details consistently.""",
+        "Posters":
+            """\u25CF\tWhether you're making a statement piece, advertising, or an announcement, we will make you present your message in a big, impressionable way.
+
+\u25CF\tWe offer various poster design options to ensure your poster is the right size and format for maximum visibility.""",
+        "Business card design":
+            "\u25CF\tWith a polished and eye-catching business card created by our team, you can make a great first impression on your client.",
+        "Why choose us?":
+            """\u25CF\tExperienced designers who understand the power of the impact that images can have.
+
+\u25CF\tFast turnaround times are needed to meet your deadlines.
+
+\u25CF\tWe provide high-quality files that are ready to print.
+
+\u25CF\tWe offer reasonable prices that will stay within your budget.
+
+Get our assistance in producing visually stunning designs for your business with our complete graphic design service packages, which include business cards, postcards, posters, and invitations that grab attention and make an impression."""
+      }
+    ]
+  },
+  {
+    "name": "Labels & Packaging Design",
+    "category": "Graphics Design",
+    "category_code": "GD0302",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/66509312044ed.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 3,
+      "basic": {
+        "price": 39,
+        "cross cut": 99,
+        "delivery": 1,
+        "revisions": 1,
+        "restrictions": [
+          "1 custom label & Packaging design",
+          "JPEG, PNG, PDF",
+          "Basic branding alignment",
+        ],
+      },
+      "standard": {
+        "price": 59,
+        "cross cut": 129,
+        "delivery": 2,
+        "revisions": 2,
+        "restrictions": [
+          "2 custom label & Packaging design",
+          "JPEG, PNG, PDF, Editable Source Files (AI, PSD)",
+          "Detailed branding alignment",
+          "Mockups for 2 product variations",
+          "3D mockups and realistic render",
+        ],
+      },
+      "premium": {
+        "price": 149,
+        "cross cut": 199,
+        "delivery": 5,
+        "revisions": 4,
+        "restrictions": [
+          "3 custom label & Packaging design",
+          "JPEG, PNG, PDF, Editable Source Files (AI, PSD)",
+          "Full branding alignment with brand guidelines",
+          "Mockups for 4 product variations",
+          "Advanced 3D mockups and realistic renders",
+        ],
+      }
+    },
+    "description": [
+      "Transform your brand with stunning labels and packaging that captivate customers, boost sales, and create a powerful market presence with our expert design services.",
+      "Make your products impossible to ignore with eye-catching labels and packaging that tell your brand’s story. Our expert designers craft visually striking, functional designs that enhance brand recognition, increase sales, and elevate customer experience. Let’s bring your vision to life—contact us today for packaging that stands out!",
+      {
+        "topics": [
+          "Tell your brand story with us!",
+          "We can help you with",
+          "Benefits",
+          "Next-level product presentation!"
+        ],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        "Tell your brand story with us!":
+            "Eye-catching labels and packaging are crucial for attracting customers and increasing sales in today's aggressive marketplace. Our graphic design services package, in the hands of our team of specialist graphic designers, will create unique and practical designs to build your brand and make your product desirable.",
+        "We can help you with":
+            """\u25CF\t\x1BLabels\x1B: We will create informative and aesthetically pleasing labels that highlight your product's features, convey your brand message, and comply with all legal requirements.
+
+\u25CF\t\x1BPackaging\x1B: We'll design packaging that is both functional and visually attractive, whether for bottles, tubes, bags, or boxes. We'll take into account elements like size, shape, and material to ensure your product is well-presented and protected.
+
+\u25CF\t\x1BBrand Consistency\x1B: Our goal is to create a consistent and identifiable visual presence for your brand across all stages by logically pairing your labels and packaging with your current brand identity.""",
+        "Benefits":
+            """\u25CF\t\x1BHigher brand awareness\x1B: Customers are more likely to remember your brand when it is presented appealingly.
+
+\u25CF\t\x1BIncreased sales\x1B: Eye-catching packaging can persuade consumers to choose your product over rivals.
+
+\u25CF\t\x1BBetter customer experience\x1B: We provide clear and informative labels to create a positive user experience.""",
+        "Next-level product presentation!":
+            """Our broad graphic design services include branding packages and logo packages design. To fit your needs and budget, we provide a range of branding and logo packages that guarantee your brand identity is robust and consistent across all platforms."""
+      }
+    ]
+  }
 ];
-//wd0304 has description pending 
+//wd0304 has description pending
 //radio \u25CF\t
 // bold \x1B
