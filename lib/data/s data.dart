@@ -2845,6 +2845,169 @@ Get our assistance in producing visually stunning designs for your business with
             """Our broad graphic design services include branding packages and logo packages design. To fit your needs and budget, we provide a range of branding and logo packages that guarantee your brand identity is robust and consistent across all platforms."""
       }
     ]
+  },
+  {
+    "name": "Craft Memorable Flyers ",
+    "category": "Graphics Design",
+    "category_code": "GD0303",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/665056c99c205.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 3,
+      "basic": {
+        "price": 39,
+        "cross cut": 99,
+        "delivery": 2,
+        "revisions": 1,
+        "restrictions": [
+          "1 flyer design (single-sided)",
+          "Custom layout design",
+          "Basic branding alignment",
+          "Basic color palette",
+        ],
+      },
+      "standard": {
+        "price": 99,
+        "cross cut": 199,
+        "delivery": 3,
+        "revisions": 2,
+        "restrictions": [
+          "2 flyer designs (single-sided)",
+          "Custom layout design",
+          "Detailed branding alignment",
+          "Extended color palette",
+          "Custom illustrations and icons",
+        ],
+      },
+      "premium": {
+        "price": 149,
+        "cross cut": 249,
+        "delivery": 4,
+        "revisions": 4,
+        "restrictions": [
+          "3 flyer designs (double-sided)",
+          "Advanced layout design with graphics and illustrations",
+          "Full branding alignment with brand guidelines",
+          "Comprehensive color palette",
+          "Advanced custom illustrations and icons"
+        ],
+      }
+    },
+    "description": [
+      "Get professional, budget-friendly flyer design services to boost brand awareness, enhance marketing, and drive engagement—contact us today!",
+      "Looking for affordable and professional flyer design services? Our package offers eye-catching designs, compelling copy, and strategic marketing to enhance brand awareness and engagement. Contact us today to create flyers that leave a lasting impression!",
+      {
+        "topics": [
+          "Benefits",
+          "Who is this package for?",
+          "Ready to create flyers that get results?",
+        ],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        "Benefits":
+            """\u25CF\t\x1BIncreased Brand Awareness\x1B: Eye-catching flyers attract attention and boost brand recognition.
+
+\u25CF\tImproved Marketing Results Compelling messages drive engagement and conversions.
+
+\u25CF\t\x1BCost-Effective Marketing\x1B: Flyers offer a high return on investment for targeted marketing campaigns.
+
+\u25CF\tProfessional Representation Well-designed flyers project a professional image for your business.""",
+        "Who is this package for?":
+            """This package is perfect for businesses of all sizes looking to create flyers for diverse purposes.
+
+\u25CF\tEvent Promotion  Generates excitement and drives attendance for your next event.
+
+\u25CF\tProduct launches announce exciting new products and capture customer interest.
+
+\u25CF\tSpecial offers and promotions Inform your audience about sales, discounts, and special deals.
+
+\u25CF\tLocal Marketing Target your local community and increase brand awareness in your area.""",
+        "Ready to create flyers that get results?":
+            """Let us help you craft flyers that leave a lasting impression. Our "Craft Memorable Flyers" package provides the perfect blend of strategic design, compelling copywriting, and professional execution to elevate your marketing efforts. 
+
+Contact us today to discuss your project and get started!"""
+      }
+    ]
+  },
+  {
+    "name": "Brochures and Infographics Designs",
+    "category": "Graphics Design",
+    "category_code": "GD0304",
+    "image":
+        "https://brownsofts.com/assets/img/services/slider-images/6650545d7d4d9.jpg",
+    "FAQ": [],
+    "price": {
+      "count": 3,
+      "basic": {
+        "price": 29,
+        "cross cut": 99,
+        "delivery": 1,
+        "revisions": 1,
+        "restrictions": [
+          "1 Brochure Design (up to 2 pages)",
+          "1 infographic design",
+          "JPEG, PNG, PDF",
+          "Basic color palette",
+          "Basic layout design",
+          "Basic branding alignment",
+        ],
+      },
+      "standard": {
+        "price": 79,
+        "cross cut": 129,
+        "delivery": 2,
+        "revisions": 1,
+        "restrictions": [
+          "1 Brochure Design (up to 4 pages)",
+          "2 infographic designs",
+          "JPEG, PNG, PDF, Editable Source Files (AI, PSD)",
+          "Extended color palette",
+          "Custom layout design",
+          "Detailed branding alignment",
+          "Custom illustrations and icons",
+          "Mockups for brochure presentation",
+        ],
+      },
+      "premium": {
+        "price": 109,
+        "cross cut": 209,
+        "delivery": 5,
+        "revisions": 4,
+        "restrictions": [
+          " 1 Brochure Design (up to 8 pages)",
+          "3 infographic designs",
+          "JPEG, PNG, PDF, Editable Source Files (AI, PSD)",
+          "Comprehensive color palette",
+          "Advanced layout design",
+          "Full branding alignment with brand guidelines",
+          "Advanced custom illustrations and icons",
+          "Advanced mockups for brochure presentation",
+        ],
+      }
+    },
+    "description": [
+      "Enhance your brand with our expert graphic design services, from brochures to infographics, ensuring impactful communication in today's dynamic market.",
+      "Unlock the potential of graphic design with our specialized services in branding, brochures, and infographics. We craft compelling visual stories that captivate audiences and strengthen brand identity. Contact us today to elevate your communication strategy and stand out in the marketplace!",
+      {
+        "topics": [
+          "Brochures: Your Brand's Narrative in Print",
+          "Infographics: Data into Visual Stories",
+          "The power of integration",
+          "Boost your communication"
+        ],
+        "phase1":
+            """Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.""",
+        "Brochures: Your Brand's Narrative in Print":
+            """Brochures transcend paper, encapsulating your brand's essence and evolution. Our custom brochures, from trifold brochures to flyers, ensure your brand story resonates with your audience, forging tangible connections beyond the digital marketplace.""",
+        "Infographics: Data into Visual Stories":
+            """In a world of complex data, infographics are paramount. Our graphic design agency excels at crafting visually impactful infographics that communicate crucial messages, empowering and engaging your audience with essential information.""",
+        "The power of integration":
+            """While brochures and infographics offer unique strengths, integrating them into your marketing strategy amplifies their impact. Our branding expertise ensures seamless integration, creating cohesive visual experiences across all touchpoints and reinforcing your brand identity and message.""",
+        "Boost your communication":
+            """Effective communication is crucial in today's fast-paced world. Our graphic design services empower you to unlock the potential of brochures and infographics, helping you stand out in a crowded marketplace. Ready to Boost your brand's communication strategy? Contact us today to achieve your goals through expert graphic design."""
+      }
+    ]
   }
 ];
 //wd0304 has description pending
