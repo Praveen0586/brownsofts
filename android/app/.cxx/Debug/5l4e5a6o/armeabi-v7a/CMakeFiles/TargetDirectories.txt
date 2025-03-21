@@ -1,0 +1,2 @@
+D:/FLUT/New Projects/Company/Brownsofts/brownsofts/android/app/.cxx/Debug/5l4e5a6o/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/FLUT/New Projects/Company/Brownsofts/brownsofts/android/app/.cxx/Debug/5l4e5a6o/armeabi-v7a/CMakeFiles/rebuild_cache.dir

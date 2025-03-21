@@ -1,0 +1,2 @@
+D:/FLUT/New Projects/Company/Brownsofts/brownsofts/android/app/.cxx/RelWithDebInfo/6d556z66/x86/CMakeFiles/edit_cache.dir
+D:/FLUT/New Projects/Company/Brownsofts/brownsofts/android/app/.cxx/RelWithDebInfo/6d556z66/x86/CMakeFiles/rebuild_cache.dir

@@ -14,9 +14,9 @@ import "package:google_sign_in/google_sign_in.dart";
 import 'package:http/http.dart' as http;
 import "package:flutter_dotenv/flutter_dotenv.dart";
 
-void main()  {
+void main()async {
   WidgetsFlutterBinding.ensureInitialized;
- // await dotenv.load(fileName: ".env");
+   await dotenv.load(fileName: ".env");
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
     debugShowMaterialGrid: false,
