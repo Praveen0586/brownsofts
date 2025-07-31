@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:brownsofts/activities/API/api.dart';
+import 'package:brownsofts/activities/API/apis.dart';
 import 'package:brownsofts/activities/authentivation/create_user.dart';
 import 'package:brownsofts/activities/models/remember_user.dart';
 import 'package:brownsofts/activities/models/user.dart';
@@ -35,11 +35,17 @@ class _SignInPageState extends State<SignInPage> {
 
   Future login_user() async {
     try {
-      var send = await http.post(Uri.parse(API.loginuser), body: {
-        "user_email": entered_email.toString(),
-        "user_password": entered_password.toString(),
-      });
-      // Fluttertoast.showToast(msg: "${send.statusCode}");
+      Fluttertoast.showToast(msg: "$entered_email $entered_password");
+      var send = await http.post(Uri.parse(BrownAPI.logIn),
+          body: jsonEncode({
+            "user_email": entered_email.toString(),
+            "user_password": entered_password.toString(),
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          });
+
+      Fluttertoast.showToast(msg: "${send.statusCode}");
       if (send.statusCode == 200) {
         Fluttertoast.showToast(msg: "2");
         var resBody = jsonDecode(send.body);
@@ -47,17 +53,17 @@ class _SignInPageState extends State<SignInPage> {
           // Fluttertoast.showToast(msg: "${entered_email},${entered_password}");
           // Fluttertoast.showToast(msg: "You Logged in sucesfuly");
           // Fluttertoast.showToast(msg: "${resBody['userData']}");
-
-          var datafromSQL = resBody['userData'];
+          print(resBody);
+          var datafromSQL = resBody['data'];
 
           //save my user credentials
 
           Remembrprefs.saveMyUserInfo(User(
-              name: datafromSQL["user_name"],
-              user_email: datafromSQL["user_email"],
-              user_password: datafromSQL["user_password"],
+              name: datafromSQL["username"],
+              user_email: datafromSQL["email_address"],
+              user_password: datafromSQL["password"],
               google_login_id: "App Login",
-              id: datafromSQL["id"]));
+              id: datafromSQL["id"].toString()));
           User? current;
           current = await Remembrprefs.readCurrentUser();
 
@@ -66,8 +72,8 @@ class _SignInPageState extends State<SignInPage> {
           //     () => Navigator.of(context)
           //         .push(MaterialPageRoute(builder: (ctx) => Homescreen())));
 
-          Future.delayed(Duration(milliseconds: 100),
-              () => Get.off(const MainScreen()));
+          Future.delayed(
+              Duration(milliseconds: 100), () => Get.off(const MainScreen()));
         } else {
           Fluttertoast.showToast(msg: "User Email Id and passwod not exist");
         }

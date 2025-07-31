@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:brownsofts/activities/API/api.dart';
+import 'package:brownsofts/activities/api/apis.dart';
 import 'package:brownsofts/activities/authentivation/sign_In.dart';
 import 'package:brownsofts/activities/models/remember_user.dart';
 import 'package:brownsofts/activities/models/user.dart';
@@ -31,7 +31,6 @@ class _CreateAccountPage extends State<CreateAccountPage> {
   final formkey1 = GlobalKey<FormState>();
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     name.dispose();
     email.dispose();
@@ -42,17 +41,25 @@ class _CreateAccountPage extends State<CreateAccountPage> {
   Future Create_user() async {
     try {
       print("sending started");
-      var send = await http.post(Uri.parse(API.createuser), body: {
-        "user_name": e_name,
-        "user_email": e_email.toString(),
-        "user_password": e_pass1.toString(),
-      });
-      Fluttertoast.showToast(msg: "${send.statusCode}");
+      print("$e_name, $e_email, $e_pass1");
+      var send = await http.post(
+        Uri.parse(BrownAPI.createUser),
+        body: jsonEncode({
+          "user_name": e_name.toString(),
+          "user_email": e_email.toString(),
+          "user_password": e_pass1.toString(),
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      );
+      Fluttertoast.showToast(msg: "${send.statusCode} Status Code");
       if (send.statusCode == 200) {
         Fluttertoast.showToast(msg: "2");
         var resBody = jsonDecode(send.body);
         if (resBody["success"]) {
-          Fluttertoast.showToast(msg: "You Logged in sucesfuly");
+          Fluttertoast.showToast(msg: "You Logged in sucesfuly");      print("$e_name, $e_email, $e_pass1");
+
           //save my user credentials
           Remembrprefs.saveMyUserInfo(
               User(name: e_name, user_email: e_email, user_password: e_pass1));

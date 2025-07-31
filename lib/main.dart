@@ -1,9 +1,8 @@
 import "dart:convert";
 
-import "package:brownsofts/activities/API/api.dart";
+import "package:brownsofts/activities/API-old/api.dart";
 import "package:brownsofts/activities/authentivation/create_user.dart";
 import "package:brownsofts/activities/authentivation/google_signin.dart";
-// import "package:brownsofts/authentivation/log_in.dart";
 import "package:brownsofts/activities/authentivation/sign_In.dart";
 import "package:brownsofts/activities/models/remember_user.dart";
 import "package:brownsofts/main%20screen.dart";
@@ -14,9 +13,9 @@ import "package:google_sign_in/google_sign_in.dart";
 import 'package:http/http.dart' as http;
 import "package:flutter_dotenv/flutter_dotenv.dart";
 
-void main()async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized;
-   await dotenv.load(fileName: ".env");
+  await dotenv.load(fileName: ".env");
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
     debugShowMaterialGrid: false,
@@ -35,7 +34,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Future googleLogintoSQL(GoogleSignInAccount? user) async {
+  Future googleLogintoSQL(
+    GoogleSignInAccount? user) async {
     try {
       var send = await http.post(Uri.parse(API.googlelogin), body: {
         "user_name": user!.displayName.toString(),
@@ -49,11 +49,7 @@ class _HomePageState extends State<HomePage> {
         var resBody = jsonDecode(send.body);
         if (resBody["success"]) {
           Fluttertoast.showToast(msg: "You Logged in sucesfuly");
-          // Future.delayed(
-          //     const Duration(microseconds: 1000),
-          //     () => Navigator.of(context).push(
-          //         MaterialPageRoute(builder: (ctx) => const Homescreen())));
-
+ 
           Future.delayed(
               Duration(milliseconds: 100), () => Get.off(const MainScreen()));
           const LinearProgressIndicator();
@@ -76,7 +72,6 @@ class _HomePageState extends State<HomePage> {
                 height: MediaQuery.of(context).size.height / 1.8,
                 child: Center(
                   child: SizedBox(
-                    //  height: MediaQuery.of(context).size.height ,
                     width: 350,
                     child: Image.asset(
                       "assets/logo.png",
