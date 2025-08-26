@@ -1,7 +1,9 @@
 import 'package:google_sign_in/google_sign_in.dart';
 
 class Google_Login {
-  static final google_sign_in = GoogleSignIn();
+  static final google_sign_in = GoogleSignIn(
+    scopes: ['email'],
+  );
   static Future<GoogleSignInAccount?> login() => google_sign_in.signIn();
   static Future signOut() => google_sign_in.signOut();
 }

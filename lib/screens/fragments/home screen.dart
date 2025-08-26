@@ -228,7 +228,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: ImageSlideshow(
                 width: double.infinity,
                 height: 200, indicatorBottomPadding: -20,
-                initialPage: 0,
+                initialPage: 1,
                 indicatorColor: Colors.transparent, // Hide internal indicators
                 autoPlayInterval: 3000, // Duration in milliseconds
                 isLoop: true,
@@ -240,6 +240,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Image.network(
                     "https://brownsofts.com/assets/img/services/slider-images/66502b53d85f3.jpg",
+                    fit: BoxFit.cover,
+                  ),
+                  Image.network(
+                    "https://www.brownsofts.com/assets/img/services/slider-images/66503e36c817f.jpg",
                     fit: BoxFit.cover,
                   ),
                 ],

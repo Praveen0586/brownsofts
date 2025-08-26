@@ -31,12 +31,14 @@ class _MainScreenState extends State<MainScreen> {
   retriving_data() async {
     var _current_user = await Remembrprefs.readCurrentUser();
 
-    uname.value = _current_user!.name;
-    uuser_email.value = _current_user.user_email;
-    uuser_password.value = _current_user.user_password!;
-    ugoogle_login_id.value = _current_user.google_login_id!;
-    uid.value = _current_user.id!;
-    print(uname.value);
+    if (_current_user != null) {
+      uname.value = _current_user.name;
+      uuser_email.value = _current_user.user_email;
+      uuser_password.value = _current_user.user_password ?? "";
+      ugoogle_login_id.value = _current_user.google_login_id ?? "";
+      uid.value = _current_user.id ?? "";
+      print(uname.value);
+    }
   }
 
   @override

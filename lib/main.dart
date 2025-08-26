@@ -1,6 +1,7 @@
 import "dart:convert";
 
 import "package:brownsofts/activities/API-old/api.dart";
+import "package:brownsofts/activities/api/api_calls.dart";
 import "package:brownsofts/activities/authentivation/create_user.dart";
 import "package:brownsofts/activities/authentivation/google_signin.dart";
 import "package:brownsofts/activities/authentivation/sign_In.dart";
@@ -34,22 +35,24 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Future googleLogintoSQL(
-    GoogleSignInAccount? user) async {
+  Future googleLogintoSQL(GoogleSignInAccount? user) async {
     try {
-      var send = await http.post(Uri.parse(API.googlelogin), body: {
-        "user_name": user!.displayName.toString(),
-        "user_email": user.email.toString(),
-        "user_login_id": user.id.toString(),
-        "user_login_type": user.runtimeType.toString()
-      });
+      print(
+          "glg ${user!.displayName} , ${user.email}, ${user.id} ,${user.runtimeType.toString()}");
+      var send = await http.post(Uri.parse(API.googlelogin),
+          body: jsonEncode({
+            "user_name": user!.displayName.toString(),
+            "user_email": user.email.toString(),
+            "user_login_id": user.id.toString(),
+            "user_login_type": user.runtimeType.toString()
+          }));
       Fluttertoast.showToast(msg: "${send.statusCode}");
       if (send.statusCode == 200) {
         Fluttertoast.showToast(msg: "2");
         var resBody = jsonDecode(send.body);
         if (resBody["success"]) {
           Fluttertoast.showToast(msg: "You Logged in sucesfuly");
- 
+
           Future.delayed(
               Duration(milliseconds: 100), () => Get.off(const MainScreen()));
           const LinearProgressIndicator();
@@ -118,19 +121,30 @@ class _HomePageState extends State<HomePage> {
                   height: MediaQuery.of(context).size.height * 0.07,
                   width: MediaQuery.of(context).size.width / 1.5,
                   child: OutlinedButton(
+                    onLongPress: () async {
+                      await Google_Login.signOut();
+                      Fluttertoast.showToast(msg: "Signed out successfully");
+                    },
                     onPressed: () async {
+                      // The button or action to trigger the sign-in
+// ...
+
                       var user = await Google_Login.login();
-                      //   Fluttertoast.showToast(
-                      //    msg:
-                      //      "${user!.displayName} ,\n ${user.email} ,\n${user.id} ,\n ${user.photoUrl} ,\n${user.displayName}");
 
-                      googleLogintoSQL(user);
+                      if (user == null) {
+                        Fluttertoast.showToast(
+                            msg: "Google Sign-In cancelled or failed.");
+                      } else {
+                        //here it is
+                        http.Response responseFrom =
+                              await ApiCalls().googleSignIn(user);
+                        print("here is the response ${responseFrom.body}");
 
-                      // if (user != null) {
-                      //   Fluttertoast.showToast(
-                      //       msg:
-                      //           "${user.displayName} ,\n ${user.email} ,\n${user.id} ,\n ${user.photoUrl} ,\n${user.serverAuthCode}");
-                      // }
+                        Fluttertoast.showToast(
+                            msg: "Signed in as: ${user.displayName}");
+
+                        print(user.toString());
+                      }
                     },
                     style: OutlinedButton.styleFrom(
                         side: BorderSide(

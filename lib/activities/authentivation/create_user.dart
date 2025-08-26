@@ -57,8 +57,10 @@ class _CreateAccountPage extends State<CreateAccountPage> {
       if (send.statusCode == 200) {
         Fluttertoast.showToast(msg: "2");
         var resBody = jsonDecode(send.body);
-        if (resBody["success"]) {
-          Fluttertoast.showToast(msg: "You Logged in sucesfuly");      print("$e_name, $e_email, $e_pass1");
+        Fluttertoast.showToast(msg: "${resBody}");
+        if (resBody["status"] == "success") {
+          Fluttertoast.showToast(msg: "You Logged in sucesfuly");
+          print("$e_name, $e_email, $e_pass1");
 
           //save my user credentials
           Remembrprefs.saveMyUserInfo(
@@ -72,6 +74,8 @@ class _CreateAccountPage extends State<CreateAccountPage> {
 
           Future.delayed(
               Duration(milliseconds: 100), () => Get.off(const MainScreen()));
+        } else if(resBody["status"] == "fail"){
+          Fluttertoast.showToast(msg: "${resBody["data"]["message"]}");
         }
       }
     } catch (e) {

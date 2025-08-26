@@ -14,7 +14,7 @@ class Remembrprefs {
   static Future<User?> readCurrentUser() async {
     User? currentUserData;
     SharedPreferences preferences = await SharedPreferences.getInstance();
-    String UserJsondata = await preferences.getString("Current User")!;
+    String UserJsondata = await preferences.getString("Current User") ?? "";
 
     Map<String, dynamic> curentMappeddata = jsonDecode(UserJsondata);
     currentUserData = User.fromJson(curentMappeddata);
