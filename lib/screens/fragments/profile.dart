@@ -1,5 +1,8 @@
 import 'package:brownsofts/activities/models/remember_user.dart';
+import 'package:brownsofts/activities/models/user.dart';
 import 'package:brownsofts/main.dart';
+import 'package:brownsofts/screens/conrollers/userdetailscontroller.dart';
+import 'package:brownsofts/screens/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,27 +16,13 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
   final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
-
-  RxString uname = "".obs;
-  RxString uuser_email = "".obs;
-  RxString uuser_password = "".obs;
-  RxString ugoogle_login_id = "".obs;
-  RxString uid = "".obs;
-  retriving_data() async {
-    var _current_user = await Remembrprefs.readCurrentUser();
-
-    uname.value = _current_user!.name;
-    uuser_email.value = _current_user.user_email;
-    uuser_password.value = _current_user.user_password!;
-    ugoogle_login_id.value = _current_user.google_login_id!;
-    uid.value = _current_user.id!;
-    print(uname.value);
-  }
-
+  late Userdetailscontroller userdetailscontroller;
   @override
   void initState() {
     // TODO: implement initState
-    retriving_data();
+    // retriving_data();
+    userdetailscontroller = Get.put(Userdetailscontroller());
+    userdetailscontroller.retriving_data();
     super.initState();
   }
 
@@ -58,17 +47,20 @@ class _ProfileState extends State<Profile> {
                 child: CircleAvatar(
                   maxRadius: 75,
                   backgroundColor: Colors.white,
-                  child: CircleAvatar(
-                    maxRadius: 70,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(100),
-                      child: Image.network(
-                        "https://pbs.twimg.com/profile_images/1653626498828619776/D8WR6HGT_400x400.jpg",
-                      ),
-                    ),
-                    foregroundImage: NetworkImage(
-                        "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQEavWvDyRtrk8pOhLeURhoB7zeMsAEXT0kdFDx_r8JREu9KmB2"),
-                  ),
+                  child: Obx(() {
+                    return CircleAvatar(
+                        maxRadius: 70,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(100),
+                          child: Center(
+                            child: CircularProgressIndicator(
+                              color: ColorsUsed.primaryColor,
+                            ),
+                          ),
+                        ),
+                        foregroundImage: NetworkImage(
+                            userdetailscontroller.uprofile_image.value));
+                  }),
                 ),
               ),
             ],
@@ -81,7 +73,7 @@ class _ProfileState extends State<Profile> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Obx(() => Text(
-                  '${uname.value}',
+                  '${userdetailscontroller.uname.value}',
                   style: TextStyle(
                     fontFamily: GoogleFonts.aBeeZee().fontFamily,
                     fontSize: 15, // Adjust size as needed
@@ -92,7 +84,7 @@ class _ProfileState extends State<Profile> {
           ],
         ),
         Obx(() => Text(
-              '${uuser_email.value}',
+              '${userdetailscontroller.uuser_email.value}',
               style: TextStyle(
                 fontFamily:
                     GoogleFonts.aBeeZeeTextTheme().titleLarge!.fontFamily,
@@ -192,6 +184,8 @@ class _ProfileState extends State<Profile> {
                     ?.pushReplacement(MaterialPageRoute(builder: (v) {
                   return HomePage();
                 }));
+
+                Get.offAll(() => HomePage());
                 ScaffoldMessenger.of(context)
                     .showSnackBar(SnackBar(content: Text("Log out Succes")));
               },

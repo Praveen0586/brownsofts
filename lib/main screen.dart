@@ -1,9 +1,12 @@
 import 'package:brownsofts/activities/models/remember_user.dart';
+import 'package:brownsofts/screens/conrollers/userdetailscontroller.dart';
 import 'package:brownsofts/screens/fragments/category_service.dart';
 import 'package:brownsofts/screens/fragments/contact.dart';
 import 'package:brownsofts/screens/fragments/home%20screen.dart';
 import 'package:brownsofts/screens/fragments/profile.dart';
+import 'package:brownsofts/screens/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -23,46 +26,40 @@ class _MainScreenState extends State<MainScreen> {
 
   RxInt currentindex = 0.obs;
 
-  RxString uname = "".obs;
-  RxString uuser_email = "".obs;
-  RxString uuser_password = "".obs;
-  RxString ugoogle_login_id = "".obs;
-  RxString uid = "".obs;
-  retriving_data() async {
-    var _current_user = await Remembrprefs.readCurrentUser();
 
-    if (_current_user != null) {
-      uname.value = _current_user.name;
-      uuser_email.value = _current_user.user_email;
-      uuser_password.value = _current_user.user_password ?? "";
-      ugoogle_login_id.value = _current_user.google_login_id ?? "";
-      uid.value = _current_user.id ?? "";
-      print(uname.value);
-    }
-  }
-
+  late Userdetailscontroller userdetailscontroller;
   @override
   void initState() {
+        super.initState();
+
+    userdetailscontroller = Get.put(Userdetailscontroller());
     // TODO: implement initState
-    retriving_data();
-    super.initState();
+
+    userdetailscontroller.retriving_data();
   }
 
+  bool floatingmailButton = false;
   @override
   Widget build(BuildContext context) {
+    var colorisOrange = true;
     return Scaffold(
-        floatingActionButton: FloatingActionButton(onPressed: () {
-          MailService().send_mail(
-              "PRAVEEN",
-              "1@GMAIL.COM",
-              "WHATSAPP GTDHWJD",
-              "SOMETHING I WAT TO TELL",
-              "COLOR GRADING",
-              "PACKAGE",
-              23.toString(),
-              DateTime.now().toString(),
-              "gopal");
-        }),
+        floatingActionButton: FloatingActionButton(
+            onPressed: floatingmailButton
+                ? () {
+                    MailService().send_mail(
+                        "PRAVEEN",
+                        "1@GMAIL.COM",
+                        "WHATSAPP GTDHWJD",
+                        "SOMETHING I WAT TO TELL",
+                        "COLOR GRADING",
+                        "PACKAGE",
+                        23.toString(),
+                        DateTime.now().toString(),
+                        "gopal");
+                  }
+                : () {
+                    Fluttertoast.showToast(msg: "some buton Preesed ");
+                  }),
         resizeToAvoidBottomInset: true,
         backgroundColor: Theme.of(context).cardTheme.surfaceTintColor,
         key: _scaffoldKey,
@@ -80,7 +77,9 @@ class _MainScreenState extends State<MainScreen> {
           //     )),
           centerTitle: true,
           automaticallyImplyLeading: false,
-          backgroundColor: const Color.fromARGB(201, 254, 249, 245),
+          backgroundColor: colorisOrange
+              ? ColorsUsed.primaryColor
+              : const Color.fromARGB(201, 254, 249, 245),
           elevation: 20,
           title: const Text(
             "BrownSofts",
@@ -97,9 +96,10 @@ class _MainScreenState extends State<MainScreen> {
           actions: [
             IconButton(
                 onPressed: () {
-                  // Navigator.of(context).push(MaterialPageRoute(builder: (cx) {
-                  //   return Notification_screen();
-                  // }));
+                  //Page for Notification
+
+
+
                 },
                 icon: const Icon(
                   Icons.notifications_none,
@@ -129,22 +129,27 @@ class _MainScreenState extends State<MainScreen> {
                           SizedBox(
                             height: 30,
                           ),
-                          CircleAvatar(
-                            maxRadius: 70,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(100),
-                              child: Image.network(
-                                "https://pbs.twimg.com/profile_images/1653626498828619776/D8WR6HGT_400x400.jpg",
-                              ),
-                            ),
-                            foregroundImage: NetworkImage(
-                                "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQEavWvDyRtrk8pOhLeURhoB7zeMsAEXT0kdFDx_r8JREu9KmB2"),
+                          Obx(
+                             () {
+                              return CircleAvatar(
+                                maxRadius: 70,
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(100),
+                                    child: Center(
+                                      child: CircularProgressIndicator(
+                                        color: ColorsUsed.primaryColor,
+                                      ),
+                                    )),
+                                foregroundImage: NetworkImage(
+                                    userdetailscontroller.uprofile_image.value),
+                              );
+                            }
                           ),
                           SizedBox(
                             height: 7,
                           ),
                           Obx(() => Text(
-                                '${uname.value}',
+                                '${userdetailscontroller.uname.value}',
                                 style: TextStyle(
                                   fontFamily: GoogleFonts.aBeeZee().fontFamily,
                                   fontSize: 15, // Adjust size as needed
@@ -153,7 +158,7 @@ class _MainScreenState extends State<MainScreen> {
                                 ),
                               )),
                           Obx(() => Text(
-                                uuser_email.value,
+                                userdetailscontroller.uuser_email.value,
                                 style: TextStyle(
                                   fontFamily: GoogleFonts.aBeeZeeTextTheme()
                                       .titleLarge!
@@ -329,7 +334,7 @@ class _MainScreenState extends State<MainScreen> {
                               children: [
                                 CircleAvatar(
                                     child: Image(
-                                        image: AssetImage("assets/logo.png"))),
+                                        image: AssetImage("assets/brownsofts logo.png"))),
                                 Padding(
                                   padding: const EdgeInsets.only(left: 14),
                                   child: Text(
@@ -389,7 +394,9 @@ class _MainScreenState extends State<MainScreen> {
             showSelectedLabels: true, useLegacyColorScheme: false,
             selectedIconTheme: IconThemeData(
                 opacity: 1,
-                color: Colors.brown,
+                color: ColorsUsed.colorisOrange
+                    ? ColorsUsed.primaryColor
+                    : Colors.brown,
                 size: 20,
                 shadows: [
                   BoxShadow(

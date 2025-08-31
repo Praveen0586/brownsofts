@@ -18,7 +18,7 @@ class Remembrprefs {
 
     Map<String, dynamic> curentMappeddata = jsonDecode(UserJsondata);
     currentUserData = User.fromJson(curentMappeddata);
-
+    // Future.delayed(Duration(seconds: 4));
     return currentUserData;
   }
 
@@ -26,7 +26,4 @@ class Remembrprefs {
     SharedPreferences pref = await SharedPreferences.getInstance();
     await pref.remove("Current User");
   }
-
 }
-
-

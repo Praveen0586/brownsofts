@@ -131,7 +131,7 @@ class _PurchaseReciptScreenState extends State<PurchaseReciptScreen> {
                 Center(
                   child: Text(
                     " $BSname1",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 23,letterSpacing: 1.4, fontWeight: FontWeight.bold),
                   ),
                 ),
                 Expanded(

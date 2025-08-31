@@ -326,7 +326,7 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (cvb) {
                           price_1 = content1!["price"];
-                          cut_price = content1!["cross cut"];
+                          cut_price = content1!["cross cut"].toDouble();
                           delivery_1 = content1!["delivery"].toString();
                           revision_1 = content1!["revisions"].toString();
                           regulations_1 = content1!["restrictions"];
@@ -524,7 +524,7 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
                   children: [
                     // Business icon or logo placeholder
                     CircleAvatar(
-                      foregroundImage: AssetImage("assets/logo.png"),
+                      foregroundImage: AssetImage("assets/brownsofts logo.png"),
                       radius: 24,
                       //backgroundImage:  AssetImage("assets/logo.png"),
                       backgroundColor: Colors.grey[300],

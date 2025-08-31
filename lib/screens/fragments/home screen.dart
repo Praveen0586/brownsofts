@@ -1,3 +1,4 @@
+import 'package:brownsofts/screens/utils/constants.dart';
 import 'package:brownsofts/service/categeries.dart';
 import 'package:brownsofts/data/s%20data.dart';
 import 'package:brownsofts/screens/fragments/category_service.dart';
@@ -74,8 +75,10 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: EdgeInsets.only(top: 15, left: 10, right: 10),
         child: Container(
           decoration: BoxDecoration(
-            color: const Color.fromARGB(
-                255, 247, 233, 227), // Background color for the search bar
+            color: ColorsUsed.colorisOrange
+                ? ColorsUsed.primaryColor.withOpacity(0.8)
+                : const Color.fromARGB(
+                    255, 247, 233, 227), // Background color for the search bar
             borderRadius: BorderRadius.circular(20), // Rounded corners
             boxShadow: const [
               BoxShadow(

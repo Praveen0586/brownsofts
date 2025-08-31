@@ -4,16 +4,19 @@ class User {
   String? user_password = "";
   String? google_login_id = "";
   String? id = "";
+  String? profile_image = "";
 
   User(
       {required this.name,
       this.google_login_id,
       required this.user_email,
       required this.user_password,
+      this.profile_image,
       this.id});
 
   Map<String, dynamic> toJson() {
     return {
+      "image": profile_image,
       "name": name,
       "user_email": user_email,
       "user_password": user_password,
@@ -24,6 +27,7 @@ class User {
 
   static User fromJson(Map<String, dynamic> json) {
     return User(
+        profile_image: json["image"],
         name: json["name"],
         user_email: json["user_email"],
         user_password: json["user_password"],

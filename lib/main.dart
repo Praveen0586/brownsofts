@@ -6,6 +6,7 @@ import "package:brownsofts/activities/authentivation/create_user.dart";
 import "package:brownsofts/activities/authentivation/google_signin.dart";
 import "package:brownsofts/activities/authentivation/sign_In.dart";
 import "package:brownsofts/activities/models/remember_user.dart";
+import "package:brownsofts/activities/models/user.dart";
 import "package:brownsofts/main%20screen.dart";
 import "package:flutter/material.dart";
 import 'package:fluttertoast/fluttertoast.dart';
@@ -33,6 +34,7 @@ class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() => _HomePageState();
 }
+//Page were login  and signup stage begins
 
 class _HomePageState extends State<HomePage> {
   Future googleLogintoSQL(GoogleSignInAccount? user) async {
@@ -63,7 +65,50 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  Widget WelcomeScreen(BuildContext context) {
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+        future: Remembrprefs.readCurrentUser(),
+        builder: (ctx, datasnapshots) {
+          if (datasnapshots.connectionState == ConnectionState.waiting) {
+            return const Center(
+              child: Image(image: AssetImage("assets/brownsofts logo.png")),
+            );
+          }
+          if (datasnapshots.connectionState == ConnectionState.done) {
+            if (datasnapshots.data == null) {
+              return WelcomeScreen();
+            } else {
+              return const MainScreen();
+            }
+          }
+
+          // if (datasnapshots.data != null) {
+          //   return Center(
+          //     child: Column(children: [
+          //       Text("Working "),
+          //       IconButton(
+          //           onPressed: () {
+          //             setState(() {
+          //               Remembrprefs.removeUser();
+          //             });
+          //           },
+          //           icon: Icon(Icons.abc_outlined))
+          //     ]),
+          //   );
+          // }
+
+          return const MainScreen();
+          // return const CreateAccountPage();
+        });
+  }
+}
+
+class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
@@ -77,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                   child: SizedBox(
                     width: 350,
                     child: Image.asset(
-                      "assets/logo.png",
+                      "assets/brownsofts logo.png",
                       alignment: Alignment.bottomCenter * 12,
                       scale: 4,
                     ),
@@ -137,13 +182,28 @@ class _HomePageState extends State<HomePage> {
                       } else {
                         //here it is
                         http.Response responseFrom =
-                              await ApiCalls().googleSignIn(user);
+                            await ApiCalls().googleSignIn(user);
                         print("here is the response ${responseFrom.body}");
 
                         Fluttertoast.showToast(
-                            msg: "Signed in as: ${user.displayName}");
+                            msg: "Signed in as: ${user.toString()}");
 
-                        print(user.toString());
+                        print("signe:" + user.toString());
+//save the user with Remembrprefs
+                        User _current_user = User(
+                            name: user.displayName.toString(),
+                            user_email: user.email,
+                            user_password: user.id,
+                            google_login_id: user.id,
+                            id: user.id,
+                            profile_image: user.photoUrl);
+
+                        await Remembrprefs.saveMyUserInfo(_current_user);
+
+                        Fluttertoast.showToast(
+                            msg: responseFrom.body.toString());
+
+                        Get.off(MainScreen());
                       }
                     },
                     style: OutlinedButton.styleFrom(
@@ -192,34 +252,5 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return FutureBuilder(
-        future: Remembrprefs.readCurrentUser(),
-        builder: (ctx, datasnapshots) {
-          if (datasnapshots.data == null) {
-            return WelcomeScreen(ctx);
-          }
-
-          // if (datasnapshots.data != null) {
-          //   return Center(
-          //     child: Column(children: [
-          //       Text("Working "),
-          //       IconButton(
-          //           onPressed: () {
-          //             setState(() {
-          //               Remembrprefs.removeUser();
-          //             });
-          //           },
-          //           icon: Icon(Icons.abc_outlined))
-          //     ]),
-          //   );
-          // }
-
-          return const MainScreen();
-          // return const CreateAccountPage();
-        });
   }
 }
