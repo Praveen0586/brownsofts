@@ -24,7 +24,7 @@ class _MainScreenState extends State<MainScreen> {
 
   // Moved currentindex to the class level
 
-  RxInt currentindex = 0.obs;
+  RxInt currentindex = 3.obs;
 
 
   late Userdetailscontroller userdetailscontroller;
@@ -489,3 +489,5 @@ List drawer_categery = [
   {"name": "Admin Support", "icon": FontAwesomeIcons.headset},
 ];
 // FontAwesomeIcons.paintbrush
+
+

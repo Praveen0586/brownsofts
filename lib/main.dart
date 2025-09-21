@@ -8,6 +8,7 @@ import "package:brownsofts/activities/authentivation/sign_In.dart";
 import "package:brownsofts/activities/models/remember_user.dart";
 import "package:brownsofts/activities/models/user.dart";
 import "package:brownsofts/main%20screen.dart";
+import "package:brownsofts/screens/fragments/constants.dart";
 import "package:flutter/material.dart";
 import 'package:fluttertoast/fluttertoast.dart';
 import "package:get/get.dart";
@@ -79,6 +80,9 @@ class _HomePageState extends State<HomePage> {
             if (datasnapshots.data == null) {
               return WelcomeScreen();
             } else {
+              username.value = datasnapshots.data!.name;
+              useremail.value = datasnapshots.data!.user_email;
+
               return const MainScreen();
             }
           }

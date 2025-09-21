@@ -1,4 +1,6 @@
 import 'package:brownsofts/activities/models/remember_user.dart';
+import 'package:brownsofts/screens/fragments/constants.dart';
+import 'package:brownsofts/screens/fragments/paypal_transactions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -22,9 +24,12 @@ class _CustomerEntryScreenState extends State<CustomerEntryScreen> {
   final _formKey = GlobalKey<FormState>(); // Correctly typed GlobalKey
   String? onselectedvalue;
   get_ready_textField() async {
-    var currentuser = await Remembrprefs.readCurrentUser();
-    name_.text = currentuser!.name;
-    email_.text = currentuser.user_email;
+    // var currentuser = await Remembrprefs.readCurrentUser();
+    // name_.text = currentuser!.name;
+
+    // email_.text = currentuser.user_email;
+    name_.text = username.value;
+    email_.text = useremail.value;
   }
 
   @override
@@ -56,65 +61,7 @@ class _CustomerEntryScreenState extends State<CustomerEntryScreen> {
               // Submit action here
 
               Navigator.of(context).push(MaterialPageRoute(builder: (cvb) {
-                return PaypalCheckoutView(
-                  sandboxMode: false,
-                  clientId:
-                      "AXnnwhAS1KVBJv9q9FO0B6OH067dPUBz8Z03qy0uWDvn-VeAoM8dLe03MPjSjxZRNdTUKKQaCxwjEj56",
-                  secretKey:
-                      "EN3xk2NB23hty3iPs87A_0sfcteGi2XlSjlE6sTMJUHKjG3ZGubyUhbnDTwDq899EV_lM5KKjjdwNWJ2",
-                  onSuccess: (Map params) async {
-                    print("onSuccess: $params");
-                    Fluttertoast.showToast(msg: "Payment Succes");
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        content: Text(
-                      "Payment Succes",
-                    )));
-                  },
-                  onError: (error) {
-                    print("onError: $error");
-                    Navigator.pop(context);
-                    Fluttertoast.showToast(msg: "Payment Errorb : $error");
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        content: Text(
-                      "Payment Error ",
-                    )));
-                  },
-                  onCancel: () {
-                    Fluttertoast.showToast(msg: "Payment Cancellerd");
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        content: Text(
-                      "Payment Cancelled",
-                    )));
-                  },
-                  transactions: [
-                    {
-                      "amount": {
-                        "total": '${widget.price_2}',
-                        "currency": "USD",
-                        "details": {
-                          "subtotal": '${widget.price_2}',
-                          "shipping": '0',
-                          "shipping_discount": 0
-                        }
-                      },
-                      "description": "The payment transaction description.",
-                      "payment_options": {
-                        "allowed_payment_method": "INSTANT_FUNDING_SOURCE"
-                      },
-                      "item_list": {
-                        "items": [
-                          {
-                            "name": "${widget.product_name}",
-                            "quantity": 1,
-                            "price": '${widget.price_2}', // 5 items × $14 = $70
-                            "currency": "USD"
-                          }
-                        ],
-                      }
-                    }
-                  ],
-                  note: "Contact us for any questions on your order.",
-                );
+                return PaypalCheckout();
               }));
             }
           },
@@ -221,6 +168,7 @@ class _CustomerEntryScreenState extends State<CustomerEntryScreen> {
                                 TextFormField(
                                   onSaved: (newValue) {
                                     description_saved = newValue!;
+                                    userdescription.value = newValue;
                                   },
                                   maxLines: 3,
                                   decoration: const InputDecoration(
@@ -276,6 +224,9 @@ class _CustomerEntryScreenState extends State<CustomerEntryScreen> {
                               onPressed: () {
                                 if (_formKey.currentState?.validate() ??
                                     false) {
+                                  selectedserviceName.value =
+                                      widget.product_name;
+                                  selectedservicePrice.value = widget.price_2;
                                   // Submit action here
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(

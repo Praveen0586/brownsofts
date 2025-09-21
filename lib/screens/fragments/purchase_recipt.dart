@@ -1,3 +1,4 @@
+import 'package:brownsofts/screens/fragments/constants.dart';
 import 'package:brownsofts/screens/fragments/customer_entry_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -58,6 +59,8 @@ class _PurchaseReciptScreenState extends State<PurchaseReciptScreen> {
     );
 
     BScurrentService = widget.currentServiceMap1;
+
+    //store id and pass to next screen
     BSname1 = BScurrentService["name"];
     bscategory1 = BScurrentService["category"];
     category_code1 = BScurrentService["category_code"];
@@ -78,6 +81,10 @@ class _PurchaseReciptScreenState extends State<PurchaseReciptScreen> {
         height: 50, // Custom height
         child: FloatingActionButton.extended(
           onPressed: () {
+            selectedServiceId.value = category_code1;
+            selectedPricePackage.value = widget.chosed!;
+            selectedserviceName.value = BSname1;
+            selectedservicePrice.value =  widget.price_1!;
             Navigator.of(context).push(MaterialPageRoute(builder: (cvb) {
               return CustomerEntryScreen(
                 product_name: BSname1,
@@ -131,7 +138,10 @@ class _PurchaseReciptScreenState extends State<PurchaseReciptScreen> {
                 Center(
                   child: Text(
                     " $BSname1",
-                    style: TextStyle(fontSize: 23,letterSpacing: 1.4, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 23,
+                        letterSpacing: 1.4,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
                 Expanded(

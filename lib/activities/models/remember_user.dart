@@ -1,10 +1,13 @@
 import 'dart:convert';
 
 import 'package:brownsofts/activities/models/user.dart';
+import 'package:brownsofts/screens/fragments/constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Remembrprefs {
   static Future<void> saveMyUserInfo(User userinfo) async {
+    username.value = userinfo.name;
+    useremail.value = userinfo.user_email;
     SharedPreferences preferences = await SharedPreferences.getInstance();
     String userJsonData = jsonEncode(userinfo.toJson());
     await preferences.setString("Current User", userJsonData);
