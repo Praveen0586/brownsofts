@@ -1,3 +1,5 @@
+// import 'dart:math';
+
 import 'package:brownsofts/activities/models/remember_user.dart';
 import 'package:get/get.dart';
 
@@ -17,9 +19,9 @@ class Userdetailscontroller extends GetxController {
     uname.value = _current_user!.name;
     uuser_email.value = _current_user.user_email;
     uuser_password.value = _current_user.user_password!;
-    ugoogle_login_id.value = _current_user.google_login_id!;
-    uid.value = _current_user.id!;
-    print(_current_user.profile_image);
+    ugoogle_login_id.value = _current_user.google_login_id??"";
+    uid.value = _current_user.id!.toString();
+    print(uid.value +" this is uid");
     if (_current_user.profile_image != null &&
         _current_user.profile_image != "") {
       loading.value = true;

@@ -55,6 +55,7 @@ dependencies:
   rename_app: ^1.6.5
   lottie: ^3.2.0
   shimmer: ^3.0.0
+  url_launcher: ^6.3.1
   #flutter_paypal_checkout: ^1.0.1
 dev_dependencies:
   flutter_test:

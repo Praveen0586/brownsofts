@@ -63,8 +63,11 @@ class _CreateAccountPage extends State<CreateAccountPage> {
           print("$e_name, $e_email, $e_pass1");
 
           //save my user credentials
-          Remembrprefs.saveMyUserInfo(
-              User(name: e_name, user_email: e_email, user_password: e_pass1));
+          Remembrprefs.saveMyUserInfo(User(
+              name: e_name,
+              user_email: e_email,
+              user_password: e_pass1,
+              id: resBody["data"]["insertId"].toString()));
 
           //navigate to next page
           // Future.delayed(
@@ -74,7 +77,7 @@ class _CreateAccountPage extends State<CreateAccountPage> {
 
           Future.delayed(
               Duration(milliseconds: 100), () => Get.off(const MainScreen()));
-        } else if(resBody["status"] == "fail"){
+        } else if (resBody["status"] == "fail") {
           Fluttertoast.showToast(msg: "${resBody["data"]["message"]}");
         }
       }

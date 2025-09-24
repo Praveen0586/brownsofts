@@ -2,9 +2,11 @@ import 'package:brownsofts/activities/models/remember_user.dart';
 import 'package:brownsofts/activities/models/user.dart';
 import 'package:brownsofts/main.dart';
 import 'package:brownsofts/screens/conrollers/userdetailscontroller.dart';
+import 'package:brownsofts/screens/fragments/constants.dart';
 import 'package:brownsofts/screens/fragments/controllers/profilecontrollers.dart';
 import 'package:brownsofts/screens/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shimmer/shimmer.dart';
@@ -41,6 +43,73 @@ class _ProfileState extends State<Profile> {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> _profileActions() {
+      return [
+        SettingsSection(
+          title: 'Account Settings',
+          items: [
+            SettingsItemData(
+              icon: Icons.person_outline,
+              label: 'Edit Profile',
+              onTap: () {},
+            ),
+            SettingsItemData(
+              icon: Icons.notifications_none,
+              label: 'Notifications',
+              onTap: () {},
+            ),
+            SettingsItemData(
+              icon: Icons.lock_outline,
+              label: 'Change Password',
+              onTap: () {},
+            ),
+            SettingsItemData(
+              icon: Icons.payment_outlined,
+              label: 'Payment Methods',
+              onTap: () {},
+            ),
+          ],
+        ),
+        SettingsSection(
+          title: 'Support & Legal',
+          items: [
+            SettingsItemData(
+              icon: Icons.help_outline,
+              label: 'Help Center',
+              onTap: () {},
+            ),
+            SettingsItemData(
+              icon: Icons.article_outlined,
+              label: 'Terms of Service',
+              onTap: () {},
+            ),
+            SettingsItemData(
+              icon: Icons.privacy_tip_outlined,
+              label: 'Privacy Policy',
+              onTap: () {},
+            ),
+            SettingsItemData(
+              icon: Icons.logout,
+              label: 'Logout',
+              onTap: () {
+                Remembrprefs.removeUser();
+                _navigatorKey.currentState
+                    ?.pushReplacement(MaterialPageRoute(builder: (v) {
+                  return HomePage();
+                }));
+
+                Get.offAll(() => HomePage());
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text("Log out Succes")));
+              },
+              iconColor: Colors.red,
+              labelColor: Colors.red,
+            ),
+          ],
+        ),
+      ];
+    }
+
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -72,9 +141,19 @@ class _ProfileState extends State<Profile> {
                                 color: ColorsUsed.primaryColor,
                               ),
                             ),
-                          ),
-                          foregroundImage: NetworkImage(
-                              userdetailscontroller.uprofile_image.value));
+                          ),onForegroundImageError: (exception, stackTrace) {
+                            print("Error loading profile image: $exception");
+                          },
+                          //   foregroundColor: Colors.white,
+                          //  backgroundColor: Colors.white,
+                          //    foregroundColor: Colors.orange,
+                          foregroundImage: userdetailscontroller
+                                  .uprofile_image.value.isEmpty
+                              ? NetworkImage(SampleNetworkImages.userProfilePic,
+                                  scale: 0.8)
+                              : NetworkImage(
+                                  userdetailscontroller.uprofile_image.value,
+                                ));
                     }),
                   ),
                 ),
@@ -170,126 +249,66 @@ class _ProfileState extends State<Profile> {
           SizedBox(
             height: 15,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              InkWell(
-                onTap: () {
-                  ScaffoldMessenger.of(context)
-                      .showSnackBar(SnackBar(content: Text("Profile Edited ")));
-                },
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    "Edit Profile",
-                    style: TextStyle(
-                      fontFamily:
-                          GoogleFonts.aBeeZeeTextTheme().titleLarge!.fontFamily,
-                      fontSize: 14, // Adjust size as needed
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //   children: [
+          //     InkWell(
+          //       onTap: () {
+          //         ScaffoldMessenger.of(context)
+          //             .showSnackBar(SnackBar(content: Text("Profile Edited ")));
+          //       },
+          //       child: Padding(
+          //         padding: const EdgeInsets.all(8.0),
+          //         child: Text(
+          //           "Edit Profile",
+          //           style: TextStyle(
+          //             fontFamily:
+          //                 GoogleFonts.aBeeZeeTextTheme().titleLarge!.fontFamily,
+          //             fontSize: 14, // Adjust size as needed
 
-                      color: const Color.fromARGB(255, 0, 0, 0), // Text color
-                    ),
-                  ),
-                ),
-              ),
-              InkWell(
-                onTap: () {
-                  Remembrprefs.removeUser();
-                  _navigatorKey.currentState
-                      ?.pushReplacement(MaterialPageRoute(builder: (v) {
-                    return HomePage();
-                  }));
+          //             color: const Color.fromARGB(255, 0, 0, 0), // Text color
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //     InkWell(
+          //       onTap: () {
+          //         Remembrprefs.removeUser();
+          //         _navigatorKey.currentState
+          //             ?.pushReplacement(MaterialPageRoute(builder: (v) {
+          //           return HomePage();
+          //         }));
 
-                  Get.offAll(() => HomePage());
-                  ScaffoldMessenger.of(context)
-                      .showSnackBar(SnackBar(content: Text("Log out Succes")));
-                },
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    "Log Out",
-                    style: TextStyle(
-                      fontFamily:
-                          GoogleFonts.aBeeZeeTextTheme().titleLarge!.fontFamily,
-                      fontSize: 14, // Adjust size as needed
+          //         Get.offAll(() => HomePage());
+          //         ScaffoldMessenger.of(context)
+          //             .showSnackBar(SnackBar(content: Text("Log out Succes")));
+          //       },
+          //       child: Padding(
+          //         padding: const EdgeInsets.all(8.0),
+          //         child: Text(
+          //           "Log Out",
+          //           style: TextStyle(
+          //             fontFamily:
+          //                 GoogleFonts.aBeeZeeTextTheme().titleLarge!.fontFamily,
+          //             fontSize: 14, // Adjust size as needed
 
-                      color: const Color.fromARGB(255, 0, 0, 0), // Text color
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          // Obx(
-          //   () {
-          //     return profilecontrollers.isLoading1.value
-          //         ? RecentOrdersSkeleton()
-          //         : RecentOrdersWidget();
-          //   },
+          //             color: const Color.fromARGB(255, 0, 0, 0), // Text color
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //   ],
           // ),
-
-          SettingsSection(
-            title: 'Account Settings',
-            items: [
-              SettingsItemData(
-                icon: Icons.person_outline,
-                label: 'Edit Profile',
-                onTap: () {},
-              ),
-              SettingsItemData(
-                icon: Icons.notifications_none,
-                label: 'Notifications',
-                onTap: () {},
-              ),
-              SettingsItemData(
-                icon: Icons.lock_outline,
-                label: 'Change Password',
-                onTap: () {},
-              ),
-              SettingsItemData(
-                icon: Icons.payment_outlined,
-                label: 'Payment Methods',
-                onTap: () {},
-              ),
-            ],
+          Obx(
+            () {
+              return profilecontrollers.isLoading1.value
+                  ? RecentOrdersSkeleton()
+                  : RecentOrdersWidget();
+            },
           ),
-          SettingsSection(
-            title: 'Support & Legal',
-            items: [
-              SettingsItemData(
-                icon: Icons.help_outline,
-                label: 'Help Center',
-                onTap: () {},
-              ),
-              SettingsItemData(
-                icon: Icons.article_outlined,
-                label: 'Terms of Service',
-                onTap: () {},
-              ),
-              SettingsItemData(
-                icon: Icons.privacy_tip_outlined,
-                label: 'Privacy Policy',
-                onTap: () {},
-              ),
-              SettingsItemData(
-                icon: Icons.logout,
-                label: 'Logout',
-                onTap: () {
-                  Remembrprefs.removeUser();
-                  _navigatorKey.currentState
-                      ?.pushReplacement(MaterialPageRoute(builder: (v) {
-                    return HomePage();
-                  }));
-
-                  Get.offAll(() => HomePage());
-                  ScaffoldMessenger.of(context)
-                      .showSnackBar(SnackBar(content: Text("Log out Succes")));
-                },
-                iconColor: Colors.red,
-                labelColor: Colors.red,
-              ),
-            ],
-          ),
+          Column(
+            children: _profileActions(),
+          )
         ],
       ),
     );

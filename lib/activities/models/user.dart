@@ -32,6 +32,6 @@ class User {
         user_email: json["user_email"],
         user_password: json["user_password"],
         google_login_id: json["google_login_id"],
-        id: json["id"]);
+        id: json["id"].toString());
   }
 }

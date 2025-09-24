@@ -1,9 +1,9 @@
-import 'package:brownsofts/activities/models/remember_user.dart';
+// import 'package:brownsofts/activities/models/remember_user.dart';
 import 'package:brownsofts/screens/fragments/constants.dart';
 import 'package:brownsofts/screens/fragments/paypal_transactions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+// import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
+// import 'package:fluttertoast/fluttertoast.dart';
 
 class CustomerEntryScreen extends StatefulWidget {
   CustomerEntryScreen(
@@ -58,27 +58,29 @@ class _CustomerEntryScreenState extends State<CustomerEntryScreen> {
         child: FloatingActionButton.extended(
           onPressed: () {
             if (_formKey.currentState?.validate() ?? false) {
-              // Submit action here
-
               Navigator.of(context).push(MaterialPageRoute(builder: (cvb) {
                 return PaypalCheckout();
               }));
             }
           },
           label: const Row(
-            //    mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 "Next",
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
               ),
               Icon(
+                color: Colors.white,
                 Icons.arrow_right_rounded,
                 size: 28,
               ),
             ],
           ),
-          // backgroundColor: Colors.orange, // Optional: Add background color
+          backgroundColor: const Color.fromARGB(
+              255, 224, 103, 28), // Optional: Add background color
         ),
       ),
       body: SafeArea(
@@ -91,10 +93,6 @@ class _CustomerEntryScreenState extends State<CustomerEntryScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 20),
-                // Title
-
-                //   const SizedBox(height: 20),
-                // Form
                 Form(
                   key: _formKey,
                   child: Row(
@@ -109,9 +107,9 @@ class _CustomerEntryScreenState extends State<CustomerEntryScreen> {
                             // Name Field
 
                             Text(
-                              "Name*",
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.bold),
+                              "Name *",
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
                             ),
                             const SizedBox(height: 8),
                             TextFormField(
@@ -135,8 +133,8 @@ class _CustomerEntryScreenState extends State<CustomerEntryScreen> {
 
                             Text(
                               "Email Address*",
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.bold),
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
                             ),
                             const SizedBox(height: 8),
                             TextFormField(
@@ -162,7 +160,9 @@ class _CustomerEntryScreenState extends State<CustomerEntryScreen> {
                               children: [
                                 const Text(
                                   "Message*",
-                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15),
                                 ),
                                 const SizedBox(height: 8),
                                 TextFormField(
@@ -220,22 +220,6 @@ class _CustomerEntryScreenState extends State<CustomerEntryScreen> {
                                 }),
 
                             const SizedBox(height: 20),
-                            ElevatedButton(
-                              onPressed: () {
-                                if (_formKey.currentState?.validate() ??
-                                    false) {
-                                  selectedserviceName.value =
-                                      widget.product_name;
-                                  selectedservicePrice.value = widget.price_2;
-                                  // Submit action here
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(
-                                        content: Text('Form submitted')),
-                                  );
-                                }
-                              },
-                              child: const Text("Submit"),
-                            ),
                           ],
                         ),
                       ),

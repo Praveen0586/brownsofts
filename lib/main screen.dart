@@ -1,6 +1,9 @@
+// import 'dart:developer';
+
 import 'package:brownsofts/activities/models/remember_user.dart';
 import 'package:brownsofts/screens/conrollers/userdetailscontroller.dart';
 import 'package:brownsofts/screens/fragments/category_service.dart';
+import 'package:brownsofts/screens/fragments/constants.dart';
 import 'package:brownsofts/screens/fragments/contact.dart';
 import 'package:brownsofts/screens/fragments/home%20screen.dart';
 import 'package:brownsofts/screens/fragments/profile.dart';
@@ -24,13 +27,12 @@ class _MainScreenState extends State<MainScreen> {
 
   // Moved currentindex to the class level
 
-  RxInt currentindex = 3.obs;
-
+  RxInt currentindex = 2.obs;
 
   late Userdetailscontroller userdetailscontroller;
   @override
   void initState() {
-        super.initState();
+    super.initState();
 
     userdetailscontroller = Get.put(Userdetailscontroller());
     // TODO: implement initState
@@ -58,6 +60,11 @@ class _MainScreenState extends State<MainScreen> {
                         "gopal");
                   }
                 : () {
+                    // log("My First Log",
+                    //     name: "Praveen",
+                    //     level: 1,
+                    //     error: "Some Error",
+                    //     stackTrace: StackTrace.empty);
                     Fluttertoast.showToast(msg: "some buton Preesed ");
                   }),
         resizeToAvoidBottomInset: true,
@@ -97,9 +104,6 @@ class _MainScreenState extends State<MainScreen> {
             IconButton(
                 onPressed: () {
                   //Page for Notification
-
-
-
                 },
                 icon: const Icon(
                   Icons.notifications_none,
@@ -129,22 +133,24 @@ class _MainScreenState extends State<MainScreen> {
                           SizedBox(
                             height: 30,
                           ),
-                          Obx(
-                             () {
-                              return CircleAvatar(
-                                maxRadius: 70,
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(100),
-                                    child: Center(
-                                      child: CircularProgressIndicator(
-                                        color: ColorsUsed.primaryColor,
-                                      ),
-                                    )),
-                                foregroundImage: NetworkImage(
-                                    userdetailscontroller.uprofile_image.value),
-                              );
-                            }
-                          ),
+                          Obx(() {
+                            return CircleAvatar(
+                              maxRadius: 70,
+                              child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(100),
+                                  child: Center(
+                                    child: CircularProgressIndicator(
+                                      color: ColorsUsed.primaryColor,
+                                    ),
+                                  )),
+                              foregroundImage: userdetailscontroller
+                                      .uprofile_image.value.isEmpty
+                                  ? NetworkImage(
+                                      SampleNetworkImages.userProfilePic)
+                                  : NetworkImage(userdetailscontroller
+                                      .uprofile_image.value),
+                            );
+                          }),
                           SizedBox(
                             height: 7,
                           ),
@@ -334,7 +340,8 @@ class _MainScreenState extends State<MainScreen> {
                               children: [
                                 CircleAvatar(
                                     child: Image(
-                                        image: AssetImage("assets/brownsofts logo.png"))),
+                                        image: AssetImage(
+                                            "assets/brownsofts logo.png"))),
                                 Padding(
                                   padding: const EdgeInsets.only(left: 14),
                                   child: Text(
@@ -447,7 +454,9 @@ List<Widget> screenList = [
     index_of_Category: 0,
     topic: false,
   ),
-  DesignedContact(),
+
+  // DesignedContact(),
+  ContactUsScreen(),
   Profile()
 ];
 

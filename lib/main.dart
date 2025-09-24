@@ -193,13 +193,17 @@ class WelcomeScreen extends StatelessWidget {
                             msg: "Signed in as: ${user.toString()}");
 
                         print("signe:" + user.toString());
+                        var responseBody = jsonDecode(responseFrom.body);
+
+                        userID.value = responseBody["user_id"].toString();
+
 //save the user with Remembrprefs
                         User _current_user = User(
                             name: user.displayName.toString(),
                             user_email: user.email,
                             user_password: user.id,
                             google_login_id: user.id,
-                            id: user.id,
+                            id: userID.value.toString(),
                             profile_image: user.photoUrl);
 
                         await Remembrprefs.saveMyUserInfo(_current_user);
