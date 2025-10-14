@@ -19,7 +19,7 @@ class ApiCalls {
         final _userName = user.displayName;
         final _userEmail = user.email;
         final _userId = user.id;
-        final _userimage= user.photoUrl;
+        final _userimage = user.photoUrl;
         final _userType = user.runtimeType.toString();
         print("glg $_userName , $_userEmail, $_userId ,$_userType");
         Fluttertoast.showToast(msg: "stage3");
@@ -88,4 +88,24 @@ class ApiCalls {
   }
 
   Future<void> userLogin() async {}
+
+  Future<List<Map<String, dynamic>>> getAllService() async {
+    Uri _getallService = Uri.parse(BrownAPI.getService);
+
+    final _resul = await http.get(_getallService, headers: headers);
+
+    if (_resul.statusCode == 200 || _resul.statusCode == 201) {
+      final _responseBody = json.decode(_resul.body);
+      print(_responseBody);
+      List<Map<String, dynamic>> services =
+          List<Map<String, dynamic>>.from(_responseBody);
+      print("Services fetched successfully: ${_responseBody}");
+
+      return services;
+    } else {
+      print("Failed to fetch services with status code: ${_resul.statusCode}");
+
+      return [];
+    }
+  }
 }

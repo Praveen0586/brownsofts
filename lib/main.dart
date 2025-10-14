@@ -82,6 +82,7 @@ class _HomePageState extends State<HomePage> {
             } else {
               username.value = datasnapshots.data!.name;
               useremail.value = datasnapshots.data!.user_email;
+              
 
               return const MainScreen();
             }

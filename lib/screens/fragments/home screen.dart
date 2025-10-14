@@ -1,3 +1,4 @@
+import 'package:brownsofts/activities/api/api_calls.dart';
 import 'package:brownsofts/screens/utils/constants.dart';
 import 'package:brownsofts/service/categeries.dart';
 import 'package:brownsofts/data/s%20data.dart';
@@ -21,6 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
 //empty list declaration for Empty declaration
   List VA = [];
   List DW = [];
+  //This was used for slide show indicator
+  RxInt _currentPage = 0.obs;
+
 //mapped list storation
   List<Map<dynamic, dynamic>> _video_animation = [];
   List<Map<dynamic, dynamic>> _web_designs = [];
@@ -190,7 +194,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
 //slideshow
-  int _currentPage = 0;
 
   Widget slide_bottom() {
     List<Widget> _buildIndicators() {
@@ -198,17 +201,19 @@ class _HomeScreenState extends State<HomeScreen> {
       int totalImages = 12; // Number of images in the slideshow
 
       for (int i = 0; i < totalImages; i++) {
-        indicators.add(Container(
-          width: 5,
-          height: 5,
-          margin: EdgeInsets.symmetric(horizontal: 3),
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: _currentPage == i
-                ? Colors.brown
-                : Colors.grey, // Active vs inactive
-          ),
-        ));
+        indicators.add(Obx(() {
+          return Container(
+            width: 5,
+            height: 5,
+            margin: EdgeInsets.symmetric(horizontal: 3),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: _currentPage.value == i
+                  ? Colors.brown
+                  : Colors.grey, // Active vs inactive
+            ),
+          );
+        }));
       }
 
       return indicators;
@@ -236,9 +241,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 autoPlayInterval: 3000, // Duration in milliseconds
                 isLoop: true,
                 onPageChanged: (value) {
-                  setState(() {
-                    _currentPage = value;
-                  });
+                  _currentPage.value = value;
                 },
                 children: [
                   Image.network(
@@ -530,6 +533,25 @@ class _HomeScreenState extends State<HomeScreen> {
             slide_bottom(),
             bar("Categories"),
             gridsection_no_image1(context),
+            bar("Service From Backend"),
+            FutureBuilder(
+              future: ApiCalls().getAllService(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return Center(
+                      child: LinearProgressIndicator(
+                    color: Colors.orange,
+                  ));
+                } else if (snapshot.hasError) {
+                  return Center(child: Text('Error: ${snapshot.error}'));
+                } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                  return Center(child: Text('No services available.'));
+                } else {
+                  List _services = snapshot.data!;
+                  return popservice(_services);
+                }
+              },
+            ),
             bar("Popular Service"),
             popservice(all_service),
             bar("Video & Animation"),

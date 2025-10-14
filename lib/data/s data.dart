@@ -1,3 +1,6 @@
+
+
+
 List all_service = [
   {
     "name": "Color Grading for Videos",
@@ -3013,3 +3016,18 @@ Contact us today to discuss your project and get started!"""
 //wd0304 has description pending
 //radio \u25CF\t
 // bold \x1B
+
+  // "phase1":
+  //           "Do you need high-quality video clips or vlogs for your YouTube channel? Our package includes filming, editing, and custom graphics to make your content stand out. We can help you create engaging, good-looking YouTube and vlog video clips that will attract more viewers and subscribers to your channel.",
+  //       "Brochures: Your Brand's Narrative in Print":
+  //           "Brochures transcend paper, encapsulating your brand's essence and evolution. Our custom brochures, from trifold brochures to flyers, ensure your brand story resonates with your audience, forging tangible connections beyond the digital marketplace.",
+  //       "Infographics: Data into Visual Stories":
+  //           "In a world of complex data, infographics are paramount. Our graphic design agency excels at crafting visually impactful infographics that communicate crucial messages, empowering and engaging your audience with essential information.",
+  //       "The power of integration":
+  //           "While brochures and infographics offer unique strengths, integrating them into your marketing strategy amplifies their impact. Our branding expertise ensures seamless integration, creating cohesive visual experiences across all touchpoints and reinforcing your brand identity and message.",
+  //       "Boost your communication":
+  //           "Effective communication is crucial in today's fast-paced world. Our graphic design services empower you to unlock the potential of brochures and infographics, helping you stand out in a crowded marketplace. Ready to Boost your brand's communication strategy? Contact us today to achieve your goals through expert graphic design."
+
+
+
+     

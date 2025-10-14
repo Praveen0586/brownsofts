@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:brownsofts/activities/api/apis.dart';
+import 'package:brownsofts/screens/fragments/constants.dart';
 import 'package:brownsofts/screens/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -9,16 +10,23 @@ import 'package:http/http.dart' as http;
 class SendToServer {
   // static String test = "http://localhost:8000/payments/payment_granted";
   // static String live =
-  //     "https://brownsofts-new-js-server.onrender.com/payments/payment_granted";
+  // "https://brownsofts-new-js-server.onrender.com/payments/payment_granted";
 
   // bool islive = true;
   Future<void> sendtoServer(Map<dynamic, dynamic> paypalData) async {
     //Uri url = islive ? Uri.parse(live) : Uri.parse(test);
 
     Uri url = Uri.parse(BrownAPI.storePurchase);
-    http.post(url, body: jsonEncode(paypalData), headers: {
-      "Content-Type": "application/json"
-    }).then((http.Response response) {
+    http.post(url,
+        body: jsonEncode({
+          "paypalData": paypalData,
+          "userID": userID.value,
+          "userEmail:": useremail.value,
+          "userName": username.value,
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        }).then((http.Response response) {
       if (response.statusCode == 200) {
         Fluttertoast.showToast(
             msg: "Payment Successful",
