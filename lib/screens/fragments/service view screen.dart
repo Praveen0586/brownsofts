@@ -1,3 +1,5 @@
+import 'package:brownsofts/activities/api/api_calls.dart';
+import 'package:brownsofts/screens/fragments/constants.dart';
 import 'package:brownsofts/screens/fragments/purchase_recipt.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -16,6 +18,13 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
   List topics = ["Description", "Reviews", "FAQ"];
 
   List pricelist = ["Basic", "Standard", "Premium"];
+
+//SHow Model Bottm Sheet
+// Inside your widget class
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController subjectController = TextEditingController();
+  final TextEditingController questionsController = TextEditingController();
 
   RxInt starRatng = 0.obs;
   RxBool isExpandedFAQ = false.obs;
@@ -41,6 +50,10 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
+
+    nameController.text = username.value;
+    emailController.text = useremail.value;
+
     WidgetsBinding.instance.addPostFrameCallback(
       (timeStamp) {
         setState(() {
@@ -299,6 +312,16 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
     );
   }
 
+// Don't forget to dispose them
+  @override
+  void dispose() {
+    nameController.dispose();
+    emailController.dispose();
+    subjectController.dispose();
+    questionsController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final h = MediaQuery.of(context).size.height;
@@ -364,120 +387,150 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
                 child: TextButton(
                     onPressed: () {
                       showModalBottomSheet(
-                          context: context,
-                          builder: (jk) {
-                            return BottomSheet(onClosing: () {
-                              Fluttertoast.showToast(msg: "Thats it");
-                            }, builder: (ss) {
-                              return Container(
-                                height: 700,
+                        context: context,
+                        isScrollControlled: true,
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.vertical(top: Radius.circular(25)),
+                        ),
+                        builder: (context) {
+                          return Padding(
+                            padding: EdgeInsets.only(
+                              bottom: MediaQuery.of(context).viewInsets.bottom,
+                            ),
+                            child: SingleChildScrollView(
+                              child: Padding(
+                                padding: const EdgeInsets.all(20.0),
                                 child: Column(
+                                  mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Text(
-                                      "Contact Us ",
+                                      "Contact Us",
                                       style: TextStyle(
                                           fontSize: 30,
                                           fontWeight: FontWeight.bold),
                                     ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 25, right: 25),
-                                      child: TextField(
-                                        decoration: InputDecoration(
-                                            label: Text("Name"),
-                                            contentPadding: EdgeInsets.only(
-                                                top: 1, left: 20),
-                                            border: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(15))),
+                                    SizedBox(height: 20),
+                                    TextField(
+                                      controller: nameController,
+                                      decoration: InputDecoration(
+                                        labelText: "Name",
+                                        contentPadding: EdgeInsets.symmetric(
+                                            vertical: 15, horizontal: 20),
+                                        border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(15)),
                                       ),
                                     ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 25, right: 25),
-                                      child: TextField(
-                                        decoration: InputDecoration(
-                                            label: Text("Email"),
-                                            contentPadding: EdgeInsets.only(
-                                                top: 20, left: 20),
-                                            border: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(15))),
+                                    SizedBox(height: 10),
+                                    TextField(
+                                      controller: emailController,
+                                      decoration: InputDecoration(
+                                        labelText: "Email",
+                                        contentPadding: EdgeInsets.symmetric(
+                                            vertical: 15, horizontal: 20),
+                                        border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(15)),
                                       ),
                                     ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 25, right: 25),
-                                      child: TextField(
-                                        decoration: InputDecoration(
-                                            label: Text("Subject"),
-                                            contentPadding: EdgeInsets.only(
-                                                top: 20, left: 20),
-                                            border: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(15))),
+                                    SizedBox(height: 10),
+                                    TextField(
+                                      controller: subjectController,
+                                      decoration: InputDecoration(
+                                        labelText: "Subject",
+                                        contentPadding: EdgeInsets.symmetric(
+                                            vertical: 15, horizontal: 20),
+                                        border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(15)),
                                       ),
                                     ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 25, right: 25),
-                                      child: TextField(
-                                        decoration: InputDecoration(
-                                            label: Text("Questions"),
-                                            contentPadding: EdgeInsets.only(
-                                                top: 20, left: 20),
-                                            border: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(15))),
+                                    SizedBox(height: 10),
+                                    TextField(
+                                      controller: questionsController,
+                                      maxLines: 3,
+                                      decoration: InputDecoration(
+                                        labelText: "Questions",
+                                        contentPadding: EdgeInsets.symmetric(
+                                            vertical: 15, horizontal: 20),
+                                        border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(15)),
                                       ),
                                     ),
-                                    SizedBox(
-                                      height: 80,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(right: 15),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          Material(
-                                              child: Container(
-                                            height: 45,
-                                            width: 180,
-                                            decoration: BoxDecoration(
-                                                color: const Color.fromARGB(
-                                                    255, 224, 103, 28),
+                                    SizedBox(height: 20),
+                                    Align(
+                                      alignment: Alignment.centerRight,
+                                      child: SizedBox(
+                                        height: 45,
+                                        width: 180,
+                                        child: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: Color.fromARGB(
+                                                255, 224, 103, 28),
+                                            shape: RoundedRectangleBorder(
                                                 borderRadius:
                                                     BorderRadius.circular(15)),
-                                            child: TextButton(
-                                                onPressed: () {},
-                                                child: Text("Get Touch",
-                                                    style: GoogleFonts.ubuntu(
-                                                        color: Colors.white,
-                                                        fontSize: 20,
-                                                        fontWeight:
-                                                            FontWeight.w500))),
-                                          )),
-                                        ],
+                                          ),
+                                          onPressed: () async {
+                                            final data = {
+                                              "name":
+                                                  nameController.text.trim(),
+                                              "email":
+                                                  emailController.text.trim(),
+                                              "subject":
+                                                  subjectController.text.trim(),
+                                              "questions": questionsController
+                                                  .text
+                                                  .trim(),
+                                            };
+                                            var _result = await ApiCalls()
+                                                .sendFeedback(
+                                                    name: nameController.text,
+                                                    email: emailController.text,
+                                                    subject:
+                                                        subjectController.text,
+                                                    Questions:
+                                                        questionsController
+                                                            .text,
+                                                    belongs:
+                                                        "Service - ${BSname}");
+
+                                            _result
+                                                ? Fluttertoast.showToast(
+                                                    msg: "Form Submitter ✅")
+                                                : Fluttertoast.showToast(
+                                                    msg: "Form Submitter ✅");
+
+                                                    // nameController.clear();
+                                                    // emailController.clear();
+                                                    subjectController.clear();
+                                                    questionsController.clear();
+                                            // Example: print to console or send to API
+                                            print(data);
+
+                                            Navigator.pop(context);
+                                            // Fluttertoast.showToast(
+                                            //     msg: "Feedback submitted!");
+                                          },
+                                          child: Text(
+                                            "Get in Touch",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.w500),
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ],
                                 ),
-                              );
-                            });
-                          });
+                              ),
+                            ),
+                          );
+                        },
+                      );
                     },
                     child: Text("Contact us",
                         style: GoogleFonts.ubuntu(

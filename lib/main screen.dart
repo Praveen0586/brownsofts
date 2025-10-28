@@ -8,6 +8,7 @@ import 'package:brownsofts/screens/fragments/contact.dart';
 import 'package:brownsofts/screens/fragments/home%20screen.dart';
 import 'package:brownsofts/screens/fragments/profile.dart';
 import 'package:brownsofts/screens/utils/constants.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -27,7 +28,7 @@ class _MainScreenState extends State<MainScreen> {
 
   // Moved currentindex to the class level
 
-  RxInt currentindex = 2.obs;
+  RxInt currentindex = 0.obs;
 
   late Userdetailscontroller userdetailscontroller;
   @override
@@ -45,28 +46,29 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     var colorisOrange = true;
     return Scaffold(
-        // floatingActionButton: FloatingActionButton(
-        //     onPressed: floatingmailButton
-        //         ? () {
-        //             MailService().send_mail(
-        //                 "PRAVEEN",
-        //                 "1@GMAIL.COM",
-        //                 "WHATSAPP GTDHWJD",
-        //                 "SOMETHING I WAT TO TELL",
-        //                 "COLOR GRADING",
-        //                 "PACKAGE",
-        //                 23.toString(),
-        //                 DateTime.now().toString(),
-        //                 "gopal");
-        //           }
-        //         : () {
-        //             // log("My First Log",
-        //             //     name: "Praveen",
-        //             //     level: 1,
-        //             //     error: "Some Error",
-        //             //     stackTrace: StackTrace.empty);
-        //             Fluttertoast.showToast(msg: "some buton Preesed ");
-        //           }),
+        floatingActionButton: FloatingActionButton(
+            onPressed: floatingmailButton
+                ? () {
+                    MailService().send_mail(
+                        "PRAVEEN",
+                        "1@GMAIL.COM",
+                        "WHATSAPP GTDHWJD",
+                        "SOMETHING I WAT TO TELL",
+                        "COLOR GRADING",
+                        "PACKAGE",
+                        23.toString(),
+                        DateTime.now().toString(),
+                        "gopal");
+                  }
+                : () {
+                    // log("My First Log",
+                    //     name: "Praveen",
+                    //     level: 1,
+                    //     error: "Some Error",
+                    //     stackTrace: StackTrace.empty);
+                    Fluttertoast.showToast(msg: userID.toString());
+                    Fluttertoast.showToast(msg: "some buton Preesed ");
+                  }),
         resizeToAvoidBottomInset: true,
         backgroundColor: Theme.of(context).cardTheme.surfaceTintColor,
         key: _scaffoldKey,

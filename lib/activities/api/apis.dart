@@ -1,9 +1,9 @@
 class BrownAPI {
   static const String liveUrl =
       "https://brownsofts-new-js-server-ixrp.onrender.com";
-  static const String devUrl = "http://localhost:8000";
+  static const String devUrl = "http://10.225.68.246:8000";
 
-  static const String activeBase = liveUrl;
+  static const String activeBase = devUrl;
 
   static const headers = {
     "Content-Type": "application/json",
@@ -28,5 +28,8 @@ class BrownAPI {
 //Service APIs
   static const String getService = "$activeBase/brown_services/get_service";
 
-  
+  //Feedbacks and Queries
+
+  static const String getAllFeeds = "$activeBase/contact/queries";
+  static const String postFeeds = "$activeBase/contact/queries/add";
 }

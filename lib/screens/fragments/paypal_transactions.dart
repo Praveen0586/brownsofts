@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:brownsofts/activities/models/Store_to_Database.dart';
+import 'package:brownsofts/main.dart';
 import 'package:brownsofts/screens/fragments/constants.dart';
+import 'package:brownsofts/screens/fragments/customer_entry_screen.dart';
 import 'package:brownsofts/screens/fragments/send_to_server.dart';
 import 'package:brownsofts/screens/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -79,7 +81,7 @@ class PaypalCheckout extends StatelessWidget {
           Center(child: LinearProgressIndicator());
           //  Navigator.pop(context);
         });
-
+        params["userData"] = useronServicepageJson;
         await SendToServer().sendtoServer(params);
         paymentPaypalId.value = params['data']['id'];
         paymentPaypalEmail.value =
@@ -100,7 +102,7 @@ class PaypalCheckout extends StatelessWidget {
           packageName: selectedPricePackage.value.toString(),
           price: "\$${selectedservicePrice.value.toString()}",
           date: DateTime.now().toUtc().toString(),
-          payment: "Paid via Credit Card",
+          payment: "Paid via PayPal",
           paypalpaymentemail: paymentPaypalEmail.value,
           paypalpaymentid: paymentPaypalId.value,
         );
@@ -143,8 +145,7 @@ class _PaymentSuccesScreenState extends State<PaymentSuccesScreen> {
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       if (_start == 0) {
         timer.cancel();
-        Navigator.of(context).pushReplacementNamed('/home');
-      } else {
+Get.off(HomePage());      } else {
         setState(() {
           _start--;
         });
@@ -160,7 +161,7 @@ class _PaymentSuccesScreenState extends State<PaymentSuccesScreen> {
     startTimer();
 
     Timer(Duration(seconds: 3), () {
-      Get.off(const ReciptScreen());
+      Get.off(const HomePage());
       // or Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HomePage()));
     });
   }
@@ -182,7 +183,7 @@ class _PaymentSuccesScreenState extends State<PaymentSuccesScreen> {
               child:
                   Lottie.asset("assets/lotties/addtocart.json", onLoaded: (p0) {
             print(p0);
-          }, reverse: true, repeat: true, height: 250, width: 250)),
+          }, reverse: true, repeat: true, height: 120, width: 120)),
           SizedBox(height: 20),
           Text(
             'Payment Successful!',

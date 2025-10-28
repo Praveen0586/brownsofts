@@ -21,7 +21,7 @@ class SendToServer {
         body: jsonEncode({
           "paypalData": paypalData,
           "userID": userID.value,
-          "userEmail:": useremail.value,
+          "userEmail": useremail.value,
           "userName": username.value,
         }),
         headers: {

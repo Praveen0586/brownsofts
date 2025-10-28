@@ -1,4 +1,5 @@
 import 'package:brownsofts/activities/api/api_calls.dart';
+import 'package:brownsofts/main%20screen.dart';
 import 'package:brownsofts/screens/utils/constants.dart';
 import 'package:brownsofts/service/categeries.dart';
 import 'package:brownsofts/data/s%20data.dart';
@@ -196,9 +197,19 @@ class _HomeScreenState extends State<HomeScreen> {
 //slideshow
 
   Widget slide_bottom() {
+    var _slideshowImageList = [
+      Image.network(
+        "https://brownsofts.com/assets/img/services/slider-images/66502b53d85f3.jpg",
+        fit: BoxFit.cover,
+      ),
+      Image.network(
+        "https://www.brownsofts.com/assets/img/services/slider-images/66503e36c817f.jpg",
+        fit: BoxFit.cover,
+      ),
+    ];
     List<Widget> _buildIndicators() {
       List<Widget> indicators = [];
-      int totalImages = 12; // Number of images in the slideshow
+      int totalImages = _slideshowImageList.length; // Number of images in the slideshow
 
       for (int i = 0; i < totalImages; i++) {
         indicators.add(Obx(() {
@@ -243,16 +254,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPageChanged: (value) {
                   _currentPage.value = value;
                 },
-                children: [
-                  Image.network(
-                    "https://brownsofts.com/assets/img/services/slider-images/66502b53d85f3.jpg",
-                    fit: BoxFit.cover,
-                  ),
-                  Image.network(
-                    "https://www.brownsofts.com/assets/img/services/slider-images/66503e36c817f.jpg",
-                    fit: BoxFit.cover,
-                  ),
-                ],
+                children: _slideshowImageList,
               ),
             ),
           ),
@@ -533,15 +535,19 @@ class _HomeScreenState extends State<HomeScreen> {
             slide_bottom(),
             bar("Categories"),
             gridsection_no_image1(context),
-            bar("Service From Backend"),
+            bar("New Fetches"),
             FutureBuilder(
               future: ApiCalls().getAllService(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Center(
-                      child: LinearProgressIndicator(
-                    color: Colors.orange,
-                  ));
+                  return Container(
+                    height: 190,
+                    width: 200,
+                    child: Center(
+                        child: CircularProgressIndicator(
+                      color: Colors.orange,
+                    )),
+                  );
                 } else if (snapshot.hasError) {
                   return Center(child: Text('Error: ${snapshot.error}'));
                 } else if (!snapshot.hasData || snapshot.data!.isEmpty) {

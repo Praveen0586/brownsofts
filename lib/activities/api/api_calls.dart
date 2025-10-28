@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:ffi';
 
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -106,6 +107,45 @@ class ApiCalls {
       print("Failed to fetch services with status code: ${_resul.statusCode}");
 
       return [];
+    }
+  }
+//Send Feedbacks
+
+  Future<bool> sendFeedback(
+      {required String name,
+      required String email,
+      required String subject,
+      required String Questions,
+      required String belongs}) async {
+    final url = Uri.parse(BrownAPI.postFeeds); // replace with your backend
+
+    final Map<String, dynamic> payload = {
+      "name": name,
+      "email": email,
+      "subject": subject,
+      "questions": Questions,
+      "belongs": belongs, // optional
+    };
+
+    try {
+      final response = await http.post(
+        url,
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode(payload),
+      );
+
+      if (response.statusCode == 201 || response.statusCode == 200) {
+        print("Feedback sent successfully!");
+        print(response.body); // response contains { message, feedback }
+        return true;
+      } else {
+        print("Failed to send feedback: ${response.statusCode}");
+        print(response.body);
+        return false;
+      }
+    } catch (e) {
+      print("Error sending feedback: $e");
+      return false;
     }
   }
 }

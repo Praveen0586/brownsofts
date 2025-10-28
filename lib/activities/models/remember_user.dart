@@ -8,6 +8,7 @@ class Remembrprefs {
   static Future<void> saveMyUserInfo(User userinfo) async {
     username.value = userinfo.name;
     useremail.value = userinfo.user_email;
+    userID.value = userinfo.id.toString();
     SharedPreferences preferences = await SharedPreferences.getInstance();
     String userJsonData = jsonEncode(userinfo.toJson());
     await preferences.setString("Current User", userJsonData);

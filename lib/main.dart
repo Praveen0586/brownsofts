@@ -71,6 +71,7 @@ class _HomePageState extends State<HomePage> {
     return FutureBuilder(
         future: Remembrprefs.readCurrentUser(),
         builder: (ctx, datasnapshots) {
+          
           if (datasnapshots.connectionState == ConnectionState.waiting) {
             return const Center(
               child: Image(image: AssetImage("assets/brownsofts logo.png")),
@@ -82,6 +83,7 @@ class _HomePageState extends State<HomePage> {
             } else {
               username.value = datasnapshots.data!.name;
               useremail.value = datasnapshots.data!.user_email;
+              userID.value = datasnapshots.data!.id.toString();
               
 
               return const MainScreen();

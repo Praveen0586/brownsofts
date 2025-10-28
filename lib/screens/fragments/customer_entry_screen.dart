@@ -1,4 +1,6 @@
 // import 'package:brownsofts/activities/models/remember_user.dart';
+import 'dart:convert';
+
 import 'package:brownsofts/screens/fragments/constants.dart';
 import 'package:brownsofts/screens/fragments/paypal_transactions.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +15,7 @@ class CustomerEntryScreen extends StatefulWidget {
   @override
   State<CustomerEntryScreen> createState() => _CustomerEntryScreenState();
 }
-
+String useronServicepageJson="";
 class _CustomerEntryScreenState extends State<CustomerEntryScreen> {
   var name_ = TextEditingController();
   var email_ = TextEditingController();
@@ -58,6 +60,14 @@ class _CustomerEntryScreenState extends State<CustomerEntryScreen> {
         child: FloatingActionButton.extended(
           onPressed: () {
             if (_formKey.currentState?.validate() ?? false) {
+              _formKey.currentState?.save();
+              useronServicepageJson = jsonEncode({
+                "userID": userID.value,
+                "userName": name_saved,
+                "userEmail": email_saved,
+                "description": description_saved
+              });
+              print("Service JSON: $useronServicepageJson");
               Navigator.of(context).push(MaterialPageRoute(builder: (cvb) {
                 return PaypalCheckout();
               }));
@@ -167,12 +177,14 @@ class _CustomerEntryScreenState extends State<CustomerEntryScreen> {
                                 const SizedBox(height: 8),
                                 TextFormField(
                                   onSaved: (newValue) {
+                                    print("Description saved: $newValue");
                                     description_saved = newValue!;
                                     userdescription.value = newValue;
                                   },
                                   maxLines: 3,
                                   decoration: const InputDecoration(
-                                    hintText: "Enter your message",
+                                    hintText:
+                                        "Mandatory to pass Your Contact Details",
                                     border: OutlineInputBorder(),
                                   ),
                                   validator: (value) {

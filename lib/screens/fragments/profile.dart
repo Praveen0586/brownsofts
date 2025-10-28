@@ -1,15 +1,18 @@
+// import 'dart:ui_web';
+
 import 'package:brownsofts/activities/models/remember_user.dart';
-import 'package:brownsofts/activities/models/user.dart';
+// import 'package:brownsofts/activities/models/user.dart';
 import 'package:brownsofts/main.dart';
 import 'package:brownsofts/screens/conrollers/userdetailscontroller.dart';
 import 'package:brownsofts/screens/fragments/constants.dart';
 import 'package:brownsofts/screens/fragments/controllers/profilecontrollers.dart';
 import 'package:brownsofts/screens/utils/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+// import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -45,48 +48,70 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     List<Widget> _profileActions() {
       return [
-        SettingsSection(
-          title: 'Account Settings',
-          items: [
-            SettingsItemData(
-              icon: Icons.person_outline,
-              label: 'Edit Profile',
-              onTap: () {},
-            ),
-            SettingsItemData(
-              icon: Icons.notifications_none,
-              label: 'Notifications',
-              onTap: () {},
-            ),
-            SettingsItemData(
-              icon: Icons.lock_outline,
-              label: 'Change Password',
-              onTap: () {},
-            ),
-            SettingsItemData(
-              icon: Icons.payment_outlined,
-              label: 'Payment Methods',
-              onTap: () {},
-            ),
-          ],
-        ),
+        // SettingsSection(
+        //   title: 'Account Settings',
+        //   items: [
+        //     SettingsItemData(
+        //       icon: Icons.person_outline,
+        //       label: 'Edit Profile',
+        //       onTap: () {},
+        //     ),
+        //     SettingsItemData(
+        //       icon: Icons.notifications_none,
+        //       label: 'Notifications',
+        //       onTap: () {},
+        //     ),
+        //     SettingsItemData(
+        //       icon: Icons.lock_outline,
+        //       label: 'Change Password',
+        //       onTap: () {},
+        //     ),
+        //     SettingsItemData(
+        //       icon: Icons.payment_outlined,
+        //       label: 'Payment Methods',
+        //       onTap: () {},
+        //     ),
+        //   ],
+        // ),
         SettingsSection(
           title: 'Support & Legal',
           items: [
             SettingsItemData(
               icon: Icons.help_outline,
               label: 'Help Center',
-              onTap: () {},
+              onTap: () async {
+                final __uri = Uri.parse("https://brownsofts.com/contact");
+
+                launchUrl(
+                  __uri,
+                  mode: LaunchMode.inAppWebView,
+                );
+              },
             ),
             SettingsItemData(
               icon: Icons.article_outlined,
               label: 'Terms of Service',
-              onTap: () {},
+              onTap: () async {
+                final __uri =
+                    Uri.parse("https://brownsofts.com/terms--conditions");
+
+                launchUrl(
+                  __uri,
+                  mode: LaunchMode.inAppWebView,
+                );
+              },
             ),
             SettingsItemData(
               icon: Icons.privacy_tip_outlined,
               label: 'Privacy Policy',
-              onTap: () {},
+              onTap: () async {
+                final __url =
+                    Uri.parse("https://brownsofts.com/privacy-policy");
+                launchUrl(
+                  __url,
+                  mode: LaunchMode.inAppWebView,
+                );
+              },
             ),
             SettingsItemData(
               icon: Icons.logout,
@@ -141,7 +166,8 @@ class _ProfileState extends State<Profile> {
                                 color: ColorsUsed.primaryColor,
                               ),
                             ),
-                          ),onForegroundImageError: (exception, stackTrace) {
+                          ),
+                          onForegroundImageError: (exception, stackTrace) {
                             print("Error loading profile image: $exception");
                           },
                           //   foregroundColor: Colors.white,
@@ -179,6 +205,16 @@ class _ProfileState extends State<Profile> {
           ),
           Obx(() => Text(
                 '${userdetailscontroller.uuser_email.value}',
+                style: TextStyle(
+                  fontFamily:
+                      GoogleFonts.aBeeZeeTextTheme().titleLarge!.fontFamily,
+                  fontSize: 12, // Adjust size as needed
+
+                  color: Colors.black, // Text color
+                ),
+              )),
+          Obx(() => Text(
+                '${userdetailscontroller.ugoogle_login_id.value}',
                 style: TextStyle(
                   fontFamily:
                       GoogleFonts.aBeeZeeTextTheme().titleLarge!.fontFamily,
