@@ -1,5 +1,4 @@
 import "dart:convert";
-
 import "package:brownsofts/activities/API-old/api.dart";
 import "package:brownsofts/activities/api/api_calls.dart";
 import "package:brownsofts/activities/authentivation/create_user.dart";
@@ -12,6 +11,7 @@ import "package:brownsofts/screens/fragments/constants.dart";
 import "package:flutter/material.dart";
 import 'package:fluttertoast/fluttertoast.dart';
 import "package:get/get.dart";
+import "package:google_fonts/google_fonts.dart";
 import "package:google_sign_in/google_sign_in.dart";
 import 'package:http/http.dart' as http;
 import "package:flutter_dotenv/flutter_dotenv.dart";
@@ -23,6 +23,7 @@ void main() async {
     debugShowCheckedModeBanner: false,
     debugShowMaterialGrid: false,
     theme: ThemeData(useMaterial3: true).copyWith(
+        textTheme: GoogleFonts.aBeeZeeTextTheme(),
         colorScheme: ColorScheme.fromSeed(
             seedColor: const Color.fromARGB(225, 91, 44, 31))),
     home: const HomePage(),
@@ -71,7 +72,6 @@ class _HomePageState extends State<HomePage> {
     return FutureBuilder(
         future: Remembrprefs.readCurrentUser(),
         builder: (ctx, datasnapshots) {
-          
           if (datasnapshots.connectionState == ConnectionState.waiting) {
             return const Center(
               child: Image(image: AssetImage("assets/brownsofts logo.png")),
@@ -84,7 +84,6 @@ class _HomePageState extends State<HomePage> {
               username.value = datasnapshots.data!.name;
               useremail.value = datasnapshots.data!.user_email;
               userID.value = datasnapshots.data!.id.toString();
-              
 
               return const MainScreen();
             }

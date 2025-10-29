@@ -102,6 +102,13 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
   List Description_topics = [];
 
   Widget buildContainer(String title, String content) {
+
+    String processedText = content
+  .replaceAll(r'\n', '\n')
+  .replaceAll(r'\t', '\t')
+  // any other replacements if needed
+  ;
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 14.0, left: 6, right: 6),
       child: Container(
@@ -117,6 +124,7 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
           children: [
             Text(
               title,
+              softWrap: true,
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -124,8 +132,8 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
               ),
             ),
             SizedBox(height: 8.0),
-            Text(
-              content,
+            Text( softWrap: true,
+              processedText,
               style: TextStyle(fontSize: 15, color: Colors.black87),
             ),
           ],
@@ -503,10 +511,10 @@ class _ServiceviewscreenState extends State<Serviceviewscreen> {
                                                 : Fluttertoast.showToast(
                                                     msg: "Form Submitter ✅");
 
-                                                    // nameController.clear();
-                                                    // emailController.clear();
-                                                    subjectController.clear();
-                                                    questionsController.clear();
+                                            // nameController.clear();
+                                            // emailController.clear();
+                                            subjectController.clear();
+                                            questionsController.clear();
                                             // Example: print to console or send to API
                                             print(data);
 

@@ -1,5 +1,6 @@
 import 'package:brownsofts/data/s%20data.dart';
 import 'package:brownsofts/screens/fragments/service%20view%20screen.dart';
+import 'package:brownsofts/screens/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class SearchPage extends StatefulWidget {
@@ -23,13 +24,14 @@ class _SearchPageState extends State<SearchPage> {
 
   @override
   void initState() {
+    serachList = all_service; // Initialize with all items
+
     super.initState();
+    _searchController.addListener(_filterSearchResults);
 
     // Initialize search list with all items
     _searchController.text = widget.word;
-    serachList = all_service; // Initialize with all items
-
-    _searchController.addListener(_filterSearchResults);
+    // _filterSearchResults();
   }
 
   // Filter the search results based on the query
@@ -121,7 +123,10 @@ class _SearchPageState extends State<SearchPage> {
                 ),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 247, 233, 227),
+                    color: ColorsUsed.colorisOrange
+                        ? ColorsUsed.primaryColor.withOpacity(0.8)
+                        : const Color.fromARGB(255, 247, 233, 227),
+                    //  const Color.fromARGB(255, 247, 233, 227),
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: const [
                       BoxShadow(

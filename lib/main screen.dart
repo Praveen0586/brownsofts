@@ -46,29 +46,32 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     var colorisOrange = true;
     return Scaffold(
-        floatingActionButton: FloatingActionButton(
-            onPressed: floatingmailButton
-                ? () {
-                    MailService().send_mail(
-                        "PRAVEEN",
-                        "1@GMAIL.COM",
-                        "WHATSAPP GTDHWJD",
-                        "SOMETHING I WAT TO TELL",
-                        "COLOR GRADING",
-                        "PACKAGE",
-                        23.toString(),
-                        DateTime.now().toString(),
-                        "gopal");
-                  }
-                : () {
-                    // log("My First Log",
-                    //     name: "Praveen",
-                    //     level: 1,
-                    //     error: "Some Error",
-                    //     stackTrace: StackTrace.empty);
-                    Fluttertoast.showToast(msg: userID.toString());
-                    Fluttertoast.showToast(msg: "some buton Preesed ");
-                  }),
+        floatingActionButton:null,
+
+        //  FloatingActionButton(
+        //     onPressed: floatingmailButton
+        //         ? () {
+        //             MailService().send_mail(
+        //                 "PRAVEEN",
+        //                 "1@GMAIL.COM",
+        //                 "WHATSAPP GTDHWJD",
+        //                 "SOMETHING I WAT TO TELL",
+        //                 "COLOR GRADING",
+        //                 "PACKAGE",
+        //                 23.toString(),
+        //                 DateTime.now().toString(),
+        //                 "gopal");
+        //           }
+        //         : () {
+        //             // log("My First Log",
+        //             //     name: "Praveen",
+        //             //     level: 1,
+        //             //     error: "Some Error",
+        //             //     stackTrace: StackTrace.empty);
+        //             Fluttertoast.showToast(msg: userID.toString());
+        //             Fluttertoast.showToast(msg: "some buton Preesed ");
+        //           }),
+        
         resizeToAvoidBottomInset: true,
         backgroundColor: Theme.of(context).cardTheme.surfaceTintColor,
         key: _scaffoldKey,
@@ -108,7 +111,7 @@ class _MainScreenState extends State<MainScreen> {
                   //Page for Notification
                 },
                 icon: const Icon(
-                  Icons.notifications_none,
+                  Icons.search_rounded,
                 )),
           ],
         ),

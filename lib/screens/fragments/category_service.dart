@@ -1,7 +1,10 @@
 import 'package:brownsofts/screens/fragments/service%20view%20screen.dart';
+import 'package:brownsofts/screens/search.dart';
+import 'package:brownsofts/screens/utils/constants.dart';
 import 'package:dynamic_tabbar/dynamic_tabbar.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:brownsofts/data/s data.dart';
 
@@ -29,6 +32,17 @@ class _CategoryServicePageState extends State<CategoryServicePage> {
   List VA05 = [];
   //        "Marketing & Advertising"
   List VA06 = [];
+
+  List WD01 = []; // Business Websites
+  List WD02 = []; // Landing Pages
+  List WD03 = []; // Website Design Services
+
+  List GD01 = []; // Logo & Banner Design
+  List GD02 = []; // Documents & Presentations
+  List GD03 = []; // Marketing & Branding
+  List GD04 = []; // Photo Editing
+  List GD05 = []; // UI & UX Designing
+
   List<Map<dynamic, dynamic>> video_animation = [];
   List all = all_service;
 
@@ -37,6 +51,21 @@ class _CategoryServicePageState extends State<CategoryServicePage> {
       String __categeryCode = data["category_code"];
       if (__categeryCode.contains("VA0")) {
         video_animation.add(data);
+      }
+    });
+  }
+
+  sorting_For_WebSubCategories() {
+    all_service.forEach((__element) {
+      String cCode = __element["category_code"];
+      if (cCode.contains("WD01")) {
+        WD01.add(__element);
+      }
+      if (cCode.contains("WD02")) {
+        WD02.add(__element);
+      }
+      if (cCode.contains("WD03")) {
+        WD03.add(__element);
       }
     });
   }
@@ -74,14 +103,43 @@ class _CategoryServicePageState extends State<CategoryServicePage> {
     });
   }
 
+  sorting_For_GraphicsDesign() {
+    all_service.forEach((__element) {
+      String cCode = __element["category_code"];
+      if (cCode.contains("GD01")) {
+        GD01.add(__element);
+      }
+      if (cCode.contains("GD02")) {
+        GD02.add(__element);
+      }
+      if (cCode.contains("GD03")) {
+        GD03.add(__element);
+      }
+      if (cCode.contains("GD04")) {
+        GD04.add(__element);
+      }
+      if (cCode.contains("GD05")) {
+        GD05.add(__element);
+      }
+    });
+  }
+
   @override
   void initState() {
     // TODO: implement initState
     sorting();
     sorting_For_VideoAnimation();
+    sorting_For_WebSubCategories();
+    sorting_For_GraphicsDesign();
+
     super.initState();
   }
 
+// @override
+// void dispose() {
+//   _tabController.dispose();
+//   super.dispose();
+// }
   @override
   Widget build(BuildContext context) {
     Widget vidandani(List _current_list) {
@@ -190,32 +248,71 @@ class _CategoryServicePageState extends State<CategoryServicePage> {
       );
     }
 
+    web_Design_SubCategories() {
+      List<TabData> tabdata_web_Design = [
+        TabData(
+          index: 1,
+          title: const Tab(text: "Business Websites"),
+          content: vidandani(WD01),
+        ),
+        TabData(
+          index: 2,
+          title: const Tab(text: "Landing Pages"),
+          content: vidandani(WD02),
+        ),
+        TabData(
+          index: 3,
+          title: const Tab(text: "Website Design Services"),
+          content: vidandani(WD03),
+        ),
+      ];
+      return Scaffold(
+        body: DynamicTabBarWidget(
+          isScrollable: true,
+          labelStyle:
+              const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+          indicator: BoxDecoration(),
+          unselectedLabelStyle:
+              TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+          showNextIcon: false,
+          padding: const EdgeInsets.only(top: 5, bottom: 5),
+          showBackIcon: false,
+          dragStartBehavior: DragStartBehavior.start,
+          onAddTabMoveTo: MoveToTab.last,
+          dynamicTabs: tabdata_web_Design,
+          onTabControllerUpdated: (ctl) {
+            ctl.animateTo(widget.index_of_Category ?? 0);
+          },
+        ),
+      );
+    }
+
     video_Animation_SubCategories() {
       List<TabData> tabdata_video_Animation = [
         TabData(
           index: 1,
-          title: const Tab(text: "Color Grading & Animation"),
+          title: Tab(text: "Color Grading & Animation"),
           content: vidandani(VA01),
         ),
         TabData(
             index: 2,
-            title: const Tab(text: "Social Media & Online Content"),
+            title: Tab(text: "Social Media & Online Content"),
             content: vidandani(VA02)),
         TabData(
             index: 3,
-            title: const Tab(text: "Education & Training"),
+            title: Tab(text: "Education & Training"),
             content: vidandani(VA03)),
         TabData(
             index: 4,
-            title: const Tab(text: "Entertainment & Storytelling"),
+            title: Tab(text: "Entertainment & Storytelling"),
             content: vidandani(VA04)),
         TabData(
             index: 5,
-            title: const Tab(text: "Events & Celebrations"),
+            title: Tab(text: "Events & Celebrations"),
             content: vidandani(VA05)),
         TabData(
             index: 6,
-            title: const Tab(text: "Marketing & Advertising"),
+            title: Tab(text: "Marketing & Advertising"),
             content: vidandani(VA06)),
       ];
 //
@@ -224,14 +321,67 @@ class _CategoryServicePageState extends State<CategoryServicePage> {
             isScrollable: true,
             indicator: BoxDecoration(),
             showNextIcon: false,
+            labelStyle:
+                const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            unselectedLabelStyle:
+                TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
             padding: const EdgeInsets.only(top: 5, bottom: 5),
             showBackIcon: false,
             dragStartBehavior: DragStartBehavior.start,
             onAddTabMoveTo: MoveToTab.last,
             dynamicTabs: tabdata_video_Animation,
             onTabControllerUpdated: (ctl) {
-              ;
+              ctl.animateTo(widget.index_of_Category ?? 0);
             }),
+      );
+    }
+
+    graphics_Design_SubCategories() {
+      List<TabData> tabdata_graphics_design = [
+        TabData(
+          index: 1,
+          title: const Tab(text: "Logo & Banner Design"),
+          content: vidandani(GD01),
+        ),
+        TabData(
+          index: 2,
+          title: const Tab(text: "Documents & Presentations"),
+          content: vidandani(GD02),
+        ),
+        TabData(
+          index: 3,
+          title: const Tab(text: "Marketing & Branding"),
+          content: vidandani(GD03),
+        ),
+        TabData(
+          index: 4,
+          title: const Tab(text: "Photo Editing"),
+          content: vidandani(GD04),
+        ),
+        TabData(
+          index: 5,
+          title: const Tab(text: "UI & UX Designing"),
+          content: vidandani(GD05),
+        ),
+      ];
+      return Scaffold(
+        body: DynamicTabBarWidget(
+          isScrollable: true,
+          labelStyle:
+              const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+          indicator: BoxDecoration(),
+          unselectedLabelStyle:
+              TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+          showNextIcon: false,
+          padding: const EdgeInsets.only(top: 5, bottom: 5),
+          showBackIcon: false,
+          dragStartBehavior: DragStartBehavior.start,
+          onAddTabMoveTo: MoveToTab.last,
+          dynamicTabs: tabdata_graphics_design,
+          onTabControllerUpdated: (ctl) {
+            ctl.animateTo(widget.index_of_Category ?? 0);
+          },
+        ),
       );
     }
 
@@ -244,16 +394,12 @@ class _CategoryServicePageState extends State<CategoryServicePage> {
       TabData(
         index: 2,
         title: const Tab(text: "Web Design"),
-        content: const Center(
-          child: Text("Web Design"),
-        ),
+        content: web_Design_SubCategories(),
       ),
       TabData(
         index: 3,
         title: const Tab(text: "Graphics and Design"),
-        content: const Center(
-          child: Text("Graphics and Design"),
-        ),
+        content: graphics_Design_SubCategories(),
       ),
       TabData(
         index: 4,
@@ -272,8 +418,9 @@ class _CategoryServicePageState extends State<CategoryServicePage> {
     ];
 
     return Scaffold(
-      appBar: widget.topic!
+      appBar: widget.topic ?? false
           ? AppBar(
+              backgroundColor: ColorsUsed.primaryColor,
               title: Text(
                 'Browse Our Collection',
                 style: TextStyle(
@@ -284,12 +431,18 @@ class _CategoryServicePageState extends State<CategoryServicePage> {
                   color: Colors.black, // Text color
                 ),
               ),
+              actions: [IconButton(onPressed: () {
+                Get.to(()=> SearchPage(word: "",));
+              }, icon: Icon(Icons.search))],
             )
           : null,
       body: DynamicTabBarWidget(
         padding: const EdgeInsets.only(top: 15, bottom: 10),
         isScrollable: true,
         showNextIcon: false,
+        labelStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+        unselectedLabelStyle:
+            TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
         showBackIcon: false,
         onAddTabMoveTo: MoveToTab.first,
         indicator: BoxDecoration(
@@ -297,7 +450,7 @@ class _CategoryServicePageState extends State<CategoryServicePage> {
         ),
         dynamicTabs: tabdata,
         onTabControllerUpdated: (ctl) {
-          ctl.animateTo(widget.index_of_Category!);
+          ctl.animateTo(widget.index_of_Category ?? 0);
         },
       ),
     );

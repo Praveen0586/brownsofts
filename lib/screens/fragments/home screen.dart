@@ -1,5 +1,6 @@
 import 'package:brownsofts/activities/api/api_calls.dart';
 import 'package:brownsofts/main%20screen.dart';
+import 'package:brownsofts/screens/conrollers/appbarcontrollers.dart';
 import 'package:brownsofts/screens/utils/constants.dart';
 import 'package:brownsofts/service/categeries.dart';
 import 'package:brownsofts/data/s%20data.dart';
@@ -11,7 +12,9 @@ import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final ScrollController scrollController = ScrollController();
+  // final AppBarController appBarController = Get.find();
+  HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -139,12 +142,13 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget search_suggesions() {
     List suggesions = [
       "Video Editing ",
-      "SEO",
-      "UI/UX Design",
-      "Graphic Designing",
-      "Short Videos",
-      "Marketting",
-      "Ads Management",
+      "Social Media Video",
+      "CMS",
+      "UI UX Design",
+      "Short Film",
+      "Business Websites",
+      "E-commerce",
+      "Ads",
     ];
 
     return SingleChildScrollView(
@@ -209,7 +213,8 @@ class _HomeScreenState extends State<HomeScreen> {
     ];
     List<Widget> _buildIndicators() {
       List<Widget> indicators = [];
-      int totalImages = _slideshowImageList.length; // Number of images in the slideshow
+      int totalImages =
+          _slideshowImageList.length; // Number of images in the slideshow
 
       for (int i = 0; i < totalImages; i++) {
         indicators.add(Obx(() {
@@ -315,6 +320,18 @@ class _HomeScreenState extends State<HomeScreen> {
 
 //Grid section of categories - without image
   Widget gridsection_no_image1(BuildContext context) {
+    final List<Color> containerColors = [
+      Colors.red.shade100,
+      Colors.blue.shade100,
+      Colors.green.shade100,
+      Colors.orange.shade100,
+      Colors.purple.shade100,
+      Colors.teal.shade100,
+      Colors.amber.shade100,
+      Colors.cyan.shade100,
+      Colors.lime.shade100,
+    ]; // Add as many colors as you want
+
     if (appCategory == null || appCategory.isEmpty) {
       return Center(child: Text("No categories available."));
     }
@@ -347,12 +364,15 @@ class _HomeScreenState extends State<HomeScreen> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Container(
+                
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: const Color.fromARGB(255, 236, 223, 217),
+                    color: containerColors[index % containerColors.length],
+                    // color: const Color.fromARGB(255, 236, 223, 217),
                     width: 1.5,
                   ),
-                  color: const Color.fromARGB(254, 254, 247, 255),
+                color:    containerColors[index % containerColors.length],
+                  // color: const Color.fromARGB(254, 254, 247, 255),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Column(
@@ -409,6 +429,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     currentServiceMap: ct_ser,
                   );
                 }));
+                print(ct_ser["description"]);
               },
               child: Container(
                 height: 290,
@@ -478,7 +499,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         width: 170,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: Color.fromARGB(225, 245, 235, 232),
+                          color:     Colors.orange[100],
                         ),
                         child: TextButton(
                           onPressed: () {
@@ -527,6 +548,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      controller: widget.scrollController,
       children: [
         Column(
           children: [
